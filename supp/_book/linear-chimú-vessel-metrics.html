@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Linear Chimú vessel metrics | Supplementary materials for paper: The Changing Shape of Empire: A GM Study of Chimú Bottles in Museum Collections</title>
+  <title>Chapter 1 Linear Chimú vessel metrics | The Changing Shape of Empire: A GM Study of Chimú Bottles in Museum Collections</title>
   <meta name="description" content="Differences in Chimú vessel shape." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Linear Chimú vessel metrics | Supplementary materials for paper: The Changing Shape of Empire: A GM Study of Chimú Bottles in Museum Collections" />
+  <meta property="og:title" content="Chapter 1 Linear Chimú vessel metrics | The Changing Shape of Empire: A GM Study of Chimú Bottles in Museum Collections" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Linear Chimú vessel metrics | Supplementary materials for paper: The Changing Shape of Empire: A GM Study of Chimú Bottles in Museum Collections" />
+  <meta name="twitter:title" content="Chapter 1 Linear Chimú vessel metrics | The Changing Shape of Empire: A GM Study of Chimú Bottles in Museum Collections" />
   
   <meta name="twitter:description" content="Differences in Chimú vessel shape." />
   
@@ -120,6 +120,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -200,7 +222,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Supplementary materials for paper: The Changing Shape of Empire: A GM Study of Chimú Bottles in Museum Collections</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The Changing Shape of Empire: A GM Study of Chimú Bottles in Museum Collections</a>
           </h1>
         </div>
 
@@ -210,103 +232,94 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="linear-chimú-vessel-metrics" class="section level1" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Linear Chimú vessel metrics</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="linear-chimú-vessel-metrics.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install required analysis packages</span></span>
-<span id="cb1-2"><a href="linear-chimú-vessel-metrics.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(&quot;tidyverse/tidyverse&quot;)</span></span>
-<span id="cb1-3"><a href="linear-chimú-vessel-metrics.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(&quot;mlcollyer/RRPP&quot;)</span></span>
-<span id="cb1-4"><a href="linear-chimú-vessel-metrics.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(&quot;kassambara/ggpubr&quot;)</span></span>
-<span id="cb1-5"><a href="linear-chimú-vessel-metrics.html#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(&#39;sinhrks/ggfortify&#39;)</span></span>
-<span id="cb1-6"><a href="linear-chimú-vessel-metrics.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># load libraries</span></span>
-<span id="cb1-7"><a href="linear-chimú-vessel-metrics.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code></pre></div>
-<pre><code>## here() starts at D:/github/peru.bottle.jar/supp</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="linear-chimú-vessel-metrics.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
-<pre><code>## -- Attaching packages ---------------------------------- tidyverse 1.3.1.9000 --</code></pre>
-<pre><code>## v ggplot2 3.3.5     v purrr   0.3.4
-## v tibble  3.1.6     v dplyr   1.0.7
-## v tidyr   1.1.4     v stringr 1.4.0
-## v readr   2.1.1     v forcats 0.5.1</code></pre>
-<pre><code>## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="linear-chimú-vessel-metrics.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RRPP)</span>
-<span id="cb7-2"><a href="linear-chimú-vessel-metrics.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
-<span id="cb7-3"><a href="linear-chimú-vessel-metrics.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggfortify)</span>
-<span id="cb7-4"><a href="linear-chimú-vessel-metrics.html#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cluster)</span>
-<span id="cb7-5"><a href="linear-chimú-vessel-metrics.html#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wesanderson)</span>
-<span id="cb7-6"><a href="linear-chimú-vessel-metrics.html#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggExtra)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="linear-chimú-vessel-metrics.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install required analysis packages</span></span>
+<span id="cb5-2"><a href="linear-chimú-vessel-metrics.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(&quot;tidyverse/tidyverse&quot;)</span></span>
+<span id="cb5-3"><a href="linear-chimú-vessel-metrics.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(&quot;mlcollyer/RRPP&quot;)</span></span>
+<span id="cb5-4"><a href="linear-chimú-vessel-metrics.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(&quot;kassambara/ggpubr&quot;)</span></span>
+<span id="cb5-5"><a href="linear-chimú-vessel-metrics.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(&#39;sinhrks/ggfortify&#39;)</span></span>
+<span id="cb5-6"><a href="linear-chimú-vessel-metrics.html#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># load libraries</span></span>
+<span id="cb5-7"><a href="linear-chimú-vessel-metrics.html#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb5-8"><a href="linear-chimú-vessel-metrics.html#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb5-9"><a href="linear-chimú-vessel-metrics.html#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RRPP)</span>
+<span id="cb5-10"><a href="linear-chimú-vessel-metrics.html#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
+<span id="cb5-11"><a href="linear-chimú-vessel-metrics.html#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggfortify)</span>
+<span id="cb5-12"><a href="linear-chimú-vessel-metrics.html#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cluster)</span>
+<span id="cb5-13"><a href="linear-chimú-vessel-metrics.html#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wesanderson)</span>
+<span id="cb5-14"><a href="linear-chimú-vessel-metrics.html#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggExtra)</span></code></pre></div>
 <div id="load-data-define-variables" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Load data + define variables</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="linear-chimú-vessel-metrics.html#cb8-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;potmeas.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">as.is =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb8-2"><a href="linear-chimú-vessel-metrics.html#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="linear-chimú-vessel-metrics.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># define variables</span></span>
-<span id="cb8-4"><a href="linear-chimú-vessel-metrics.html#cb8-4" aria-hidden="true" tabindex="-1"></a>od <span class="ot">&lt;-</span> data<span class="sc">$</span>orifice.diameter <span class="co"># orifice diameter</span></span>
-<span id="cb8-5"><a href="linear-chimú-vessel-metrics.html#cb8-5" aria-hidden="true" tabindex="-1"></a>bd <span class="ot">&lt;-</span> data<span class="sc">$</span>base.diameter <span class="co"># base diameter</span></span>
-<span id="cb8-6"><a href="linear-chimú-vessel-metrics.html#cb8-6" aria-hidden="true" tabindex="-1"></a>nd <span class="ot">&lt;-</span> data<span class="sc">$</span>bneck.diameter <span class="co"># neck diameter</span></span>
-<span id="cb8-7"><a href="linear-chimú-vessel-metrics.html#cb8-7" aria-hidden="true" tabindex="-1"></a>bl <span class="ot">&lt;-</span> data<span class="sc">$</span>wide.diameter <span class="co"># belly diameter</span></span>
-<span id="cb8-8"><a href="linear-chimú-vessel-metrics.html#cb8-8" aria-hidden="true" tabindex="-1"></a>h <span class="ot">&lt;-</span> data<span class="sc">$</span>height <span class="co"># height</span></span>
-<span id="cb8-9"><a href="linear-chimú-vessel-metrics.html#cb8-9" aria-hidden="true" tabindex="-1"></a>rt <span class="ot">&lt;-</span> data<span class="sc">$</span>rim.thickness <span class="co"># rim thickness</span></span>
-<span id="cb8-10"><a href="linear-chimú-vessel-metrics.html#cb8-10" aria-hidden="true" tabindex="-1"></a>gp <span class="ot">&lt;-</span> data<span class="sc">$</span>form <span class="co"># bottle or jar</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="linear-chimú-vessel-metrics.html#cb6-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;potmeas.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">as.is =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-2"><a href="linear-chimú-vessel-metrics.html#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="linear-chimú-vessel-metrics.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># define variables</span></span>
+<span id="cb6-4"><a href="linear-chimú-vessel-metrics.html#cb6-4" aria-hidden="true" tabindex="-1"></a>od <span class="ot">&lt;-</span> data<span class="sc">$</span>orifice.diameter <span class="co"># orifice diameter</span></span>
+<span id="cb6-5"><a href="linear-chimú-vessel-metrics.html#cb6-5" aria-hidden="true" tabindex="-1"></a>bd <span class="ot">&lt;-</span> data<span class="sc">$</span>base.diameter <span class="co"># base diameter</span></span>
+<span id="cb6-6"><a href="linear-chimú-vessel-metrics.html#cb6-6" aria-hidden="true" tabindex="-1"></a>nd <span class="ot">&lt;-</span> data<span class="sc">$</span>bneck.diameter <span class="co"># neck diameter</span></span>
+<span id="cb6-7"><a href="linear-chimú-vessel-metrics.html#cb6-7" aria-hidden="true" tabindex="-1"></a>bl <span class="ot">&lt;-</span> data<span class="sc">$</span>wide.diameter <span class="co"># belly diameter</span></span>
+<span id="cb6-8"><a href="linear-chimú-vessel-metrics.html#cb6-8" aria-hidden="true" tabindex="-1"></a>h <span class="ot">&lt;-</span> data<span class="sc">$</span>height <span class="co"># height</span></span>
+<span id="cb6-9"><a href="linear-chimú-vessel-metrics.html#cb6-9" aria-hidden="true" tabindex="-1"></a>rt <span class="ot">&lt;-</span> data<span class="sc">$</span>rim.thickness <span class="co"># rim thickness</span></span>
+<span id="cb6-10"><a href="linear-chimú-vessel-metrics.html#cb6-10" aria-hidden="true" tabindex="-1"></a>gp <span class="ot">&lt;-</span> data<span class="sc">$</span>form <span class="co"># bottle or jar</span></span></code></pre></div>
 </div>
 <div id="boxplots-for-variable-by-group" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> Boxplots for <em>variable</em> by <em>group</em></h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="linear-chimú-vessel-metrics.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of orifice diameter ~ group</span></span>
-<span id="cb9-2"><a href="linear-chimú-vessel-metrics.html#cb9-2" aria-hidden="true" tabindex="-1"></a>odgroup <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> gp, <span class="at">y =</span> od, <span class="at">color =</span> gp)) <span class="sc">+</span> </span>
-<span id="cb9-3"><a href="linear-chimú-vessel-metrics.html#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb9-4"><a href="linear-chimú-vessel-metrics.html#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>,<span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>,<span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb9-5"><a href="linear-chimú-vessel-metrics.html#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb9-6"><a href="linear-chimú-vessel-metrics.html#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Form&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Orifice Diam&quot;</span>) <span class="sc">+</span></span>
-<span id="cb9-7"><a href="linear-chimú-vessel-metrics.html#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb9-8"><a href="linear-chimú-vessel-metrics.html#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="linear-chimú-vessel-metrics.html#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of base diameter ~ group</span></span>
-<span id="cb9-10"><a href="linear-chimú-vessel-metrics.html#cb9-10" aria-hidden="true" tabindex="-1"></a>bdgroup <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> gp, <span class="at">y =</span> bd, <span class="at">color =</span> gp)) <span class="sc">+</span> </span>
-<span id="cb9-11"><a href="linear-chimú-vessel-metrics.html#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb9-12"><a href="linear-chimú-vessel-metrics.html#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>,<span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>,<span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb9-13"><a href="linear-chimú-vessel-metrics.html#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb9-14"><a href="linear-chimú-vessel-metrics.html#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Form&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Base Diam&quot;</span>) <span class="sc">+</span></span>
-<span id="cb9-15"><a href="linear-chimú-vessel-metrics.html#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb9-16"><a href="linear-chimú-vessel-metrics.html#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-17"><a href="linear-chimú-vessel-metrics.html#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of neck diameter ~ group</span></span>
-<span id="cb9-18"><a href="linear-chimú-vessel-metrics.html#cb9-18" aria-hidden="true" tabindex="-1"></a>ndgroup <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> gp, <span class="at">y =</span> nd, <span class="at">color =</span> gp)) <span class="sc">+</span> </span>
-<span id="cb9-19"><a href="linear-chimú-vessel-metrics.html#cb9-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb9-20"><a href="linear-chimú-vessel-metrics.html#cb9-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>,<span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>,<span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb9-21"><a href="linear-chimú-vessel-metrics.html#cb9-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb9-22"><a href="linear-chimú-vessel-metrics.html#cb9-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Form&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Neck Diam&quot;</span>) <span class="sc">+</span>  </span>
-<span id="cb9-23"><a href="linear-chimú-vessel-metrics.html#cb9-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb9-24"><a href="linear-chimú-vessel-metrics.html#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-25"><a href="linear-chimú-vessel-metrics.html#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of belly diameter ~ group</span></span>
-<span id="cb9-26"><a href="linear-chimú-vessel-metrics.html#cb9-26" aria-hidden="true" tabindex="-1"></a>blgroup <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> gp, <span class="at">y =</span> bl, <span class="at">color =</span> gp)) <span class="sc">+</span> </span>
-<span id="cb9-27"><a href="linear-chimú-vessel-metrics.html#cb9-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb9-28"><a href="linear-chimú-vessel-metrics.html#cb9-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>,<span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>,<span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb9-29"><a href="linear-chimú-vessel-metrics.html#cb9-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb9-30"><a href="linear-chimú-vessel-metrics.html#cb9-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Form&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Belly Diam&quot;</span>) <span class="sc">+</span>  </span>
-<span id="cb9-31"><a href="linear-chimú-vessel-metrics.html#cb9-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb9-32"><a href="linear-chimú-vessel-metrics.html#cb9-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-33"><a href="linear-chimú-vessel-metrics.html#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of height ~ group</span></span>
-<span id="cb9-34"><a href="linear-chimú-vessel-metrics.html#cb9-34" aria-hidden="true" tabindex="-1"></a>hgroup <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> gp, <span class="at">y =</span> h, <span class="at">color =</span> gp)) <span class="sc">+</span> </span>
-<span id="cb9-35"><a href="linear-chimú-vessel-metrics.html#cb9-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb9-36"><a href="linear-chimú-vessel-metrics.html#cb9-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>,<span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>,<span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb9-37"><a href="linear-chimú-vessel-metrics.html#cb9-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb9-38"><a href="linear-chimú-vessel-metrics.html#cb9-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Form&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Height&quot;</span>) <span class="sc">+</span>  </span>
-<span id="cb9-39"><a href="linear-chimú-vessel-metrics.html#cb9-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb9-40"><a href="linear-chimú-vessel-metrics.html#cb9-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-41"><a href="linear-chimú-vessel-metrics.html#cb9-41" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of rim thickness ~ group</span></span>
-<span id="cb9-42"><a href="linear-chimú-vessel-metrics.html#cb9-42" aria-hidden="true" tabindex="-1"></a>rtgroup <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> gp, <span class="at">y =</span> rt, <span class="at">color =</span> gp)) <span class="sc">+</span> </span>
-<span id="cb9-43"><a href="linear-chimú-vessel-metrics.html#cb9-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb9-44"><a href="linear-chimú-vessel-metrics.html#cb9-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>,<span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>,<span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb9-45"><a href="linear-chimú-vessel-metrics.html#cb9-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb9-46"><a href="linear-chimú-vessel-metrics.html#cb9-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Form&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Rim Thick&quot;</span>) <span class="sc">+</span>  </span>
-<span id="cb9-47"><a href="linear-chimú-vessel-metrics.html#cb9-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb9-48"><a href="linear-chimú-vessel-metrics.html#cb9-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-49"><a href="linear-chimú-vessel-metrics.html#cb9-49" aria-hidden="true" tabindex="-1"></a><span class="co"># render figure</span></span>
-<span id="cb9-50"><a href="linear-chimú-vessel-metrics.html#cb9-50" aria-hidden="true" tabindex="-1"></a>sitefigure<span class="ot">&lt;-</span><span class="fu">ggarrange</span>(odgroup, bdgroup, ndgroup, blgroup, hgroup, rtgroup,</span>
-<span id="cb9-51"><a href="linear-chimú-vessel-metrics.html#cb9-51" aria-hidden="true" tabindex="-1"></a>                  <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;c&quot;</span>,<span class="st">&quot;d&quot;</span>,<span class="st">&quot;e&quot;</span>,<span class="st">&quot;f&quot;</span>),</span>
-<span id="cb9-52"><a href="linear-chimú-vessel-metrics.html#cb9-52" aria-hidden="true" tabindex="-1"></a>                  <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="linear-chimú-vessel-metrics.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of orifice diameter ~ group</span></span>
+<span id="cb7-2"><a href="linear-chimú-vessel-metrics.html#cb7-2" aria-hidden="true" tabindex="-1"></a>odgroup <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> gp, <span class="at">y =</span> od, <span class="at">color =</span> gp)) <span class="sc">+</span> </span>
+<span id="cb7-3"><a href="linear-chimú-vessel-metrics.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb7-4"><a href="linear-chimú-vessel-metrics.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>,<span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>,<span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="linear-chimú-vessel-metrics.html#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="linear-chimú-vessel-metrics.html#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Form&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Orifice Diam&quot;</span>) <span class="sc">+</span></span>
+<span id="cb7-7"><a href="linear-chimú-vessel-metrics.html#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb7-8"><a href="linear-chimú-vessel-metrics.html#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="linear-chimú-vessel-metrics.html#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of base diameter ~ group</span></span>
+<span id="cb7-10"><a href="linear-chimú-vessel-metrics.html#cb7-10" aria-hidden="true" tabindex="-1"></a>bdgroup <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> gp, <span class="at">y =</span> bd, <span class="at">color =</span> gp)) <span class="sc">+</span> </span>
+<span id="cb7-11"><a href="linear-chimú-vessel-metrics.html#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb7-12"><a href="linear-chimú-vessel-metrics.html#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>,<span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>,<span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="linear-chimú-vessel-metrics.html#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb7-14"><a href="linear-chimú-vessel-metrics.html#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Form&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Base Diam&quot;</span>) <span class="sc">+</span></span>
+<span id="cb7-15"><a href="linear-chimú-vessel-metrics.html#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb7-16"><a href="linear-chimú-vessel-metrics.html#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="linear-chimú-vessel-metrics.html#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of neck diameter ~ group</span></span>
+<span id="cb7-18"><a href="linear-chimú-vessel-metrics.html#cb7-18" aria-hidden="true" tabindex="-1"></a>ndgroup <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> gp, <span class="at">y =</span> nd, <span class="at">color =</span> gp)) <span class="sc">+</span> </span>
+<span id="cb7-19"><a href="linear-chimú-vessel-metrics.html#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb7-20"><a href="linear-chimú-vessel-metrics.html#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>,<span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>,<span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb7-21"><a href="linear-chimú-vessel-metrics.html#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb7-22"><a href="linear-chimú-vessel-metrics.html#cb7-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Form&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Neck Diam&quot;</span>) <span class="sc">+</span>  </span>
+<span id="cb7-23"><a href="linear-chimú-vessel-metrics.html#cb7-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb7-24"><a href="linear-chimú-vessel-metrics.html#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="linear-chimú-vessel-metrics.html#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of belly diameter ~ group</span></span>
+<span id="cb7-26"><a href="linear-chimú-vessel-metrics.html#cb7-26" aria-hidden="true" tabindex="-1"></a>blgroup <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> gp, <span class="at">y =</span> bl, <span class="at">color =</span> gp)) <span class="sc">+</span> </span>
+<span id="cb7-27"><a href="linear-chimú-vessel-metrics.html#cb7-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb7-28"><a href="linear-chimú-vessel-metrics.html#cb7-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>,<span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>,<span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb7-29"><a href="linear-chimú-vessel-metrics.html#cb7-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb7-30"><a href="linear-chimú-vessel-metrics.html#cb7-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Form&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Belly Diam&quot;</span>) <span class="sc">+</span>  </span>
+<span id="cb7-31"><a href="linear-chimú-vessel-metrics.html#cb7-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb7-32"><a href="linear-chimú-vessel-metrics.html#cb7-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-33"><a href="linear-chimú-vessel-metrics.html#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of height ~ group</span></span>
+<span id="cb7-34"><a href="linear-chimú-vessel-metrics.html#cb7-34" aria-hidden="true" tabindex="-1"></a>hgroup <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> gp, <span class="at">y =</span> h, <span class="at">color =</span> gp)) <span class="sc">+</span> </span>
+<span id="cb7-35"><a href="linear-chimú-vessel-metrics.html#cb7-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb7-36"><a href="linear-chimú-vessel-metrics.html#cb7-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>,<span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>,<span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb7-37"><a href="linear-chimú-vessel-metrics.html#cb7-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb7-38"><a href="linear-chimú-vessel-metrics.html#cb7-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Form&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Height&quot;</span>) <span class="sc">+</span>  </span>
+<span id="cb7-39"><a href="linear-chimú-vessel-metrics.html#cb7-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb7-40"><a href="linear-chimú-vessel-metrics.html#cb7-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-41"><a href="linear-chimú-vessel-metrics.html#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of rim thickness ~ group</span></span>
+<span id="cb7-42"><a href="linear-chimú-vessel-metrics.html#cb7-42" aria-hidden="true" tabindex="-1"></a>rtgroup <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> gp, <span class="at">y =</span> rt, <span class="at">color =</span> gp)) <span class="sc">+</span> </span>
+<span id="cb7-43"><a href="linear-chimú-vessel-metrics.html#cb7-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb7-44"><a href="linear-chimú-vessel-metrics.html#cb7-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>,<span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>,<span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb7-45"><a href="linear-chimú-vessel-metrics.html#cb7-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb7-46"><a href="linear-chimú-vessel-metrics.html#cb7-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Form&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Rim Thick&quot;</span>) <span class="sc">+</span>  </span>
+<span id="cb7-47"><a href="linear-chimú-vessel-metrics.html#cb7-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb7-48"><a href="linear-chimú-vessel-metrics.html#cb7-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-49"><a href="linear-chimú-vessel-metrics.html#cb7-49" aria-hidden="true" tabindex="-1"></a><span class="co"># render figure</span></span>
+<span id="cb7-50"><a href="linear-chimú-vessel-metrics.html#cb7-50" aria-hidden="true" tabindex="-1"></a>sitefigure<span class="ot">&lt;-</span><span class="fu">ggarrange</span>(odgroup, bdgroup, ndgroup, blgroup, hgroup, rtgroup,</span>
+<span id="cb7-51"><a href="linear-chimú-vessel-metrics.html#cb7-51" aria-hidden="true" tabindex="-1"></a>                  <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;c&quot;</span>,<span class="st">&quot;d&quot;</span>,<span class="st">&quot;e&quot;</span>,<span class="st">&quot;f&quot;</span>),</span>
+<span id="cb7-52"><a href="linear-chimú-vessel-metrics.html#cb7-52" aria-hidden="true" tabindex="-1"></a>                  <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.
 ## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.
 ## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.
 ## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.
 ## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.
 ## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="linear-chimú-vessel-metrics.html#cb11-1" aria-hidden="true" tabindex="-1"></a>sitefigure</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="linear-chimú-vessel-metrics.html#cb9-1" aria-hidden="true" tabindex="-1"></a>sitefigure</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:boxsite"></span>
 <img src="chimu1_files/figure-html/boxsite-1.png" alt="Boxplots of orifice diameter, base diameter, neck diameter, belly diameter, height, and rim thickness for the anthropomorphic, phytomorphic, and zoomorphic Chimú vessels used in this study." width="100%" />
 <p class="caption">
@@ -316,28 +329,28 @@ Figure 1.1: Boxplots of orifice diameter, base diameter, neck diameter, belly di
 </div>
 <div id="principal-components-analysis-for-group" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> Principal Components Analysis for <em>group</em></h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="linear-chimú-vessel-metrics.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters to plot by group</span></span>
-<span id="cb12-2"><a href="linear-chimú-vessel-metrics.html#cb12-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> data[<span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">8</span>)]</span>
-<span id="cb12-3"><a href="linear-chimú-vessel-metrics.html#cb12-3" aria-hidden="true" tabindex="-1"></a>pch.gps.gp <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="fu">as.factor</span>(gp)]</span>
-<span id="cb12-4"><a href="linear-chimú-vessel-metrics.html#cb12-4" aria-hidden="true" tabindex="-1"></a>col.gps.gp <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(gp)]</span>
-<span id="cb12-5"><a href="linear-chimú-vessel-metrics.html#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="linear-chimú-vessel-metrics.html#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="do">## pca plot</span></span>
-<span id="cb12-7"><a href="linear-chimú-vessel-metrics.html#cb12-7" aria-hidden="true" tabindex="-1"></a>pca <span class="ot">&lt;-</span> <span class="fu">autoplot</span>(<span class="fu">prcomp</span>(df),</span>
-<span id="cb12-8"><a href="linear-chimú-vessel-metrics.html#cb12-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> data,</span>
-<span id="cb12-9"><a href="linear-chimú-vessel-metrics.html#cb12-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb12-10"><a href="linear-chimú-vessel-metrics.html#cb12-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">shape =</span> pch.gps.gp,</span>
-<span id="cb12-11"><a href="linear-chimú-vessel-metrics.html#cb12-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">colour =</span> <span class="st">&quot;form&quot;</span>,</span>
-<span id="cb12-12"><a href="linear-chimú-vessel-metrics.html#cb12-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">variance_percentage =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb12-13"><a href="linear-chimú-vessel-metrics.html#cb12-13" aria-hidden="true" tabindex="-1"></a>                <span class="at">loadings =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb12-14"><a href="linear-chimú-vessel-metrics.html#cb12-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">loadings.colour =</span> <span class="st">&#39;blue&#39;</span>,</span>
-<span id="cb12-15"><a href="linear-chimú-vessel-metrics.html#cb12-15" aria-hidden="true" tabindex="-1"></a>                <span class="at">loadings.label =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb12-16"><a href="linear-chimú-vessel-metrics.html#cb12-16" aria-hidden="true" tabindex="-1"></a>                <span class="at">loadings.label.size =</span> <span class="dv">3</span>,</span>
-<span id="cb12-17"><a href="linear-chimú-vessel-metrics.html#cb12-17" aria-hidden="true" tabindex="-1"></a>                <span class="at">frame =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb12-18"><a href="linear-chimú-vessel-metrics.html#cb12-18" aria-hidden="true" tabindex="-1"></a>                <span class="at">frame.type =</span> <span class="st">&#39;t&#39;</span>) <span class="sc">+</span></span>
-<span id="cb12-19"><a href="linear-chimú-vessel-metrics.html#cb12-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb12-20"><a href="linear-chimú-vessel-metrics.html#cb12-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>))</span>
-<span id="cb12-21"><a href="linear-chimú-vessel-metrics.html#cb12-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-22"><a href="linear-chimú-vessel-metrics.html#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="fu">ggMarginal</span>(pca, <span class="at">groupColour =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="linear-chimú-vessel-metrics.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters to plot by group</span></span>
+<span id="cb10-2"><a href="linear-chimú-vessel-metrics.html#cb10-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> data[<span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">8</span>)]</span>
+<span id="cb10-3"><a href="linear-chimú-vessel-metrics.html#cb10-3" aria-hidden="true" tabindex="-1"></a>pch.gps.gp <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="fu">as.factor</span>(gp)]</span>
+<span id="cb10-4"><a href="linear-chimú-vessel-metrics.html#cb10-4" aria-hidden="true" tabindex="-1"></a>col.gps.gp <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(gp)]</span>
+<span id="cb10-5"><a href="linear-chimú-vessel-metrics.html#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="linear-chimú-vessel-metrics.html#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="do">## pca plot</span></span>
+<span id="cb10-7"><a href="linear-chimú-vessel-metrics.html#cb10-7" aria-hidden="true" tabindex="-1"></a>pca <span class="ot">&lt;-</span> <span class="fu">autoplot</span>(<span class="fu">prcomp</span>(df),</span>
+<span id="cb10-8"><a href="linear-chimú-vessel-metrics.html#cb10-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> data,</span>
+<span id="cb10-9"><a href="linear-chimú-vessel-metrics.html#cb10-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb10-10"><a href="linear-chimú-vessel-metrics.html#cb10-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">shape =</span> pch.gps.gp,</span>
+<span id="cb10-11"><a href="linear-chimú-vessel-metrics.html#cb10-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">colour =</span> <span class="st">&quot;form&quot;</span>,</span>
+<span id="cb10-12"><a href="linear-chimú-vessel-metrics.html#cb10-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">variance_percentage =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb10-13"><a href="linear-chimú-vessel-metrics.html#cb10-13" aria-hidden="true" tabindex="-1"></a>                <span class="at">loadings =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb10-14"><a href="linear-chimú-vessel-metrics.html#cb10-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">loadings.colour =</span> <span class="st">&#39;blue&#39;</span>,</span>
+<span id="cb10-15"><a href="linear-chimú-vessel-metrics.html#cb10-15" aria-hidden="true" tabindex="-1"></a>                <span class="at">loadings.label =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb10-16"><a href="linear-chimú-vessel-metrics.html#cb10-16" aria-hidden="true" tabindex="-1"></a>                <span class="at">loadings.label.size =</span> <span class="dv">3</span>,</span>
+<span id="cb10-17"><a href="linear-chimú-vessel-metrics.html#cb10-17" aria-hidden="true" tabindex="-1"></a>                <span class="at">frame =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb10-18"><a href="linear-chimú-vessel-metrics.html#cb10-18" aria-hidden="true" tabindex="-1"></a>                <span class="at">frame.type =</span> <span class="st">&#39;t&#39;</span>) <span class="sc">+</span></span>
+<span id="cb10-19"><a href="linear-chimú-vessel-metrics.html#cb10-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb10-20"><a href="linear-chimú-vessel-metrics.html#cb10-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>))</span>
+<span id="cb10-21"><a href="linear-chimú-vessel-metrics.html#cb10-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-22"><a href="linear-chimú-vessel-metrics.html#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="fu">ggMarginal</span>(pca, <span class="at">groupColour =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:pca"></span>
 <img src="chimu1_files/figure-html/pca-1.png" alt="Results of Principal Components Analysis for linear metrics associated with the Chimu vessels used in this study (gray squares, anthropomorphic; orange triangles, phytomorphic; tan circles, zoomorphic)." width="100%" />
 <p class="caption">
@@ -349,14 +362,14 @@ Figure 1.2: Results of Principal Components Analysis for linear metrics associat
 <h2><span class="header-section-number">1.4</span> Density plots for <em>variable</em> ~ <em>group</em></h2>
 <div id="orifice-diameter-group" class="section level3" number="1.4.1">
 <h3><span class="header-section-number">1.4.1</span> <em>Orifice diameter</em> ~ <em>group</em></h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="linear-chimú-vessel-metrics.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># density plot for orifice diameter by group</span></span>
-<span id="cb13-2"><a href="linear-chimú-vessel-metrics.html#cb13-2" aria-hidden="true" tabindex="-1"></a>Group <span class="ot">&lt;-</span> data<span class="sc">$</span>form</span>
-<span id="cb13-3"><a href="linear-chimú-vessel-metrics.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> od, <span class="at">fill =</span> Group, <span class="at">colour =</span> Group)) <span class="sc">+</span></span>
-<span id="cb13-4"><a href="linear-chimú-vessel-metrics.html#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb13-5"><a href="linear-chimú-vessel-metrics.html#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb13-6"><a href="linear-chimú-vessel-metrics.html#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb13-7"><a href="linear-chimú-vessel-metrics.html#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">10</span>) <span class="sc">+</span></span>
-<span id="cb13-8"><a href="linear-chimú-vessel-metrics.html#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Orifice Diameter&#39;</span>, <span class="at">y =</span> <span class="st">&#39;density&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="linear-chimú-vessel-metrics.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># density plot for orifice diameter by group</span></span>
+<span id="cb11-2"><a href="linear-chimú-vessel-metrics.html#cb11-2" aria-hidden="true" tabindex="-1"></a>Group <span class="ot">&lt;-</span> data<span class="sc">$</span>form</span>
+<span id="cb11-3"><a href="linear-chimú-vessel-metrics.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> od, <span class="at">fill =</span> Group, <span class="at">colour =</span> Group)) <span class="sc">+</span></span>
+<span id="cb11-4"><a href="linear-chimú-vessel-metrics.html#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb11-5"><a href="linear-chimú-vessel-metrics.html#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb11-6"><a href="linear-chimú-vessel-metrics.html#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb11-7"><a href="linear-chimú-vessel-metrics.html#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb11-8"><a href="linear-chimú-vessel-metrics.html#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Orifice Diameter&#39;</span>, <span class="at">y =</span> <span class="st">&#39;density&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="chimu1_files/figure-html/density.gp.od-1.png" alt="Density plot for orifice diameter by group." width="100%" />
 <p class="caption">
@@ -366,13 +379,13 @@ Figure 1.2: Results of Principal Components Analysis for linear metrics associat
 </div>
 <div id="base-diameter-group" class="section level3" number="1.4.2">
 <h3><span class="header-section-number">1.4.2</span> <em>Base diameter</em> ~ <em>group</em></h3>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="linear-chimú-vessel-metrics.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># density plot for base diameter by group</span></span>
-<span id="cb14-2"><a href="linear-chimú-vessel-metrics.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> bd, <span class="at">fill =</span> Group, <span class="at">colour =</span> Group)) <span class="sc">+</span></span>
-<span id="cb14-3"><a href="linear-chimú-vessel-metrics.html#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb14-4"><a href="linear-chimú-vessel-metrics.html#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb14-5"><a href="linear-chimú-vessel-metrics.html#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb14-6"><a href="linear-chimú-vessel-metrics.html#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">7</span>) <span class="sc">+</span></span>
-<span id="cb14-7"><a href="linear-chimú-vessel-metrics.html#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Base Diameter&#39;</span>, <span class="at">y =</span> <span class="st">&#39;density&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="linear-chimú-vessel-metrics.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># density plot for base diameter by group</span></span>
+<span id="cb12-2"><a href="linear-chimú-vessel-metrics.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> bd, <span class="at">fill =</span> Group, <span class="at">colour =</span> Group)) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="linear-chimú-vessel-metrics.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb12-4"><a href="linear-chimú-vessel-metrics.html#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="linear-chimú-vessel-metrics.html#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="linear-chimú-vessel-metrics.html#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">7</span>) <span class="sc">+</span></span>
+<span id="cb12-7"><a href="linear-chimú-vessel-metrics.html#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Base Diameter&#39;</span>, <span class="at">y =</span> <span class="st">&#39;density&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="chimu1_files/figure-html/density.gp.bd-1.png" alt="Density plot for base diameter by group." width="100%" />
 <p class="caption">
@@ -382,13 +395,13 @@ Figure 1.2: Results of Principal Components Analysis for linear metrics associat
 </div>
 <div id="neck-diameter-group" class="section level3" number="1.4.3">
 <h3><span class="header-section-number">1.4.3</span> <em>Neck diameter</em> ~ <em>group</em></h3>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="linear-chimú-vessel-metrics.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># density plot for neck diameter by group</span></span>
-<span id="cb15-2"><a href="linear-chimú-vessel-metrics.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> nd, <span class="at">fill =</span> Group, <span class="at">colour =</span> Group)) <span class="sc">+</span></span>
-<span id="cb15-3"><a href="linear-chimú-vessel-metrics.html#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb15-4"><a href="linear-chimú-vessel-metrics.html#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb15-5"><a href="linear-chimú-vessel-metrics.html#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb15-6"><a href="linear-chimú-vessel-metrics.html#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">10</span>) <span class="sc">+</span></span>
-<span id="cb15-7"><a href="linear-chimú-vessel-metrics.html#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Neck Diameter&#39;</span>, <span class="at">y =</span> <span class="st">&#39;density&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="linear-chimú-vessel-metrics.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># density plot for neck diameter by group</span></span>
+<span id="cb13-2"><a href="linear-chimú-vessel-metrics.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> nd, <span class="at">fill =</span> Group, <span class="at">colour =</span> Group)) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="linear-chimú-vessel-metrics.html#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb13-4"><a href="linear-chimú-vessel-metrics.html#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb13-5"><a href="linear-chimú-vessel-metrics.html#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb13-6"><a href="linear-chimú-vessel-metrics.html#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb13-7"><a href="linear-chimú-vessel-metrics.html#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Neck Diameter&#39;</span>, <span class="at">y =</span> <span class="st">&#39;density&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="chimu1_files/figure-html/density.gp.nd-1.png" alt="Density plot for neck diameter by group." width="100%" />
 <p class="caption">
@@ -398,13 +411,13 @@ Figure 1.2: Results of Principal Components Analysis for linear metrics associat
 </div>
 <div id="belly-diameter-group" class="section level3" number="1.4.4">
 <h3><span class="header-section-number">1.4.4</span> <em>Belly diameter</em> ~ <em>group</em></h3>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="linear-chimú-vessel-metrics.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># density plot for belly diameter by group</span></span>
-<span id="cb16-2"><a href="linear-chimú-vessel-metrics.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> bl, <span class="at">fill =</span> Group, <span class="at">colour =</span> Group)) <span class="sc">+</span></span>
-<span id="cb16-3"><a href="linear-chimú-vessel-metrics.html#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb16-4"><a href="linear-chimú-vessel-metrics.html#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb16-5"><a href="linear-chimú-vessel-metrics.html#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb16-6"><a href="linear-chimú-vessel-metrics.html#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">5</span>,<span class="dv">33</span>) <span class="sc">+</span></span>
-<span id="cb16-7"><a href="linear-chimú-vessel-metrics.html#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Belly Diameter&#39;</span>, <span class="at">y =</span> <span class="st">&#39;density&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="linear-chimú-vessel-metrics.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># density plot for belly diameter by group</span></span>
+<span id="cb14-2"><a href="linear-chimú-vessel-metrics.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> bl, <span class="at">fill =</span> Group, <span class="at">colour =</span> Group)) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="linear-chimú-vessel-metrics.html#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb14-4"><a href="linear-chimú-vessel-metrics.html#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb14-5"><a href="linear-chimú-vessel-metrics.html#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb14-6"><a href="linear-chimú-vessel-metrics.html#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">5</span>,<span class="dv">33</span>) <span class="sc">+</span></span>
+<span id="cb14-7"><a href="linear-chimú-vessel-metrics.html#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Belly Diameter&#39;</span>, <span class="at">y =</span> <span class="st">&#39;density&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="chimu1_files/figure-html/density.gp.bl-1.png" alt="Density plot for belly diameter by group." width="100%" />
 <p class="caption">
@@ -414,13 +427,13 @@ Figure 1.2: Results of Principal Components Analysis for linear metrics associat
 </div>
 <div id="height-group" class="section level3" number="1.4.5">
 <h3><span class="header-section-number">1.4.5</span> <em>Height</em> ~ <em>group</em></h3>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="linear-chimú-vessel-metrics.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># density plot for height by group</span></span>
-<span id="cb17-2"><a href="linear-chimú-vessel-metrics.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> h, <span class="at">fill =</span> Group, <span class="at">colour =</span> Group)) <span class="sc">+</span></span>
-<span id="cb17-3"><a href="linear-chimú-vessel-metrics.html#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb17-4"><a href="linear-chimú-vessel-metrics.html#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb17-5"><a href="linear-chimú-vessel-metrics.html#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb17-6"><a href="linear-chimú-vessel-metrics.html#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">8</span>,<span class="dv">30</span>) <span class="sc">+</span></span>
-<span id="cb17-7"><a href="linear-chimú-vessel-metrics.html#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Vessel Height&#39;</span>, <span class="at">y =</span> <span class="st">&#39;density&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="linear-chimú-vessel-metrics.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># density plot for height by group</span></span>
+<span id="cb15-2"><a href="linear-chimú-vessel-metrics.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> h, <span class="at">fill =</span> Group, <span class="at">colour =</span> Group)) <span class="sc">+</span></span>
+<span id="cb15-3"><a href="linear-chimú-vessel-metrics.html#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="linear-chimú-vessel-metrics.html#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb15-5"><a href="linear-chimú-vessel-metrics.html#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb15-6"><a href="linear-chimú-vessel-metrics.html#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">8</span>,<span class="dv">30</span>) <span class="sc">+</span></span>
+<span id="cb15-7"><a href="linear-chimú-vessel-metrics.html#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Vessel Height&#39;</span>, <span class="at">y =</span> <span class="st">&#39;density&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="chimu1_files/figure-html/density.gp.h-1.png" alt="Density plot for vessel height by group." width="100%" />
 <p class="caption">
@@ -433,13 +446,13 @@ Figure 1.2: Results of Principal Components Analysis for linear metrics associat
 <h2><span class="header-section-number">1.5</span> Analyses of Variance (ANOVA) for <em>variable</em> ~ <em>group</em></h2>
 <div id="anova-orifice-diameter-group" class="section level3" number="1.5.1">
 <h3><span class="header-section-number">1.5.1</span> ANOVA <em>Orifice diameter</em> ~ <em>group</em></h3>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="linear-chimú-vessel-metrics.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># anova = orifice diameter ~ group</span></span>
-<span id="cb18-2"><a href="linear-chimú-vessel-metrics.html#cb18-2" aria-hidden="true" tabindex="-1"></a>gp.od <span class="ot">&lt;-</span> <span class="fu">lm.rrpp</span>(od <span class="sc">~</span> gp, </span>
-<span id="cb18-3"><a href="linear-chimú-vessel-metrics.html#cb18-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">SS.type =</span> <span class="st">&quot;I&quot;</span>, </span>
-<span id="cb18-4"><a href="linear-chimú-vessel-metrics.html#cb18-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> data, </span>
-<span id="cb18-5"><a href="linear-chimú-vessel-metrics.html#cb18-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">iter =</span> <span class="dv">9999</span>, </span>
-<span id="cb18-6"><a href="linear-chimú-vessel-metrics.html#cb18-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">print.progress =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb18-7"><a href="linear-chimú-vessel-metrics.html#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(gp.od)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="linear-chimú-vessel-metrics.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># anova = orifice diameter ~ group</span></span>
+<span id="cb16-2"><a href="linear-chimú-vessel-metrics.html#cb16-2" aria-hidden="true" tabindex="-1"></a>gp.od <span class="ot">&lt;-</span> <span class="fu">lm.rrpp</span>(od <span class="sc">~</span> gp, </span>
+<span id="cb16-3"><a href="linear-chimú-vessel-metrics.html#cb16-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">SS.type =</span> <span class="st">&quot;I&quot;</span>, </span>
+<span id="cb16-4"><a href="linear-chimú-vessel-metrics.html#cb16-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> data, </span>
+<span id="cb16-5"><a href="linear-chimú-vessel-metrics.html#cb16-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">iter =</span> <span class="dv">9999</span>, </span>
+<span id="cb16-6"><a href="linear-chimú-vessel-metrics.html#cb16-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">print.progress =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb16-7"><a href="linear-chimú-vessel-metrics.html#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(gp.od)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -460,13 +473,13 @@ Figure 1.2: Results of Principal Components Analysis for linear metrics associat
 </div>
 <div id="anova-base-diameter-of-chimú-vessels" class="section level3" number="1.5.2">
 <h3><span class="header-section-number">1.5.2</span> ANOVA <em>Base diameter</em> of Chimú vessels</h3>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="linear-chimú-vessel-metrics.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># anova = base diameter ~ group</span></span>
-<span id="cb20-2"><a href="linear-chimú-vessel-metrics.html#cb20-2" aria-hidden="true" tabindex="-1"></a>gp.bd <span class="ot">&lt;-</span> <span class="fu">lm.rrpp</span>(bd <span class="sc">~</span> gp, </span>
-<span id="cb20-3"><a href="linear-chimú-vessel-metrics.html#cb20-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">SS.type =</span> <span class="st">&quot;I&quot;</span>, </span>
-<span id="cb20-4"><a href="linear-chimú-vessel-metrics.html#cb20-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> data, </span>
-<span id="cb20-5"><a href="linear-chimú-vessel-metrics.html#cb20-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">iter =</span> <span class="dv">9999</span>, </span>
-<span id="cb20-6"><a href="linear-chimú-vessel-metrics.html#cb20-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">print.progress =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb20-7"><a href="linear-chimú-vessel-metrics.html#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(gp.bd)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="linear-chimú-vessel-metrics.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># anova = base diameter ~ group</span></span>
+<span id="cb18-2"><a href="linear-chimú-vessel-metrics.html#cb18-2" aria-hidden="true" tabindex="-1"></a>gp.bd <span class="ot">&lt;-</span> <span class="fu">lm.rrpp</span>(bd <span class="sc">~</span> gp, </span>
+<span id="cb18-3"><a href="linear-chimú-vessel-metrics.html#cb18-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">SS.type =</span> <span class="st">&quot;I&quot;</span>, </span>
+<span id="cb18-4"><a href="linear-chimú-vessel-metrics.html#cb18-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> data, </span>
+<span id="cb18-5"><a href="linear-chimú-vessel-metrics.html#cb18-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">iter =</span> <span class="dv">9999</span>, </span>
+<span id="cb18-6"><a href="linear-chimú-vessel-metrics.html#cb18-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">print.progress =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb18-7"><a href="linear-chimú-vessel-metrics.html#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(gp.bd)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -485,13 +498,13 @@ Figure 1.2: Results of Principal Components Analysis for linear metrics associat
 </div>
 <div id="anova-neck-diameter-of-chimú-vessels" class="section level3" number="1.5.3">
 <h3><span class="header-section-number">1.5.3</span> ANOVA <em>Neck diameter</em> of Chimú vessels</h3>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="linear-chimú-vessel-metrics.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># anova = neck diameter ~ group</span></span>
-<span id="cb22-2"><a href="linear-chimú-vessel-metrics.html#cb22-2" aria-hidden="true" tabindex="-1"></a>gp.nd <span class="ot">&lt;-</span> <span class="fu">lm.rrpp</span>(nd <span class="sc">~</span> gp, </span>
-<span id="cb22-3"><a href="linear-chimú-vessel-metrics.html#cb22-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">SS.type =</span> <span class="st">&quot;I&quot;</span>, </span>
-<span id="cb22-4"><a href="linear-chimú-vessel-metrics.html#cb22-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> data, </span>
-<span id="cb22-5"><a href="linear-chimú-vessel-metrics.html#cb22-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">iter =</span> <span class="dv">9999</span>, </span>
-<span id="cb22-6"><a href="linear-chimú-vessel-metrics.html#cb22-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">print.progress =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb22-7"><a href="linear-chimú-vessel-metrics.html#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(gp.nd)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="linear-chimú-vessel-metrics.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># anova = neck diameter ~ group</span></span>
+<span id="cb20-2"><a href="linear-chimú-vessel-metrics.html#cb20-2" aria-hidden="true" tabindex="-1"></a>gp.nd <span class="ot">&lt;-</span> <span class="fu">lm.rrpp</span>(nd <span class="sc">~</span> gp, </span>
+<span id="cb20-3"><a href="linear-chimú-vessel-metrics.html#cb20-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">SS.type =</span> <span class="st">&quot;I&quot;</span>, </span>
+<span id="cb20-4"><a href="linear-chimú-vessel-metrics.html#cb20-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> data, </span>
+<span id="cb20-5"><a href="linear-chimú-vessel-metrics.html#cb20-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">iter =</span> <span class="dv">9999</span>, </span>
+<span id="cb20-6"><a href="linear-chimú-vessel-metrics.html#cb20-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">print.progress =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb20-7"><a href="linear-chimú-vessel-metrics.html#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(gp.nd)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -510,13 +523,13 @@ Figure 1.2: Results of Principal Components Analysis for linear metrics associat
 </div>
 <div id="anova-belly-diameter-of-chimú-vessels" class="section level3" number="1.5.4">
 <h3><span class="header-section-number">1.5.4</span> ANOVA <em>Belly diameter</em> of Chimú vessels</h3>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="linear-chimú-vessel-metrics.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># anova = belly diameter ~ group</span></span>
-<span id="cb24-2"><a href="linear-chimú-vessel-metrics.html#cb24-2" aria-hidden="true" tabindex="-1"></a>gp.bl <span class="ot">&lt;-</span> <span class="fu">lm.rrpp</span>(bl <span class="sc">~</span> gp, </span>
-<span id="cb24-3"><a href="linear-chimú-vessel-metrics.html#cb24-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">SS.type =</span> <span class="st">&quot;I&quot;</span>, </span>
-<span id="cb24-4"><a href="linear-chimú-vessel-metrics.html#cb24-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> data, </span>
-<span id="cb24-5"><a href="linear-chimú-vessel-metrics.html#cb24-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">iter =</span> <span class="dv">9999</span>, </span>
-<span id="cb24-6"><a href="linear-chimú-vessel-metrics.html#cb24-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">print.progress =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb24-7"><a href="linear-chimú-vessel-metrics.html#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(gp.bl)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="linear-chimú-vessel-metrics.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># anova = belly diameter ~ group</span></span>
+<span id="cb22-2"><a href="linear-chimú-vessel-metrics.html#cb22-2" aria-hidden="true" tabindex="-1"></a>gp.bl <span class="ot">&lt;-</span> <span class="fu">lm.rrpp</span>(bl <span class="sc">~</span> gp, </span>
+<span id="cb22-3"><a href="linear-chimú-vessel-metrics.html#cb22-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">SS.type =</span> <span class="st">&quot;I&quot;</span>, </span>
+<span id="cb22-4"><a href="linear-chimú-vessel-metrics.html#cb22-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> data, </span>
+<span id="cb22-5"><a href="linear-chimú-vessel-metrics.html#cb22-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">iter =</span> <span class="dv">9999</span>, </span>
+<span id="cb22-6"><a href="linear-chimú-vessel-metrics.html#cb22-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">print.progress =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb22-7"><a href="linear-chimú-vessel-metrics.html#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(gp.bl)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -537,13 +550,13 @@ Figure 1.2: Results of Principal Components Analysis for linear metrics associat
 </div>
 <div id="anova-height-of-chimú-vessels" class="section level3" number="1.5.5">
 <h3><span class="header-section-number">1.5.5</span> ANOVA <em>Height</em> of Chimú vessels</h3>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="linear-chimú-vessel-metrics.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># anova = height ~ group</span></span>
-<span id="cb26-2"><a href="linear-chimú-vessel-metrics.html#cb26-2" aria-hidden="true" tabindex="-1"></a>gp.h <span class="ot">&lt;-</span> <span class="fu">lm.rrpp</span>(h <span class="sc">~</span> gp, </span>
-<span id="cb26-3"><a href="linear-chimú-vessel-metrics.html#cb26-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">SS.type =</span> <span class="st">&quot;I&quot;</span>, </span>
-<span id="cb26-4"><a href="linear-chimú-vessel-metrics.html#cb26-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> data, </span>
-<span id="cb26-5"><a href="linear-chimú-vessel-metrics.html#cb26-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">iter =</span> <span class="dv">9999</span>, </span>
-<span id="cb26-6"><a href="linear-chimú-vessel-metrics.html#cb26-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">print.progress =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb26-7"><a href="linear-chimú-vessel-metrics.html#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(gp.h)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="linear-chimú-vessel-metrics.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># anova = height ~ group</span></span>
+<span id="cb24-2"><a href="linear-chimú-vessel-metrics.html#cb24-2" aria-hidden="true" tabindex="-1"></a>gp.h <span class="ot">&lt;-</span> <span class="fu">lm.rrpp</span>(h <span class="sc">~</span> gp, </span>
+<span id="cb24-3"><a href="linear-chimú-vessel-metrics.html#cb24-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">SS.type =</span> <span class="st">&quot;I&quot;</span>, </span>
+<span id="cb24-4"><a href="linear-chimú-vessel-metrics.html#cb24-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> data, </span>
+<span id="cb24-5"><a href="linear-chimú-vessel-metrics.html#cb24-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">iter =</span> <span class="dv">9999</span>, </span>
+<span id="cb24-6"><a href="linear-chimú-vessel-metrics.html#cb24-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">print.progress =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb24-7"><a href="linear-chimú-vessel-metrics.html#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(gp.h)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -557,8 +570,7 @@ Figure 1.2: Results of Principal Components Analysis for linear metrics associat
 ## Residuals 38 553.45 14.5644 0.99382                       
 ## Total     39 556.89                                       
 ## 
-## Call: lm.rrpp(f1 = h ~ gp, iter = 9999, SS.type = &quot;I&quot;, data = data,  
-##     print.progress = FALSE)</code></pre>
+## Call: lm.rrpp(f1 = h ~ gp, iter = 9999, SS.type = &quot;I&quot;, data = data,      print.progress = FALSE)</code></pre>
 
 </div>
 </div>

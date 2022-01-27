@@ -1,7 +1,13 @@
+fig:botjarbox
+fig:botjar
+fig:boxsite
+fig:pca
 tab:gpa
 fig:box1
 basis-of-inquiry
 primary-findings
+linear-metrics
+geometric-morphometrics
 acknowledgments
 funding
 data-management
@@ -23,7 +29,7 @@ anova-neck-diameter-of-chimú-vessels
 anova-belly-diameter-of-chimú-vessels
 anova-height-of-chimú-vessels
 landmarking-protocol
-geometric-morphometrics
+geometric-morphometrics-1
 load-packages-data
 generalised-procrustes-analysis
 boxplot
@@ -31,9 +37,3 @@ principal-components-analysis
 define-models
 vessel-size-and-shape
 mean-shapes
-fig:botjar
-linear-metrics
-geometric-morphometrics-1
-fig:boxsite
-fig:pca
-fig:botjarbox
