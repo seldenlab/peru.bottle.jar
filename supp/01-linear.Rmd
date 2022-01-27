@@ -17,26 +17,26 @@ library(wesanderson)
 library(ggExtra)
 ```
 
-## Load data + define variables
+## Load DATA + define variables
 
 ```{r setwd ld define variables 3, echo=TRUE}
-data <- read.csv("potmeas.csv", header = TRUE, as.is = TRUE)
+DATA <- read.csv("potmeas.csv", header = TRUE, as.is = TRUE)
 
 # define variables
-od <- data$orifice.diameter # orifice diameter
-bd <- data$base.diameter # base diameter
-nd <- data$bneck.diameter # neck diameter
-bl <- data$wide.diameter # belly diameter
-h <- data$height # height
-rt <- data$rim.thickness # rim thickness
-gp <- data$form # bottle or jar
+od <- DATA$od <- DATA$orifice.diameter # orifice diameter
+bd <- DATA$bd <- DATA$base.diameter # base diameter
+nd <- DATA$nd <- DATA$bneck.diameter # neck diameter
+bl <- DATA$bl <- DATA$wide.diameter # belly diameter
+h <- DATA$h <- DATA$height # height
+RT <- DATA$RT <- DATA$rim.thickness # rim thickness
+gp <- DATA$gp <- as.factor(DATA$form) # bottle or jar
 ```
 
 ## Boxplots for _variable_ by _group_
 
 ```{r boxsite, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplots of orifice diameter, base diameter, neck diameter, belly diameter, height, and rim thickness for the anthropomorphic, phytomorphic, and zoomorphic Chimú vessels used in this study."}
 # boxplot of orifice diameter ~ group
-odgroup <- ggplot(data, aes(x = gp, y = od, color = gp)) + 
+odgroup <- ggplot(DATA, aes(x = gp, y = od, color = gp)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_colour_manual(values = wes_palette("Moonrise2")) +
@@ -44,7 +44,7 @@ odgroup <- ggplot(data, aes(x = gp, y = od, color = gp)) +
   theme(legend.position = "none")
 
 # boxplot of base diameter ~ group
-bdgroup <- ggplot(data, aes(x = gp, y = bd, color = gp)) + 
+bdgroup <- ggplot(DATA, aes(x = gp, y = bd, color = gp)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_colour_manual(values = wes_palette("Moonrise2")) +
@@ -52,7 +52,7 @@ bdgroup <- ggplot(data, aes(x = gp, y = bd, color = gp)) +
   theme(legend.position = "none")
 
 # boxplot of neck diameter ~ group
-ndgroup <- ggplot(data, aes(x = gp, y = nd, color = gp)) + 
+ndgroup <- ggplot(DATA, aes(x = gp, y = nd, color = gp)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_colour_manual(values = wes_palette("Moonrise2")) +
@@ -60,7 +60,7 @@ ndgroup <- ggplot(data, aes(x = gp, y = nd, color = gp)) +
   theme(legend.position = "none")
 
 # boxplot of belly diameter ~ group
-blgroup <- ggplot(data, aes(x = gp, y = bl, color = gp)) + 
+blgroup <- ggplot(DATA, aes(x = gp, y = bl, color = gp)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_colour_manual(values = wes_palette("Moonrise2")) +
@@ -68,7 +68,7 @@ blgroup <- ggplot(data, aes(x = gp, y = bl, color = gp)) +
   theme(legend.position = "none")
 
 # boxplot of height ~ group
-hgroup <- ggplot(data, aes(x = gp, y = h, color = gp)) + 
+hgroup <- ggplot(DATA, aes(x = gp, y = h, color = gp)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_colour_manual(values = wes_palette("Moonrise2")) +
@@ -76,7 +76,7 @@ hgroup <- ggplot(data, aes(x = gp, y = h, color = gp)) +
   theme(legend.position = "none")
 
 # boxplot of rim thickness ~ group
-rtgroup <- ggplot(data, aes(x = gp, y = rt, color = gp)) + 
+rtgroup <- ggplot(DATA, aes(x = gp, y = RT, color = gp)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_colour_manual(values = wes_palette("Moonrise2")) +
@@ -94,15 +94,15 @@ sitefigure
 
 ```{r pca, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Results of Principal Components Analysis for linear metrics associated with the Chimu vessels used in this study (gray squares, anthropomorphic; orange triangles, phytomorphic; tan circles, zoomorphic)."}
 # set plot parameters to plot by group
-df <- data[c(3:8)]
-pch.gps.gp <- c(15,17)[as.factor(gp)]
-col.gps.gp <- wes_palette("Moonrise2")[as.factor(gp)]
+df <- DATA[c(3:8)]
+pch.gps <- c(15,17)[as.factor(gp)]
+col.gps <- wes_palette("Moonrise2")[as.factor(gp)]
 
 ## pca plot
 pca <- autoplot(prcomp(df),
-                data = data,
+                data = DATA,
                 asp = 1,
-                shape = pch.gps.gp,
+                shape = pch.gps,
                 colour = "form",
                 variance_percentage = TRUE,
                 loadings = TRUE, 
@@ -117,69 +117,6 @@ pca <- autoplot(prcomp(df),
 ggMarginal(pca, groupColour = TRUE)
 ```
 
-## Density plots for _variable_ ~ _group_
-
-### _Orifice diameter_ ~ _group_
-
-```{r density.gp.od, out.width = "100%", dpi = 300, echo=TRUE, fig.cap="Density plot for orifice diameter by group."}
-# density plot for orifice diameter by group
-Group <- data$form
-ggplot(data, aes(x = od, fill = Group, colour = Group)) +
-  geom_density(alpha = .5) +
-  scale_fill_manual(values = wes_palette("Moonrise2")) +
-  scale_colour_manual(values = wes_palette("Moonrise2")) +
-  xlim(0,10) +
-  labs(x = 'Orifice Diameter', y = 'density')
-```
-
-### _Base diameter_ ~ _group_
-
-```{r density.gp.bd, out.width = "100%", dpi = 300, echo=TRUE, fig.cap="Density plot for base diameter by group."}
-# density plot for base diameter by group
-ggplot(data, aes(x = bd, fill = Group, colour = Group)) +
-  geom_density(alpha = .5) +
-  scale_fill_manual(values = wes_palette("Moonrise2")) +
-  scale_colour_manual(values = wes_palette("Moonrise2")) +
-  xlim(0,7) +
-  labs(x = 'Base Diameter', y = 'density')
-```
-
-### _Neck diameter_ ~ _group_
-
-```{r density.gp.nd, out.width = "100%", dpi = 300, echo=TRUE, fig.cap="Density plot for neck diameter by group."}
-# density plot for neck diameter by group
-ggplot(data, aes(x = nd, fill = Group, colour = Group)) +
-  geom_density(alpha = .5) +
-  scale_fill_manual(values = wes_palette("Moonrise2")) +
-  scale_colour_manual(values = wes_palette("Moonrise2")) +
-  xlim(0,10) +
-  labs(x = 'Neck Diameter', y = 'density')
-```
-
-### _Belly diameter_ ~ _group_
-
-```{r density.gp.bl, out.width = "100%", dpi = 300, echo=TRUE, fig.cap="Density plot for belly diameter by group."}
-# density plot for belly diameter by group
-ggplot(data, aes(x = bl, fill = Group, colour = Group)) +
-  geom_density(alpha = .5) +
-  scale_fill_manual(values = wes_palette("Moonrise2")) +
-  scale_colour_manual(values = wes_palette("Moonrise2")) +
-  xlim(5,33) +
-  labs(x = 'Belly Diameter', y = 'density')
-```
-
-### _Height_ ~ _group_
-
-```{r density.gp.h, out.width = "100%", dpi = 300, echo=TRUE, fig.cap="Density plot for vessel height by group."}
-# density plot for height by group
-ggplot(data, aes(x = h, fill = Group, colour = Group)) +
-  geom_density(alpha = .5) +
-  scale_fill_manual(values = wes_palette("Moonrise2")) +
-  scale_colour_manual(values = wes_palette("Moonrise2")) +
-  xlim(8,30) +
-  labs(x = 'Vessel Height', y = 'density')
-```
-
 ## Analyses of Variance (ANOVA) for _variable_ ~ _group_
 
 ### ANOVA _Orifice diameter_ ~ _group_
@@ -188,7 +125,7 @@ ggplot(data, aes(x = h, fill = Group, colour = Group)) +
 # anova = orifice diameter ~ group
 gp.od <- lm.rrpp(od ~ gp, 
                  SS.type = "I", 
-                 data = data, 
+                 DATA = DATA, 
                  iter = 9999, 
                  print.progress = FALSE)
 anova(gp.od)
@@ -200,7 +137,7 @@ anova(gp.od)
 # anova = base diameter ~ group
 gp.bd <- lm.rrpp(bd ~ gp, 
                  SS.type = "I", 
-                 data = data, 
+                 DATA = DATA, 
                  iter = 9999, 
                  print.progress = FALSE)
 anova(gp.bd)
@@ -212,7 +149,7 @@ anova(gp.bd)
 # anova = neck diameter ~ group
 gp.nd <- lm.rrpp(nd ~ gp, 
                  SS.type = "I", 
-                 data = data, 
+                 DATA = DATA, 
                  iter = 9999, 
                  print.progress = FALSE)
 anova(gp.nd)
@@ -224,7 +161,7 @@ anova(gp.nd)
 # anova = belly diameter ~ group
 gp.bl <- lm.rrpp(bl ~ gp, 
                  SS.type = "I", 
-                 data = data, 
+                 DATA = DATA, 
                  iter = 9999, 
                  print.progress = FALSE)
 anova(gp.bl)
@@ -236,8 +173,20 @@ anova(gp.bl)
 # anova = height ~ group
 gp.h <- lm.rrpp(h ~ gp, 
                 SS.type = "I", 
-                data = data, 
+                DATA = DATA, 
                 iter = 9999, 
                 print.progress = FALSE)
 anova(gp.h)
+```
+
+### ANOVA _Rim Thickness_ of Chimú vessels
+
+```{r anova.gp.rt, out.width = "100%", dpi = 300, echo=TRUE}
+# anova = rim thickness ~ group
+gp.rt <- lm.rrpp(RT ~ gp, 
+                 SS.type = "I", 
+                 DATA = DATA, 
+                 iter = 9999, 
+                 print.progress = FALSE)
+anova(gp.rt)
 ```

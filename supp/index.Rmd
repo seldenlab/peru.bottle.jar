@@ -24,6 +24,7 @@ After centuries of looting along Peru’s North Coast, archaeologists acknowledg
 
  * Bottles and jars **differ significantly** in orifice diameter
  * Bottles and jars **differ significantly** in belly diameter
+ * Bottles and jars **differ significantly** in rim thickness
  
 ```{r botjarbox, out.width = "100%", dpi = 300, echo=FALSE, warning=FALSE, fig.cap="Boxplots for vessel form by a, orifice diameter; b, base diameter; c, neck diameter; d, belly diameter; e, height; and f, rim thickness."}
 knitr::include_graphics('images/boxsite-1.png')
