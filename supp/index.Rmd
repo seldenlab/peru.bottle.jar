@@ -1,0 +1,57 @@
+--- 
+title: "Supplementary materials for paper: The Changing Shape of Empire: A GM Study of Chimú Bottles in Museum Collections"
+author: "R. Alan Covey, Robert Z. Selden Jr., Nicole Payntar, and Astrid Runggaldier"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Differences in Chimú vessel shape."
+---
+
+# Preface {-}
+
+>Reproducibility---the ability to recompute results---and replicability---the chances other experimenters will achieve a consistent result---are two foundational characteristics of successful scientific research [@RN20918].
+
+## Basis of inquiry
+
+After centuries of looting along Peru’s North Coast, archaeologists acknowledge that the pottery of the Chimú Empire is one of the most collected Andean artifacts, but also one of the most poorly understood.  Much of the enduring classificatory uncertainty comes from the problematic provenance of most Chimú vessels, and the fact that the distinctive blackware identified as Chimú represents the production of workshops from across an extensive area, during periods of regional political decentralization (c. 900-1200 CE), imperial growth (c. 1200-1450), and foreign conquest by the Inca (c. 1450-1535) and Spanish (after 1532) empires.  This chapter builds on previous seriations and field observations, using geometric morphometric analysis of a sample of 3D-scanned Chimú bottles from publicly held collections at the University of Texas (Austin) and the American Museum of Natural History.  Since Chimú bottles were formed in workshops using molds, variations in vessel shape can serve as indicators of variable practices.  We compare a sample of typical Chimú blackware bottles with a sample of “Inca-Chimú” vessels that carry features typical of the short Inca occupation of the North Coast.  Differences between the two samples offer new lines of evidence that can guide more precise classifications of these vessels, as well as new interpretations of the imperial history of Peru’s North Coast.
+
+## Primary findings
+
+ * 
+
+## Acknowledgments
+
+We extend our gratitude to...
+
+## Funding
+
+Components of this analytical work flow were developed and funded by a Preservation Technology and Training grant (P14AP00138) to RZS from the National Center for Preservation Technology and Training (NCPTT), and additional grants to RZS from the Caddo Tribe of Oklahoma and the National Forests and Grasslands in Texas (15-PA-11081300-033 and 20-PA-11081300-074). Funding to scan the Chimú vessels in the Art and Art History Collections at The University of Texas at Austin was provided by The University of Texas at Austin.
+
+## Data management
+
+This volume is written in _Markdown_, and all files needed to reproduce it are included in the [GitHub repository](https://github.com/aksel-blaise/aahc-anthro-zoo), which is digitally curated on the Open Science Framework. The reproducible nature of this undertaking provides a means for others to critically assess and evaluate the various analytical components [@RN20915;@RN20916;@RN20917], which is a necessary requirement for the production of reliable knowledge.
+
+Reproducibility projects in [psychology](https://osf.io/ezcuj/) and [cancer biology](https://www.cos.io/rpcb) are impacting current research practices across all domains. Examples of reproducible research are becoming more abundant in archaeology [@RN20804;@RN21009;@RN21001], and the next generation of archaeologists are learning those tools and methods needed to reproduce and/or replicate research results [@RN21007]. Reproducible and replicable research work flows are often employed at the highest levels of humanities-based inquiries to mitigate concern or doubt regarding proper execution, and is of particular import should the results have—explicitly or implicitly—a major impact on scientific progress [@RN21008].
+
+Components of the undertaking presented in this volume are novel, and this basic research endeavour is rooted in archaeological epistemology. Sharing data is not enough, and if investigators share only data absent their analysis code, that places a substantive burden on those who may seek to build upon or replicate their work in the future. In this instance, the choice to pursue a replicable work flow occurs based on the simple fact that this work is foundational, and meant to begin a meaningful discussion related to projectile morphology.
+
+The data and analysis code associated with this project can be accessed through this document or the [GitHub](https://seldenlab.github.io/anthro.zoo/) repository, and is digitally curated on the Open Science Framework ([DOI 10.17605/OSF.IO/VZHJR](https://osf.io/vzhjr/)).
+
+## Colophon
+
+This version of the analysis was generated on `r Sys.time()` using the following computational environment and dependencies: 
+
+```{r colophon, cache = FALSE}
+# what R packages and versions were used?
+if ("devtools" %in% installed.packages()) devtools::session_info()
+```
+
+Current Git commit details are:
+
+```{r}
+# where can I find this commit? 
+if ("git2r" %in% installed.packages() & git2r::in_repository(path = ".")) git2r::repository(here::here())  
+```
