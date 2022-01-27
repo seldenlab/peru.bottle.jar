@@ -2,10 +2,10 @@
 
 ```{r load packages 3, echo=TRUE}
 # install required analysis packages
-devtools::install_github("tidyverse/tidyverse")
-devtools::install_github("mlcollyer/RRPP")
-devtools::install_github("kassambara/ggpubr")
-devtools::install_github('sinhrks/ggfortify')
+#devtools::install_github("tidyverse/tidyverse")
+#devtools::install_github("mlcollyer/RRPP")
+#devtools::install_github("kassambara/ggpubr")
+#devtools::install_github('sinhrks/ggfortify')
 # load libraries
 library(here)
 library(tidyverse)
