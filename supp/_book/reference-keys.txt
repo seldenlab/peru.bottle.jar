@@ -29,6 +29,7 @@ load-packages-data
 generalised-procrustes-analysis
 boxplot
 principal-components-analysis
-define-models
+vessel-allometry
 vessel-size-and-shape
+morphological-disparity
 mean-shapes
