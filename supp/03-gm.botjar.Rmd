@@ -1,4 +1,4 @@
-# Geometric morphometrics
+# Bottles vs Jar morphology
 
 ## Load packages + data
 

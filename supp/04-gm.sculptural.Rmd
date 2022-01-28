@@ -1,0 +1,199 @@
+# Sculptural elements
+
+## Load packages + data
+
+```{r load.data.s, echo = TRUE}
+# load packages
+#devtools::install_github("mlcollyer/RRPP")
+#devtools::install_github("geomorphR/geomorph", ref = "Stable", build_vignettes = TRUE)
+library(here)
+library(geomorph)
+library(tidyverse)
+library(wesanderson)
+
+# read GM data
+source('readmulti.csv.R')
+setwd("./data")
+filelist <- list.files(pattern = ".csv")
+coords <- readmulti.csv(filelist)
+setwd("../")
+
+# read qualitative data
+qdata <- read.csv("qdata.csv", 
+                  header = TRUE, 
+                  row.names = 1)
+
+qdata <- qdata[match(dimnames(coords)[[3]],
+                     rownames(qdata)),]
+
+qdata <- qdata %>% 
+  unite("merged", group:type, remove = FALSE)
+```
+
+## Generalised Procrustes Analysis
+
+Landmark data were aligned to a global coordinate system [@RN11622;@RN11623;@RN11563], achieved through generalised Procrustes superimposition [@RN478] performed in R 4.0.3 [@R] using the `geomorph` library v. 3.3.2 [@RN11530;@RN1774]. Procrustes superimposition translates, scales, and rotates the coordinate data to allow for comparisons among objects [@RN11564;@RN478]. The `geomorph` package uses a partial Procrustes superimposition that projects the aligned specimens into tangent space subsequent to alignment in preparation for the use of multivariate methods that assume linear space [@RN1646;@RN11563]. 
+
+```{r gpa.s, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# gpa
+Y.gpa <- gpagen(coords, 
+                PrinAxes = TRUE, 
+                ProcD = TRUE, 
+                Proj = TRUE, 
+                print.progress = FALSE)
+
+# geomorph data frame
+gdf <- geomorph.data.frame(shape = Y.gpa$coords, 
+                           size = Y.gpa$Csize,
+                           merged = qdata$merged)
+
+# render 3d gpa plot
+plot(Y.gpa)
+
+# gpa plot
+#knitr::include_graphics('images/gpa3d.png')
+
+# add centroid size to qdata
+qdata$csz <- Y.gpa$Csize
+
+# print updated qdata with centroid size
+knitr::kable(qdata, 
+             align = "lccccc", 
+             caption = "Modified attributes included in qdata.")
+```
+
+### Boxplot
+
+```{r box1.s, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by spatial/temporal unit."}
+# attributes for boxplot
+csz <- qdata$csz
+merged <-  qdata$merged
+
+# palette
+pal <- wes_palette("Moonrise2", 6, type = "continuous")
+
+# boxplot of vessel centroid size by merged
+csz.merged <- ggplot(qdata, aes(x = merged, y = csz, color = merged)) + 
+  geom_boxplot(notch = FALSE) +
+  geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize = 0.3) +
+  scale_colour_manual(values = pal) +
+  theme(legend.position = "none") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  labs(x = 'Sculptural Element + Vessel Form', 
+       y = 'Centroid Size')
+
+# render plot
+csz.merged
+```
+
+## Principal Components Analysis
+
+Principal components analysis [@RN1746] was used to visualise shape variation among the bottles. The shape changes described by each principal axis are commonly visualised using thin-plate spline warping of a reference 3D mesh [@RN1731;@RN479]. 
+
+```{r gmpca.s, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# principal components analysis
+pca<-gm.prcomp(Y.gpa$coords)
+summary(pca)
+
+# set plot parameters (mergeds)
+pch.gps.merged <- c(1:6)[as.factor(merged)]
+
+# plot pca by merged
+plot(pca,
+     asp = 1,
+     pch = pch.gps.merged,
+     col = pal)
+```
+
+```{r pca.warp.s, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Results of PCA summarising shape variation in the aggregated sample; gray, north-formative/early; orange, north-late/historic; brown, south-formative/early; and black, south-late/historic; with mean shapes (gray) contrasted with max/min shapes (black)."}
+# pca warp                   
+#knitr::include_graphics('images/pca-warp.jpg')
+```
+
+## Vessel size and shape
+
+A residual randomisation permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes differ by merged (geography and time), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756].
+
+```{r def.mod.1.s, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# size as a function of vessel form (bottle/jar)?
+fit.size.merged <- procD.lm(size ~ merged,
+                            data = gdf,
+                            print.progress = FALSE,
+                            iter = 9999)
+
+# Procrustes ANOVA: do sizes differ as a function of vessel form?
+anova(fit.size.merged)
+
+# pairwise comparison of LS means = which differ?
+pairwise.size <- pairwise(fit.size.merged,
+                          groups = qdata$merged)
+summary(pairwise.size, 
+        confidence = 0.95, 
+        test.type = "dist")
+
+# shape as a function of vessel form?
+fit.shape.merged <- procD.lm(shape ~ merged,
+                data = gdf,
+                print.progress = FALSE,
+                iter = 9999)
+
+# Procrustes ANOVA: do shapes differ as a function of vessel form?
+anova(fit.shape.merged)
+
+# pairwise comparison of LS means = which differ?
+pairwise.shape <- pairwise(fit.shape.merged,
+                           groups = qdata$merged)
+summary(pairwise.shape, 
+        confidence = 0.95, 
+        test.type = "dist")
+```
+
+## Morphological disparity
+
+```{r disparity.s, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# morphological disparity: do either of the mergeds display greater 
+# size variation among individuals relative to the other merged?
+morphol.disparity(fit.size.merged, 
+                  groups = qdata$merged, 
+                  data = gdf, 
+                  print.progress = FALSE, 
+                  iter = 9999)
+
+# morphological disparity: do either of the mergeds display greater 
+#shape variation among individuals relative to the other merged?
+morphol.disparity(fit.shape.merged, 
+                  groups = qdata$merged, 
+                  data = gdf, 
+                  print.progress = FALSE, 
+                  iter = 9999)
+```
+
+## Mean shapes
+
+```{r mshape.s, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# subset landmark coordinates to produce mean shapes
+new.coords<-coords.subset(A = Y.gpa$coords,
+                          group = qdata$merged)
+names(new.coords)
+
+# merged shape means
+mean <- lapply(new.coords, mshape)
+
+# plot mean shapes (merged)
+plot(mean$anthropomorph_bottle)
+plot(mean$anthropomorph_jar)
+
+plot(mean$phytomorph_bottle)
+plot(mean$phytomorph_jar)
+
+plot(mean$zoomorph_bottle)
+plot(mean$zoomorph_jar)
+
+# comparison plots
+plotRefToTarget(mean$anthropomorph_bottle, 
+                mean$zoomorph_jar, 
+                method = c("points"),
+                mag = 1)
+
+#knitr::include_graphics('images/mshape.png')
+```
