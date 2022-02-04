@@ -30,13 +30,22 @@ After centuries of looting along Peru’s North Coast, archaeologists acknowledg
 knitr::include_graphics('images/boxsite-1.png')
 ```
  
-### Geometric morphometrics
+### 3D Geometric morphometrics
 
+**Whole vessel morphology**:
  * Bottles and jars **differ significantly** in shape
  * Bottles and jars do not differ in size
  
 ```{r botjar, out.width = "100%", dpi = 300, echo=FALSE, warning=FALSE, fig.cap="Mean shapes for bottles (a), jars (c), and comparison of bottle (gray) and jar (black) shape (b)."}
 knitr::include_graphics('images/mshape.png')
+```
+
+**Neck morphology**:
+ * Bottle and jar necks **differ significantly** in shape
+ * Bottle and jar necks do not differ in size
+ 
+```{r botjarneck, out.width = "100%", dpi = 300, echo=FALSE, warning=FALSE, fig.cap="Mean shapes for bottle necks (a), jar necks (b), and comparison of bottle (gray) and jar (black) neck shapes (c)."}
+knitr::include_graphics('images/mshape-neck.png')
 ```
 
 ## Acknowledgments
