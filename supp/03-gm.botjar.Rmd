@@ -1,4 +1,4 @@
-# Bottles vs Jar morphology
+# Bottle vs Jar morphology
 
 ## Load packages + data
 

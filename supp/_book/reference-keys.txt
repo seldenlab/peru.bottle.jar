@@ -24,7 +24,7 @@ anova-belly-diameter-of-chimú-vessels
 anova-height-of-chimú-vessels
 anova-rim-thickness-of-chimú-vessels
 landmarking-protocol
-bottles-vs-jar-morphology
+bottle-vs-jar-morphology
 load-packages-data
 generalised-procrustes-analysis
 boxplot
@@ -33,7 +33,7 @@ vessel-allometry
 vessel-size-and-shape
 morphological-disparity
 mean-shapes
-sculptural-elements
+sculptural-elements-vessel-form
 load-packages-data-1
 generalised-procrustes-analysis-1
 boxplot-1
