@@ -41,3 +41,17 @@ boxplot-1
 principal-components-analysis-1
 neck-size-and-shape
 mean-shapes-1
+dgm-body-morphology
+load-packages-data-2
+generalised-procrustes-analysis-2
+boxplot-2
+principal-components-analysis-2
+body-size-and-shape
+mean-shapes-2
+dgm-body-morphology-1
+load-packages-data-3
+generalised-procrustes-analysis-3
+boxplot-3
+principal-components-analysis-3
+body-size-and-shape-1
+mean-shapes-3
