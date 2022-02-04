@@ -1,5 +1,6 @@
 fig:botjarbox
 fig:botjar
+fig:botjarneck
 fig:boxsite
 fig:pca
 tab:gpa
@@ -7,7 +8,7 @@ fig:box1
 basis-of-inquiry
 primary-findings
 linear-metrics
-geometric-morphometrics
+d-geometric-morphometrics
 acknowledgments
 funding
 data-management
@@ -33,11 +34,28 @@ vessel-allometry
 vessel-size-and-shape
 morphological-disparity
 mean-shapes
+<<<<<<< HEAD
 sculptural-elements-vessel-form
+=======
+dgm-neck-morphology
+>>>>>>> 61d5dbccf7b8bd18270ef346337ac517016a6843
 load-packages-data-1
 generalised-procrustes-analysis-1
 boxplot-1
 principal-components-analysis-1
-vessel-size-and-shape-1
-morphological-disparity-1
+neck-size-and-shape
 mean-shapes-1
+dgm-body-morphology
+load-packages-data-2
+generalised-procrustes-analysis-2
+boxplot-2
+principal-components-analysis-2
+body-size-and-shape
+mean-shapes-2
+dgm-body-morphology-1
+load-packages-data-3
+generalised-procrustes-analysis-3
+boxplot-3
+principal-components-analysis-3
+body-size-and-shape-1
+mean-shapes-3
