@@ -45,7 +45,7 @@ gdf <- geomorph.data.frame(shape = Y.gpa$coords,
                            type = qdata$type)
 
 # render 3d gpa plot
-plot(Y.gpa)
+#plot(Y.gpa)
 
 # gpa plot
 #knitr::include_graphics('images/gpa3d.png')
@@ -103,67 +103,32 @@ pc.plot.type <- plot(pca,
                              group.cols = col.hull.type)
 ```
 
-```{r pca.warp, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Results of PCA summarising shape variation in the aggregated sample; gray, north-formative/early; orange, north-late/historic; brown, south-formative/early; and black, south-late/historic; with mean shapes (gray) contrasted with max/min shapes (black)."}
+### Minima/maxima of PC1/2 with warp grids
+
+```{r min.max.botjar, echo=TRUE, out.width = "100%", dpi = 300, warning=FALSE}
+# plot x/y maxima/minima
+## x - minima
+ref <- mean.shape <- mshape(Y.gpa$coords)
+plotRefToTarget(M1 = ref, 
+                M2 = pca$shapes$shapes.comp1$min, 
+                method = "TPS")
+
+plotRefToTarget(M1 = ref, 
+                M2 = pca$shapes$shapes.comp1$max, 
+                method = "TPS")
+
+plotRefToTarget(M1 = ref, 
+                M2 = pca$shapes$shapes.comp2$min, 
+                method = "TPS")
+
+plotRefToTarget(M1 = ref, 
+                M2 = pca$shapes$shapes.comp2$max,
+                method = "TPS")
+```
+
+```{r pca.warp.botjar, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Results of PCA summarising shape variation in bottles, gray; and jars, orange; with shapes + warp grids for maxima/minima of each axis."}
 # pca warp                   
-#knitr::include_graphics('images/pca-warp.jpg')
-```
-
-## Vessel allometry
-
-```{r allometry.1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# allometry: shape as a function of vessel size?
-fit.size<-procD.lm(shape ~ size, 
-                   data = gdf, 
-                   print.progress = FALSE, 
-                   iter = 9999)
-
-# Procrustes ANOVA: does shape change with size?
-anova(fit.size)
-```
-
-
-```{r common.allometry.1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# common allometries
-fit.common<-procD.lm(shape ~ size + type, 
-                     data = gdf, 
-                     print.progress = FALSE, 
-                     iter = 9999)
-
-anova(fit.common)
-
-common.allometry <- plot(fit.size,
-                         type = "regression",
-                         reg.type = "RegScore",
-                         predictor = log(gdf$size),
-                         pch = pch.gps.type,
-                         col = col.gps.type)
-
-# common allometric component (Mitteroecker 2004)
-plotAllometry(fit.size, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "CAC", 
-              pch = pch.gps.type, 
-              col = col.gps.type)
-```
-
-
-```{r unique.allometry.1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# unique allometries
-fit.unique<-procD.lm(shape ~ size * type, 
-                     data = gdf, 
-                     print.progress = FALSE, 
-                     iter = 9999)
-
-anova(fit.unique)
-
-# do vessel forms express parallel, convergent, or divergent morphological characteristics?
-plotAllometry(fit.unique, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "PredLine", 
-              pch = pch.gps.type, 
-              col = col.gps.type)
+knitr::include_graphics('images/pca-warp-botjar.jpg')
 ```
 
 ## Vessel size and shape

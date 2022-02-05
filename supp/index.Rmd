@@ -36,8 +36,12 @@ knitr::include_graphics('images/boxsite-1.png')
 
  * Bottles and jars **differ significantly** in shape
  * Bottles and jars do not differ in size
- 
-```{r botjar, out.width = "100%", dpi = 300, echo=FALSE, warning=FALSE, fig.cap="Mean shapes for bottles (a), jars (c), and comparison of bottle (gray) and jar (black) shape (b)."}
+
+```{r pca.warp.botjar.index, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Results of PCA summarising shape variation in bottles, gray; and jars, orange; with shapes + warp grids for maxima/minima of each axis."}
+# pca warp neck                   
+knitr::include_graphics('images/pca-warp-botjar.jpg')
+``` 
+```{r botjar, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for bottles (a), jars (c), and comparison of bottle (gray) and jar (black) shape (b)."}
 knitr::include_graphics('images/mshape.png')
 ```
 
@@ -46,19 +50,26 @@ knitr::include_graphics('images/mshape.png')
  * Bottle and jar necks **differ significantly** in shape
  * Bottle and jar necks do not differ in size
  
-```{r botjarneck, out.width = "100%", dpi = 300, echo=FALSE, warning=FALSE, fig.cap="Mean shapes for bottle necks (a), jar necks (b), and comparison of bottle (gray) and jar (black) neck shapes (c)."}
+```{r pca.warp.ne.index, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Results of PCA summarising shape variation in bottle necks, gray; and jar necks, orange; with shapes + warp grids for maxima/minima of each axis."}
+# pca warp neck                   
+knitr::include_graphics('images/pca-warp-neck.jpg')
+```
+```{r botjarneck, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for bottle necks (a), jar necks (b), and comparison of bottle (gray) and jar (black) neck shapes (c)."}
 knitr::include_graphics('images/mshape-neck.png')
 ```
 
-**Body morphology**:
-
- * Bottle and jar bodies **differ significantly** in shape
- * Bottle and jar bodies do not differ in size
- 
-**Base morphology**:
+**Basal morphology**:
 
  * Bottle and jar bases **differ significantly** in shape
  * Bottle and jar bases do not differ in size
+ 
+```{r pca.warp.ba.index, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Results of PCA summarising shape variation in bottle bases, gray; and jar bases, orange; with shapes + warp grids for maxima/minima of each axis."}
+# pca warp                   
+knitr::include_graphics('images/pca-warp-base.jpg')
+```
+```{r botjarbase.index, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for bottle bases (a), jar bases (b), and comparison of bottle (gray) and jar (black) base shapes (c)."}
+knitr::include_graphics('images/mshape-base.png')
+```
 
 ## Acknowledgments
 

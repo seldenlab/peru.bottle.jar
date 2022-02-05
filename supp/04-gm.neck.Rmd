@@ -1,15 +1,9 @@
-<<<<<<< HEAD:supp/04-gm.sculptural.Rmd
-# Sculptural elements + Vessel form
-=======
 # 3DGM: Neck morphology
->>>>>>> 61d5dbccf7b8bd18270ef346337ac517016a6843:supp/04-gm.neck.Rmd
 
 ## Load packages + data
 
 ```{r load.data.s, echo = TRUE}
 # load packages
-#devtools::install_github("mlcollyer/RRPP")
-#devtools::install_github("geomorphR/geomorph", ref = "Stable", build_vignettes = TRUE)
 library(here)
 library(geomorph)
 library(tidyverse)
@@ -77,7 +71,7 @@ csz <- qdata$csz
 type <-  qdata$type
 
 # palette
-pal <- wes_palette("Moonrise2", 2, type = "continuous")
+pal <- wes_palette("Moonrise2")
 
 # boxplot of vessel centroid size by type
 csz.type <- ggplot(qdata, aes(x = type, y = csz, color = type)) + 
@@ -117,9 +111,32 @@ pc.plot.type <- plot(pca,
                              group.cols = col.hull.type)
 ```
 
-```{r pca.warp.s, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Results of PCA summarising shape variation in the aggregated sample; gray, north-formative/early; orange, north-late/historic; brown, south-formative/early; and black, south-late/historic; with mean shapes (gray) contrasted with max/min shapes (black)."}
-# pca warp                   
-#knitr::include_graphics('images/pca-warp.jpg')
+### Minima/maxima of PC1/2 with warp grids
+
+```{r min.max.neck, echo=TRUE, out.width = "100%", dpi = 300, warning=FALSE}
+# plot x/y maxima/minima
+## x - minima
+ref <- mean.shape <- mshape(Y.gpa$coords)
+plotRefToTarget(M1 = ref, 
+                M2 = pca$shapes$shapes.comp1$min, 
+                method = "TPS")
+
+plotRefToTarget(M1 = ref, 
+                M2 = pca$shapes$shapes.comp1$max, 
+                method = "TPS")
+
+plotRefToTarget(M1 = ref, 
+                M2 = pca$shapes$shapes.comp2$min, 
+                method = "TPS")
+
+plotRefToTarget(M1 = ref, 
+                M2 = pca$shapes$shapes.comp2$max,
+                method = "TPS")
+```
+
+```{r pca.warp.ne, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Results of PCA summarising shape variation in bottle necks, gray; and jar necks, orange; with shapes + warp grids for maxima/minima of each axis."}
+# pca warp neck                   
+knitr::include_graphics('images/pca-warp-neck.jpg')
 ```
 
 ## Neck size and shape
@@ -148,7 +165,7 @@ anova(fit.shape.type)
 
 ## Mean shapes
 
-```{r mshape.s, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+```{r mshape.s, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for bottles (a), jars (b), and comparison of bottle (gray) and jar (black) neck shapes (c)."}
 # subset landmark coordinates to produce mean shapes
 new.coords<-coords.subset(A = Y.gpa$coords,
                           group = qdata$type)

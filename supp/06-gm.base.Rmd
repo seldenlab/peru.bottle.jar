@@ -1,11 +1,9 @@
-# 3DGM: Body morphology
+# 3DGM: Base morphology
 
 ## Load packages + data
 
 ```{r load.data.ba, echo = TRUE}
 # load packages
-#devtools::install_github("mlcollyer/RRPP")
-#devtools::install_github("geomorphR/geomorph", ref = "Stable", build_vignettes = TRUE)
 library(here)
 library(geomorph)
 library(tidyverse)
@@ -73,7 +71,7 @@ csz <- qdata$csz
 type <-  qdata$type
 
 # palette
-pal <- wes_palette("Moonrise2", 2, type = "continuous")
+pal <- wes_palette("Moonrise2")
 
 # boxplot of vessel centroid size by type
 csz.type <- ggplot(qdata, aes(x = type, y = csz, color = type)) + 
@@ -98,6 +96,7 @@ Principal components analysis [@RN1746] was used to visualise shape variation am
 pca<-gm.prcomp(Y.gpa$coords)
 summary(pca)
 
+
 # set plot parameters (types)
 pch.gps.type <- c(15,17)[as.factor(type)]
 col.gps.type <- wes_palette("Moonrise2")[as.factor(type)]
@@ -110,41 +109,64 @@ pc.plot.type <- plot(pca,
                  col = col.gps.type)
                     shapeHulls(pc.plot.type, 
                              groups = type,
-                             group.cols = col.hull.type)
+                             group.cols = col.hull.type)                   
 ```
 
-```{r pca.warp.ba, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Results of PCA summarising shape variation in the aggregated sample; gray, north-formative/early; orange, north-late/historic; brown, south-formative/early; and black, south-late/historic; with mean shapes (gray) contrasted with max/min shapes (black)."}
+### Minima/maxima of PC1/2 with warp grids
+
+```{r min.max.base, echo=TRUE, out.width = "100%", dpi = 300, warning=FALSE}
+# plot x/y maxima/minima
+## x - minima
+ref <- mean.shape <- mshape(Y.gpa$coords)
+plotRefToTarget(M1 = ref, 
+                M2 = pca$shapes$shapes.comp1$min, 
+                method = "TPS")
+
+plotRefToTarget(M1 = ref, 
+                M2 = pca$shapes$shapes.comp1$max, 
+                method = "TPS")
+
+plotRefToTarget(M1 = ref, 
+                M2 = pca$shapes$shapes.comp2$min, 
+                method = "TPS")
+
+plotRefToTarget(M1 = ref, 
+                M2 = pca$shapes$shapes.comp2$max,
+                method = "TPS")
+```
+
+```{r pca.warp.ba, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Results of PCA summarising shape variation in bottles, gray; and jars, orange; with shapes + warp grids for maxima/minima of each axis."}
 # pca warp                   
-#knitr::include_graphics('images/pca-warp.jpg')
+knitr::include_graphics('images/pca-warp-base.jpg')
 ```
 
-## Body size and shape
+## Base size and shape
 
 A residual randomisation permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes differ by type (geography and time), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756].
 
 ```{r def.mod.1.ba, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# body size as a function of vessel form (bottle/jar)?
+# base size as a function of vessel form (bottle/jar)?
 fit.size.type <- procD.lm(size ~ type,
                             data = gdf,
                             print.progress = FALSE,
                             iter = 9999)
 
-# Procrustes ANOVA: do body sizes differ as a function of vessel form?
+# Procrustes ANOVA: do basal sizes differ as a function of vessel form?
 anova(fit.size.type)
 
-# body shape as a function of vessel form?
+# base shape as a function of vessel form?
 fit.shape.type <- procD.lm(shape ~ type,
                 data = gdf,
                 print.progress = FALSE,
                 iter = 9999)
 
-# Procrustes ANOVA: do body shapes differ as a function of vessel form?
+# Procrustes ANOVA: do basal shapes differ as a function of vessel form?
 anova(fit.shape.type)
 ```
 
 ## Mean shapes
 
-```{r mshape.ba, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+```{r mshape.ba, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for bottle bases (a), jar bases (b), and comparison of bottle (gray) and jar (black) base shapes (c)."}
 # subset landmark coordinates to produce mean shapes
 new.coords<-coords.subset(A = Y.gpa$coords,
                           group = qdata$type)
@@ -163,5 +185,5 @@ plotRefToTarget(mean$bottle,
                 method = c("points"),
                 mag = 1)
 
-#knitr::include_graphics('images/mshape-base.png')
+knitr::include_graphics('images/mshape-base.png')
 ```

@@ -4,8 +4,6 @@
 
 ```{r load.data.b, echo = TRUE}
 # load packages
-#devtools::install_github("mlcollyer/RRPP")
-#devtools::install_github("geomorphR/geomorph", ref = "Stable", build_vignettes = TRUE)
 library(here)
 library(geomorph)
 library(tidyverse)
@@ -73,7 +71,7 @@ csz <- qdata$csz
 type <-  qdata$type
 
 # palette
-pal <- wes_palette("Moonrise2", 2, type = "continuous")
+pal <- wes_palette("Moonrise2")
 
 # boxplot of vessel centroid size by type
 csz.type <- ggplot(qdata, aes(x = type, y = csz, color = type)) + 
@@ -113,9 +111,32 @@ pc.plot.type <- plot(pca,
                              group.cols = col.hull.type)
 ```
 
-```{r pca.warp.b, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Results of PCA summarising shape variation in the aggregated sample; gray, north-formative/early; orange, north-late/historic; brown, south-formative/early; and black, south-late/historic; with mean shapes (gray) contrasted with max/min shapes (black)."}
-# pca warp                   
-#knitr::include_graphics('images/pca-warp.jpg')
+### Minima/maxima of PC1/2 with warp grids
+
+```{r min.max.body, echo=TRUE, out.width = "100%", dpi = 300, warning=FALSE}
+# plot x/y maxima/minima
+## x - minima
+ref <- mean.shape <- mshape(Y.gpa$coords)
+plotRefToTarget(M1 = ref, 
+                M2 = pca$shapes$shapes.comp1$min, 
+                method = "TPS")
+
+plotRefToTarget(M1 = ref, 
+                M2 = pca$shapes$shapes.comp1$max, 
+                method = "TPS")
+
+plotRefToTarget(M1 = ref, 
+                M2 = pca$shapes$shapes.comp2$min, 
+                method = "TPS")
+
+plotRefToTarget(M1 = ref, 
+                M2 = pca$shapes$shapes.comp2$max,
+                method = "TPS")
+```
+
+```{r pca.warp.bo, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Results of PCA summarising shape variation in bottle bodies, gray; and jar bodies, orange; with shapes + warp grids for maxima/minima of each axis."}
+# pca warp body                 
+knitr::include_graphics('images/pca-warp-body.jpg')
 ```
 
 ## Body size and shape
@@ -140,28 +161,4 @@ fit.shape.type <- procD.lm(shape ~ type,
 
 # Procrustes ANOVA: do body shapes differ as a function of vessel form?
 anova(fit.shape.type)
-```
-
-## Mean shapes
-
-```{r mshape.b, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# subset landmark coordinates to produce mean shapes
-new.coords<-coords.subset(A = Y.gpa$coords,
-                          group = qdata$type)
-names(new.coords)
-
-# type shape means
-mean <- lapply(new.coords, mshape)
-
-# plot mean shapes (type)
-plot(mean$bottle)
-plot(mean$jar)
-
-# comparison plots
-plotRefToTarget(mean$bottle,
-                mean$jar, 
-                method = c("points"),
-                mag = 1)
-
-#knitr::include_graphics('images/mshape-body.png')
 ```
