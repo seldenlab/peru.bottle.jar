@@ -49,11 +49,3 @@ boxplot-2
 principal-components-analysis-2
 minimamaxima-of-pc12-with-warp-grids-2
 body-size-and-shape
-dgm-base-morphology
-load-packages-data-3
-generalised-procrustes-analysis-3
-boxplot-3
-principal-components-analysis-3
-minimamaxima-of-pc12-with-warp-grids-3
-base-size-and-shape
-mean-shapes-2

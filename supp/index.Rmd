@@ -45,32 +45,24 @@ knitr::include_graphics('images/pca-warp-botjar.jpg')
 knitr::include_graphics('images/mshape.png')
 ```
 
-**Neck morphology**:
+**Neck/rim morphology**:
 
- * Bottle and jar necks **differ significantly** in shape
- * Bottle and jar necks do not differ in size
+ * Bottle and jar neck/rim shapes **differ significantly**
+ * Bottle and jar neck/rim sizes do not differ
  
-```{r pca.warp.ne.index, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Results of PCA summarising shape variation in bottle necks, gray; and jar necks, orange; with shapes + warp grids for maxima/minima of each axis."}
+```{r pca.warp.ne.index, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Results of PCA summarising shape variation in bottle necks/rims, gray; and jar necks/rims, orange; with shapes + warp grids for maxima/minima of each axis."}
 # pca warp neck                   
 knitr::include_graphics('images/pca-warp-neck.jpg')
 ```
-```{r botjarneck, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for bottle necks (a), jar necks (b), and comparison of bottle (gray) and jar (black) neck shapes (c)."}
+```{r botjarneck, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for bottle necks/rims (a), jar necks/rims (b), and comparison of bottle (gray) and jar (black) neck/rim shapes (c)."}
 knitr::include_graphics('images/mshape-neck.png')
 ```
 
-**Basal morphology**:
+**Body/Base morphology**:
 
- * Bottle and jar bases **differ significantly** in shape
- * Bottle and jar bases do not differ in size
+ * Bottle and jar body/base shapes do not differ
+ * Bottle and jar body/base sizes do not differ
  
-```{r pca.warp.ba.index, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Results of PCA summarising shape variation in bottle bases, gray; and jar bases, orange; with shapes + warp grids for maxima/minima of each axis."}
-# pca warp                   
-knitr::include_graphics('images/pca-warp-base.jpg')
-```
-```{r botjarbase.index, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for bottle bases (a), jar bases (b), and comparison of bottle (gray) and jar (black) base shapes (c)."}
-knitr::include_graphics('images/mshape-base.png')
-```
-
 ## Acknowledgments
 
 We extend our gratitude to...
@@ -81,11 +73,9 @@ Components of this analytical work flow were developed and funded by a Preservat
 
 ## Data management
 
-This volume is written in _Markdown_, and all files needed to reproduce it are included in the [GitHub repository](https://github.com/aksel-blaise/aahc-anthro-zoo), which is digitally curated on the Open Science Framework. The reproducible nature of this undertaking provides a means for others to critically assess and evaluate the various analytical components [@RN20915;@RN20916;@RN20917], which is a necessary requirement for the production of reliable knowledge.
+All data and analysis code associated with this project can be accessed through this document or the [GitHub](https://seldenlab.github.io/anthro.zoo/) repository, which is digitally curated on the Open Science Framework ([DOI 10.17605/OSF.IO/VZHJR](https://osf.io/vzhjr/)). The reproducible nature of this undertaking provides a means for others to critically assess and evaluate the various analyses [@RN20915;@RN20916;@RN20917], which is a necessary requirement for the production of reliable knowledge.
 
 Reproducibility projects in [psychology](https://osf.io/ezcuj/) and [cancer biology](https://www.cos.io/rpcb) are impacting current research practices across all domains. Examples of reproducible research are becoming more abundant in archaeology [@RN20804;@RN21009;@RN21001], and the next generation of archaeologists are learning those tools and methods needed to reproduce and/or replicate research results [@RN21007]. Reproducible and replicable research work flows are often employed at the highest levels of humanities-based inquiries to mitigate concern or doubt regarding proper execution, and is of particular import should the results have—explicitly or implicitly—a major impact on scientific progress [@RN21008].
-
-The data and analysis code associated with this project can be accessed through this document or the [GitHub](https://seldenlab.github.io/anthro.zoo/) repository, and is digitally curated on the Open Science Framework ([DOI 10.17605/OSF.IO/VZHJR](https://osf.io/vzhjr/)).
 
 ## Colophon
 

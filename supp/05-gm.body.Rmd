@@ -31,7 +31,7 @@ Landmark data were aligned to a global coordinate system [@RN11622;@RN11623;@RN1
 
 ```{r gpa.b, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 #select landmarks associated with body
-b <- c(10:19, 27:36)
+b <- c(10:36)
 
 # new coords body
 body.coords <- coords[b,,]
@@ -106,9 +106,9 @@ pc.plot.type <- plot(pca,
                  asp = 1,
                  pch = pch.gps.type,
                  col = col.gps.type)
-                    shapeHulls(pc.plot.type, 
-                             groups = type,
-                             group.cols = col.hull.type)
+shapeHulls(pc.plot.type,
+           groups = type,
+           group.cols = col.hull.type)
 ```
 
 ### Minima/maxima of PC1/2 with warp grids

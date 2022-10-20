@@ -1,12 +1,14 @@
 bookdown::gitbook:
-  css: style.css
+  css: custom.css
   config:
     toc:
       before: |
-        <li><a href="./">chimu1</a></li>
+        <li><a href="./">chimu.1</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     download: ["pdf", "epub"]
+    fontsettings:
+      theme: night
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

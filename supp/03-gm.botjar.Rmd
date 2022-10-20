@@ -69,7 +69,7 @@ type <- qdata$type
 
 # boxplot of vessel centroid size by type
 csz.type <- ggplot(qdata, aes(x = type, y = csz, color = type)) + 
-  geom_boxplot(notch = FALSE) +
+  geom_boxplot() +
   geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize = 0.3) +
   scale_colour_manual(values = wes_palette("Moonrise2")) +
   theme(legend.position = "none") +
@@ -98,9 +98,9 @@ pc.plot.type <- plot(pca,
                  asp = 1,
                  pch = pch.gps.type,
                  col = col.gps.type)
-                    shapeHulls(pc.plot.type, 
-                             groups = type,
-                             group.cols = col.hull.type)
+shapeHulls(pc.plot.type,
+           groups = type,
+           group.cols = col.hull.type)
 ```
 
 ### Minima/maxima of PC1/2 with warp grids

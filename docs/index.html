@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>The Changing Shape of Empire: A GM Study of Chimú Bottles in Museum Collections</title>
   <meta name="description" content="Differences in Chimú vessel shape." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="The Changing Shape of Empire: A GM Study of Chimú Bottles in Museum Collections" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Differences in Chimú vessel shape." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="R. Alan Covey, Robert Z. Selden Jr., Nicole Payntar, and Astrid Runggaldier" />
 
 
-<meta name="date" content="2022-02-05" />
+<meta name="date" content="2022-10-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,6 @@
   
 
 <link rel="next" href="linear-chimú-vessel-metrics.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,8 +49,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -143,7 +142,7 @@ div.csl-indent {
 }
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
 </head>
 
 <body>
@@ -156,7 +155,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">chimu1</a></li>
+<li><a href="./">chimu.1</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
@@ -230,20 +229,6 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="dgm-body-morphology.html"><a href="dgm-body-morphology.html#body-size-and-shape"><i class="fa fa-check"></i><b>5.4</b> Body size and shape</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="dgm-base-morphology.html"><a href="dgm-base-morphology.html"><i class="fa fa-check"></i><b>6</b> 3DGM: Base morphology</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="dgm-base-morphology.html"><a href="dgm-base-morphology.html#load-packages-data-3"><i class="fa fa-check"></i><b>6.1</b> Load packages + data</a></li>
-<li class="chapter" data-level="6.2" data-path="dgm-base-morphology.html"><a href="dgm-base-morphology.html#generalised-procrustes-analysis-3"><i class="fa fa-check"></i><b>6.2</b> Generalised Procrustes Analysis</a>
-<ul>
-<li class="chapter" data-level="6.2.1" data-path="dgm-base-morphology.html"><a href="dgm-base-morphology.html#boxplot-3"><i class="fa fa-check"></i><b>6.2.1</b> Boxplot</a></li>
-</ul></li>
-<li class="chapter" data-level="6.3" data-path="dgm-base-morphology.html"><a href="dgm-base-morphology.html#principal-components-analysis-3"><i class="fa fa-check"></i><b>6.3</b> Principal Components Analysis</a>
-<ul>
-<li class="chapter" data-level="6.3.1" data-path="dgm-base-morphology.html"><a href="dgm-base-morphology.html#minimamaxima-of-pc12-with-warp-grids-3"><i class="fa fa-check"></i><b>6.3.1</b> Minima/maxima of PC1/2 with warp grids</a></li>
-</ul></li>
-<li class="chapter" data-level="6.4" data-path="dgm-base-morphology.html"><a href="dgm-base-morphology.html#base-size-and-shape"><i class="fa fa-check"></i><b>6.4</b> Base size and shape</a></li>
-<li class="chapter" data-level="6.5" data-path="dgm-base-morphology.html"><a href="dgm-base-morphology.html#mean-shapes-2"><i class="fa fa-check"></i><b>6.5</b> Mean shapes</a></li>
-</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -268,21 +253,21 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">The Changing Shape of Empire: A GM Study of Chimú Bottles in Museum Collections</h1>
 <p class="author"><em>R. Alan Covey, Robert Z. Selden Jr., Nicole Payntar, and Astrid Runggaldier</em></p>
-<p class="date"><em>2022-02-05</em></p>
+<p class="date"><em>2022-10-20</em></p>
 </div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
+<div id="preface" class="section level1 unnumbered hasAnchor">
+<h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <blockquote>
 <p>Reproducibility—the ability to recompute results—and replicability—the chances other experimenters will achieve a consistent result—are two foundational characteristics of successful scientific research <span class="citation">(<a href="#ref-RN20918" role="doc-biblioref">Leek and Peng 2015</a>)</span>.</p>
 </blockquote>
-<div id="basis-of-inquiry" class="section level2" number="0.1">
-<h2><span class="header-section-number">0.1</span> Basis of inquiry</h2>
+<div id="basis-of-inquiry" class="section level2 hasAnchor" number="0.1">
+<h2><span class="header-section-number">0.1</span> Basis of inquiry<a href="index.html#basis-of-inquiry" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>After centuries of looting along Peru’s North Coast, archaeologists acknowledge that the pottery of the Chimú Empire is one of the most collected Andean artifacts, but also one of the most poorly understood. Much of the enduring classificatory uncertainty comes from the problematic provenance of most Chimú vessels, and the fact that the distinctive blackware identified as Chimú represents the production of workshops from across an extensive area, during periods of regional political decentralization (c. 900-1200 CE), imperial growth (c. 1200-1450), and foreign conquest by the Inca (c. 1450-1535) and Spanish (after 1532) empires. This chapter builds on previous seriations and field observations, using geometric morphometric analysis of a sample of 3D-scanned Chimú bottles from publicly held collections at the University of Texas (Austin) and the American Museum of Natural History. Since Chimú bottles were formed in workshops using molds, variations in vessel shape can serve as indicators of variable practices. We compare a sample of typical Chimú blackware bottles with a sample of “Inca-Chimú” vessels that carry features typical of the short Inca occupation of the North Coast. Differences between the two samples offer new lines of evidence that can guide more precise classifications of these vessels, as well as new interpretations of the imperial history of Peru’s North Coast.</p>
 </div>
-<div id="primary-findings" class="section level2" number="0.2">
-<h2><span class="header-section-number">0.2</span> Primary findings</h2>
-<div id="linear-metrics" class="section level3" number="0.2.1">
-<h3><span class="header-section-number">0.2.1</span> Linear metrics</h3>
+<div id="primary-findings" class="section level2 hasAnchor" number="0.2">
+<h2><span class="header-section-number">0.2</span> Primary findings<a href="index.html#primary-findings" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="linear-metrics" class="section level3 hasAnchor" number="0.2.1">
+<h3><span class="header-section-number">0.2.1</span> Linear metrics<a href="index.html#linear-metrics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Bottles and jars <strong>differ significantly</strong> in orifice diameter</li>
 <li>Bottles and jars <strong>differ significantly</strong> in belly diameter</li>
@@ -295,8 +280,8 @@ Figure 0.1: Boxplots for vessel form by a, orifice diameter; b, base diameter; c
 </p>
 </div>
 </div>
-<div id="d-geometric-morphometrics" class="section level3" number="0.2.2">
-<h3><span class="header-section-number">0.2.2</span> 3D Geometric morphometrics</h3>
+<div id="d-geometric-morphometrics" class="section level3 hasAnchor" number="0.2.2">
+<h3><span class="header-section-number">0.2.2</span> 3D Geometric morphometrics<a href="index.html#d-geometric-morphometrics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Whole vessel morphology</strong>:</p>
 <ul>
 <li>Bottles and jars <strong>differ significantly</strong> in shape</li>
@@ -317,215 +302,197 @@ Figure 0.1: Boxplots for vessel form by a, orifice diameter; b, base diameter; c
 Figure 0.2: Mean shapes for bottles (a), jars (c), and comparison of bottle (gray) and jar (black) shape (b).
 </p>
 </div>
-<p><strong>Neck morphology</strong>:</p>
+<p><strong>Neck/rim morphology</strong>:</p>
 <ul>
-<li>Bottle and jar necks <strong>differ significantly</strong> in shape</li>
-<li>Bottle and jar necks do not differ in size</li>
+<li>Bottle and jar neck/rim shapes <strong>differ significantly</strong></li>
+<li>Bottle and jar neck/rim sizes do not differ</li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pca warp neck                   </span></span>
 <span id="cb3-2"><a href="index.html#cb3-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/pca-warp-neck.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
-<img src="images/pca-warp-neck.jpg" alt="Results of PCA summarising shape variation in bottle necks, gray; and jar necks, orange; with shapes + warp grids for maxima/minima of each axis." width="100%" />
+<img src="images/pca-warp-neck.jpg" alt="Results of PCA summarising shape variation in bottle necks/rims, gray; and jar necks/rims, orange; with shapes + warp grids for maxima/minima of each axis." width="100%" />
 <p class="caption">
-(#fig:pca.warp.ne.index)Results of PCA summarising shape variation in bottle necks, gray; and jar necks, orange; with shapes + warp grids for maxima/minima of each axis.
+(#fig:pca.warp.ne.index)Results of PCA summarising shape variation in bottle necks/rims, gray; and jar necks/rims, orange; with shapes + warp grids for maxima/minima of each axis.
 </p>
 </div>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="index.html#cb4-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/mshape-neck.png&#39;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:botjarneck"></span>
-<img src="images/mshape-neck.png" alt="Mean shapes for bottle necks (a), jar necks (b), and comparison of bottle (gray) and jar (black) neck shapes (c)." width="100%" />
+<img src="images/mshape-neck.png" alt="Mean shapes for bottle necks/rims (a), jar necks/rims (b), and comparison of bottle (gray) and jar (black) neck/rim shapes (c)." width="100%" />
 <p class="caption">
-Figure 0.3: Mean shapes for bottle necks (a), jar necks (b), and comparison of bottle (gray) and jar (black) neck shapes (c).
+Figure 0.3: Mean shapes for bottle necks/rims (a), jar necks/rims (b), and comparison of bottle (gray) and jar (black) neck/rim shapes (c).
 </p>
 </div>
-<p><strong>Basal morphology</strong>:</p>
+<p><strong>Body/Base morphology</strong>:</p>
 <ul>
-<li>Bottle and jar bases <strong>differ significantly</strong> in shape</li>
-<li>Bottle and jar bases do not differ in size</li>
+<li>Bottle and jar body/base shapes do not differ</li>
+<li>Bottle and jar body/base sizes do not differ</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="index.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pca warp                   </span></span>
-<span id="cb5-2"><a href="index.html#cb5-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/pca-warp-base.jpg&#39;</span>)</span></code></pre></div>
-<div class="figure">
-<img src="images/pca-warp-base.jpg" alt="Results of PCA summarising shape variation in bottle bases, gray; and jar bases, orange; with shapes + warp grids for maxima/minima of each axis." width="100%" />
-<p class="caption">
-(#fig:pca.warp.ba.index)Results of PCA summarising shape variation in bottle bases, gray; and jar bases, orange; with shapes + warp grids for maxima/minima of each axis.
-</p>
-</div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="index.html#cb6-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/mshape-base.png&#39;</span>)</span></code></pre></div>
-<div class="figure">
-<img src="images/mshape-base.png" alt="Mean shapes for bottle bases (a), jar bases (b), and comparison of bottle (gray) and jar (black) base shapes (c)." width="100%" />
-<p class="caption">
-(#fig:botjarbase.index)Mean shapes for bottle bases (a), jar bases (b), and comparison of bottle (gray) and jar (black) base shapes (c).
-</p>
 </div>
 </div>
-</div>
-<div id="acknowledgments" class="section level2" number="0.3">
-<h2><span class="header-section-number">0.3</span> Acknowledgments</h2>
+<div id="acknowledgments" class="section level2 hasAnchor" number="0.3">
+<h2><span class="header-section-number">0.3</span> Acknowledgments<a href="index.html#acknowledgments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We extend our gratitude to…</p>
 </div>
-<div id="funding" class="section level2" number="0.4">
-<h2><span class="header-section-number">0.4</span> Funding</h2>
+<div id="funding" class="section level2 hasAnchor" number="0.4">
+<h2><span class="header-section-number">0.4</span> Funding<a href="index.html#funding" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Components of this analytical work flow were developed and funded by a Preservation Technology and Training grant (P14AP00138) to RZS from the National Center for Preservation Technology and Training (NCPTT), and additional grants to RZS from the Caddo Tribe of Oklahoma and the National Forests and Grasslands in Texas (15-PA-11081300-033 and 20-PA-11081300-074). Funding to scan the Chimú vessels in the Art and Art History Collections at The University of Texas at Austin was provided by The University of Texas at Austin.</p>
 </div>
-<div id="data-management" class="section level2" number="0.5">
-<h2><span class="header-section-number">0.5</span> Data management</h2>
-<p>This volume is written in <em>Markdown</em>, and all files needed to reproduce it are included in the <a href="https://github.com/aksel-blaise/aahc-anthro-zoo">GitHub repository</a>, which is digitally curated on the Open Science Framework. The reproducible nature of this undertaking provides a means for others to critically assess and evaluate the various analytical components <span class="citation">(<a href="#ref-RN20915" role="doc-biblioref">Gray and Marwick 2019</a>; <a href="#ref-RN20916" role="doc-biblioref">Peng 2011</a>; <a href="#ref-RN20917" role="doc-biblioref">Gandrud 2014</a>)</span>, which is a necessary requirement for the production of reliable knowledge.</p>
+<div id="data-management" class="section level2 hasAnchor" number="0.5">
+<h2><span class="header-section-number">0.5</span> Data management<a href="index.html#data-management" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>All data and analysis code associated with this project can be accessed through this document or the <a href="https://seldenlab.github.io/anthro.zoo/">GitHub</a> repository, which is digitally curated on the Open Science Framework (<a href="https://osf.io/vzhjr/">DOI 10.17605/OSF.IO/VZHJR</a>). The reproducible nature of this undertaking provides a means for others to critically assess and evaluate the various analyses <span class="citation">(<a href="#ref-RN20915" role="doc-biblioref">Gray and Marwick 2019</a>; <a href="#ref-RN20916" role="doc-biblioref">Peng 2011</a>; <a href="#ref-RN20917" role="doc-biblioref">Gandrud 2014</a>)</span>, which is a necessary requirement for the production of reliable knowledge.</p>
 <p>Reproducibility projects in <a href="https://osf.io/ezcuj/">psychology</a> and <a href="https://www.cos.io/rpcb">cancer biology</a> are impacting current research practices across all domains. Examples of reproducible research are becoming more abundant in archaeology <span class="citation">(<a href="#ref-RN20804" role="doc-biblioref">Marwick 2016</a>; <a href="#ref-RN21009" role="doc-biblioref">Ivanovaitė et al. 2020</a>; <a href="#ref-RN21001" role="doc-biblioref">Selden Jr., Dockall, and Dubied 2020</a>)</span>, and the next generation of archaeologists are learning those tools and methods needed to reproduce and/or replicate research results <span class="citation">(<a href="#ref-RN21007" role="doc-biblioref">Marwick et al. 2019</a>)</span>. Reproducible and replicable research work flows are often employed at the highest levels of humanities-based inquiries to mitigate concern or doubt regarding proper execution, and is of particular import should the results have—explicitly or implicitly—a major impact on scientific progress <span class="citation">(<a href="#ref-RN21008" role="doc-biblioref">Peels and Bouter 2018</a>)</span>.</p>
-<p>The data and analysis code associated with this project can be accessed through this document or the <a href="https://seldenlab.github.io/anthro.zoo/">GitHub</a> repository, and is digitally curated on the Open Science Framework (<a href="https://osf.io/vzhjr/">DOI 10.17605/OSF.IO/VZHJR</a>).</p>
 </div>
-<div id="colophon" class="section level2" number="0.6">
-<h2><span class="header-section-number">0.6</span> Colophon</h2>
-<p>This version of the analysis was generated on 2022-02-05 06:50:27 using the following computational environment and dependencies:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="index.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># what R packages and versions were used?</span></span>
-<span id="cb7-2"><a href="index.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="st">&quot;devtools&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()) devtools<span class="sc">::</span><span class="fu">session_info</span>()</span></code></pre></div>
-<pre><code>## - Session info -------------------------------------------------------------------------------------
+<div id="colophon" class="section level2 hasAnchor" number="0.6">
+<h2><span class="header-section-number">0.6</span> Colophon<a href="index.html#colophon" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This version of the analysis was generated on 2022-10-20 09:00:21 using the following computational environment and dependencies:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="index.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># what R packages and versions were used?</span></span>
+<span id="cb5-2"><a href="index.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="st">&quot;devtools&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()) devtools<span class="sc">::</span><span class="fu">session_info</span>()</span></code></pre></div>
+<pre><code>## - Session info --------------------------------------------------------------------
 ##  setting  value
-##  version  R version 4.1.2 (2021-11-01)
-##  os       Windows 10 x64 (build 19043)
+##  version  R version 4.2.1 (2022-06-23 ucrt)
+##  os       Windows 10 x64 (build 19044)
 ##  system   x86_64, mingw32
 ##  ui       RStudio
 ##  language (EN)
-##  collate  English_United States.1252
-##  ctype    English_United States.1252
+##  collate  English_United States.utf8
+##  ctype    C
 ##  tz       America/Chicago
-##  date     2022-02-05
-##  rstudio  2021.09.0+351 Ghost Orchid (desktop)
-##  pandoc   2.14.0.3 @ C:/Program Files/RStudio/bin/pandoc/ (via rmarkdown)
+##  date     2022-10-20
+##  rstudio  2022.07.1+554 Spotted Wakerobin (desktop)
+##  pandoc   2.18 @ C:/Program Files/RStudio/bin/quarto/bin/tools/ (via rmarkdown)
 ## 
-## - Packages -----------------------------------------------------------------------------------------
-##  package       * version    date (UTC) lib source
-##  abind           1.4-5      2016-07-21 [1] CRAN (R 4.1.0)
-##  ape             5.6-1      2022-01-07 [1] CRAN (R 4.1.2)
-##  assertthat      0.2.1      2019-03-21 [1] CRAN (R 4.1.0)
-##  backports       1.4.1      2021-12-13 [1] CRAN (R 4.1.2)
-##  bookdown        0.24       2021-09-02 [1] CRAN (R 4.1.1)
-##  brio            1.1.3      2021-11-30 [1] CRAN (R 4.1.2)
-##  broom           0.7.12     2022-01-28 [1] CRAN (R 4.1.2)
-##  bslib           0.3.1      2021-10-06 [1] CRAN (R 4.1.1)
-##  cachem          1.0.6      2021-08-19 [1] CRAN (R 4.1.1)
-##  callr           3.7.0      2021-04-20 [1] CRAN (R 4.1.0)
-##  car             3.0-12     2021-11-06 [1] CRAN (R 4.1.1)
-##  carData         3.0-5      2022-01-06 [1] CRAN (R 4.1.2)
-##  cellranger      1.1.0      2016-07-27 [1] CRAN (R 4.1.0)
-##  cli             3.1.1      2022-01-20 [1] CRAN (R 4.1.2)
-##  cluster       * 2.1.2      2021-04-17 [2] CRAN (R 4.1.2)
-##  colorspace      2.0-2      2021-06-24 [1] CRAN (R 4.1.0)
-##  cowplot         1.1.1      2020-12-30 [1] CRAN (R 4.1.0)
-##  crayon          1.4.2      2021-10-29 [1] CRAN (R 4.1.1)
-##  data.table      1.14.2     2021-09-27 [1] CRAN (R 4.1.1)
-##  DBI             1.1.2      2021-12-20 [1] CRAN (R 4.1.2)
-##  dbplyr          2.1.1      2021-04-06 [1] CRAN (R 4.1.0)
-##  desc            1.4.0      2021-09-28 [1] CRAN (R 4.1.1)
-##  devtools        2.4.3      2021-11-30 [1] CRAN (R 4.1.2)
-##  digest          0.6.29     2021-12-01 [1] CRAN (R 4.1.2)
-##  dplyr         * 1.0.7      2021-06-18 [1] CRAN (R 4.1.0)
-##  dtplyr          1.2.1      2022-01-19 [1] CRAN (R 4.1.2)
-##  ellipsis        0.3.2      2021-04-29 [1] CRAN (R 4.1.0)
-##  evaluate        0.14       2019-05-28 [1] CRAN (R 4.1.0)
-##  fansi           1.0.2      2022-01-14 [1] CRAN (R 4.1.2)
-##  farver          2.1.0      2021-02-28 [1] CRAN (R 4.1.0)
-##  fastmap         1.1.0      2021-01-25 [1] CRAN (R 4.1.0)
-##  forcats       * 0.5.1      2021-01-27 [1] CRAN (R 4.1.0)
-##  fs              1.5.2      2021-12-08 [1] CRAN (R 4.1.2)
-##  gargle          1.2.0      2021-07-02 [1] CRAN (R 4.1.0)
-##  generics        0.1.2      2022-01-31 [1] CRAN (R 4.1.2)
-##  geomorph      * 4.0.1      2021-12-20 [1] Github (geomorphR/geomorph@9816609)
-##  ggExtra       * 0.9        2019-08-27 [1] CRAN (R 4.1.0)
-##  ggfortify     * 0.4.14     2022-01-05 [1] Github (sinhrks/ggfortify@619d40e)
-##  ggplot2       * 3.3.5      2021-06-25 [1] CRAN (R 4.1.0)
-##  ggpubr        * 0.4.0.999  2022-01-05 [1] Github (kassambara/ggpubr@ac5a01f)
-##  ggsignif        0.6.3      2021-09-09 [1] CRAN (R 4.1.1)
-##  git2r           0.29.0     2021-11-22 [1] CRAN (R 4.1.2)
-##  glue            1.6.1      2022-01-22 [1] CRAN (R 4.1.2)
-##  googledrive     2.0.0      2021-07-08 [1] CRAN (R 4.1.0)
-##  googlesheets4   1.0.0      2021-07-21 [1] CRAN (R 4.1.0)
-##  gridExtra       2.3        2017-09-09 [1] CRAN (R 4.1.0)
-##  gtable          0.3.0      2019-03-25 [1] CRAN (R 4.1.0)
-##  haven           2.4.3      2021-08-04 [1] CRAN (R 4.1.0)
-##  here          * 1.0.1.9000 2021-11-08 [1] Github (r-lib/here@b66d1ab)
-##  highr           0.9        2021-04-16 [1] CRAN (R 4.1.0)
-##  hms             1.1.1      2021-09-26 [1] CRAN (R 4.1.1)
-##  htmltools       0.5.2      2021-08-25 [1] CRAN (R 4.1.1)
-##  htmlwidgets     1.5.4      2021-09-08 [1] CRAN (R 4.1.1)
-##  httpuv          1.6.5      2022-01-05 [1] CRAN (R 4.1.2)
-##  httr            1.4.2      2020-07-20 [1] CRAN (R 4.1.0)
-##  jpeg            0.1-9      2021-07-24 [1] CRAN (R 4.1.0)
-##  jquerylib       0.1.4      2021-04-26 [1] CRAN (R 4.1.0)
-##  jsonlite        1.7.3      2022-01-17 [1] CRAN (R 4.1.2)
-##  knitr           1.37       2021-12-16 [1] CRAN (R 4.1.2)
-##  labeling        0.4.2      2020-10-20 [1] CRAN (R 4.1.0)
-##  later           1.3.0      2021-08-18 [1] CRAN (R 4.1.1)
-##  lattice         0.20-45    2021-09-22 [2] CRAN (R 4.1.2)
-##  lifecycle       1.0.1      2021-09-24 [1] CRAN (R 4.1.1)
-##  lubridate       1.8.0      2021-10-07 [1] CRAN (R 4.1.1)
-##  magrittr        2.0.2      2022-01-26 [1] CRAN (R 4.1.2)
-##  MASS            7.3-54     2021-05-03 [2] CRAN (R 4.1.2)
-##  Matrix        * 1.3-4      2021-06-01 [2] CRAN (R 4.1.2)
-##  memoise         2.0.1      2021-11-26 [1] CRAN (R 4.1.2)
-##  mime            0.12       2021-09-28 [1] CRAN (R 4.1.1)
-##  miniUI          0.1.1.1    2018-05-18 [1] CRAN (R 4.1.0)
-##  modelr          0.1.8      2020-05-19 [1] CRAN (R 4.1.0)
-##  munsell         0.5.0      2018-06-12 [1] CRAN (R 4.1.0)
-##  nlme            3.1-153    2021-09-07 [2] CRAN (R 4.1.2)
-##  pillar          1.7.0      2022-02-01 [1] CRAN (R 4.1.2)
-##  pkgbuild        1.3.1      2021-12-20 [1] CRAN (R 4.1.2)
-##  pkgconfig       2.0.3      2019-09-22 [1] CRAN (R 4.1.0)
-##  pkgload         1.2.4      2021-11-30 [1] CRAN (R 4.1.2)
-##  prettyunits     1.1.1      2020-01-24 [1] CRAN (R 4.1.0)
-##  processx        3.5.2      2021-04-30 [1] CRAN (R 4.1.0)
-##  promises        1.2.0.1    2021-02-11 [1] CRAN (R 4.1.0)
-##  ps              1.6.0      2021-02-28 [1] CRAN (R 4.1.0)
-##  purrr         * 0.3.4      2020-04-17 [1] CRAN (R 4.1.0)
-##  R6              2.5.1      2021-08-19 [1] CRAN (R 4.1.1)
-##  Rcpp            1.0.8      2022-01-13 [1] CRAN (R 4.1.2)
-##  readr         * 2.1.2      2022-01-30 [1] CRAN (R 4.1.2)
-##  readxl          1.3.1      2019-03-13 [1] CRAN (R 4.1.0)
-##  remotes         2.4.2      2021-11-30 [1] CRAN (R 4.1.2)
-##  reprex          2.0.1      2021-08-05 [1] CRAN (R 4.1.0)
-##  rgl           * 0.108.3    2021-11-21 [1] CRAN (R 4.1.2)
-##  rlang           0.4.12     2021-10-18 [1] CRAN (R 4.1.1)
-##  rmarkdown       2.11       2021-09-14 [1] CRAN (R 4.1.1)
-##  rprojroot       2.0.2      2020-11-15 [1] CRAN (R 4.1.0)
-##  RRPP          * 1.1.2      2021-11-02 [1] Github (mlcollyer/RRPP@96cab18)
-##  rstatix         0.7.0      2021-02-13 [1] CRAN (R 4.1.0)
-##  rstudioapi      0.13       2020-11-12 [1] CRAN (R 4.1.0)
-##  rvest           1.0.2      2021-10-16 [1] CRAN (R 4.1.1)
-##  sass            0.4.0      2021-05-12 [1] CRAN (R 4.1.0)
-##  scales          1.1.1      2020-05-11 [1] CRAN (R 4.1.0)
-##  sessioninfo     1.2.2      2021-12-06 [1] CRAN (R 4.1.2)
-##  shiny           1.7.1      2021-10-02 [1] CRAN (R 4.1.1)
-##  stringi         1.7.6      2021-11-29 [1] CRAN (R 4.1.1)
-##  stringr       * 1.4.0      2019-02-10 [1] CRAN (R 4.1.0)
-##  testthat        3.1.2      2022-01-20 [1] CRAN (R 4.1.2)
-##  tibble        * 3.1.6      2021-11-07 [1] CRAN (R 4.1.1)
-##  tidyr         * 1.2.0      2022-02-01 [1] CRAN (R 4.1.2)
-##  tidyselect      1.1.1      2021-04-30 [1] CRAN (R 4.1.0)
-##  tidyverse     * 1.3.1.9000 2022-01-05 [1] Github (tidyverse/tidyverse@6186fbf)
-##  tzdb            0.2.0      2021-10-27 [1] CRAN (R 4.1.1)
-##  usethis         2.1.5      2021-12-09 [1] CRAN (R 4.1.2)
-##  utf8            1.2.2      2021-07-24 [1] CRAN (R 4.1.0)
-##  vctrs           0.3.8      2021-04-29 [1] CRAN (R 4.1.0)
-##  wesanderson   * 0.3.6.9000 2021-11-08 [1] Github (karthik/wesanderson@651c944)
-##  withr           2.4.3      2021-11-30 [1] CRAN (R 4.1.2)
-##  xfun            0.29       2021-12-14 [1] CRAN (R 4.1.2)
-##  xml2            1.3.3      2021-11-30 [1] CRAN (R 4.1.2)
-##  xtable          1.8-4      2019-04-21 [1] CRAN (R 4.1.0)
-##  yaml            2.2.2      2022-01-25 [1] CRAN (R 4.1.2)
+## - Packages ------------------------------------------------------------------------
+##  package       * version  date (UTC) lib source
+##  abind           1.4-5    2016-07-21 [1] CRAN (R 4.2.0)
+##  ape             5.6-2    2022-03-02 [1] CRAN (R 4.2.1)
+##  assertthat      0.2.1    2019-03-21 [1] CRAN (R 4.2.1)
+##  backports       1.4.1    2021-12-13 [1] CRAN (R 4.2.0)
+##  base64enc       0.1-3    2015-07-28 [1] CRAN (R 4.2.0)
+##  bookdown        0.29     2022-09-12 [1] CRAN (R 4.2.1)
+##  broom           1.0.1    2022-08-29 [1] CRAN (R 4.2.1)
+##  bslib           0.4.0    2022-07-16 [1] CRAN (R 4.2.1)
+##  cachem          1.0.6    2021-08-19 [1] CRAN (R 4.2.1)
+##  callr           3.7.2    2022-08-22 [1] CRAN (R 4.2.1)
+##  car             3.1-1    2022-10-19 [1] CRAN (R 4.2.1)
+##  carData         3.0-5    2022-01-06 [1] CRAN (R 4.2.1)
+##  cellranger      1.1.0    2016-07-27 [1] CRAN (R 4.2.1)
+##  cli             3.4.1    2022-09-23 [1] CRAN (R 4.2.1)
+##  cluster       * 2.1.4    2022-08-22 [1] CRAN (R 4.2.1)
+##  colorspace      2.0-3    2022-02-21 [1] CRAN (R 4.2.1)
+##  cowplot         1.1.1    2020-12-30 [1] CRAN (R 4.2.1)
+##  crayon          1.5.2    2022-09-29 [1] CRAN (R 4.2.1)
+##  DBI             1.1.3    2022-06-18 [1] CRAN (R 4.2.1)
+##  dbplyr          2.2.1    2022-06-27 [1] CRAN (R 4.2.1)
+##  devtools        2.4.5    2022-10-11 [1] CRAN (R 4.2.1)
+##  digest          0.6.30   2022-10-18 [1] CRAN (R 4.2.1)
+##  dplyr         * 1.0.10   2022-09-01 [1] CRAN (R 4.2.1)
+##  ellipsis        0.3.2    2021-04-29 [1] CRAN (R 4.2.1)
+##  evaluate        0.17     2022-10-07 [1] CRAN (R 4.2.1)
+##  fansi           1.0.3    2022-03-24 [1] CRAN (R 4.2.1)
+##  farver          2.1.1    2022-07-06 [1] CRAN (R 4.2.1)
+##  fastmap         1.1.0    2021-01-25 [1] CRAN (R 4.2.1)
+##  forcats       * 0.5.2    2022-08-19 [1] CRAN (R 4.2.1)
+##  fs              1.5.2    2021-12-08 [1] CRAN (R 4.2.1)
+##  gargle          1.2.1    2022-09-08 [1] CRAN (R 4.2.1)
+##  generics        0.1.3    2022-07-05 [1] CRAN (R 4.2.1)
+##  geomorph      * 4.0.4    2022-06-23 [1] CRAN (R 4.2.1)
+##  ggExtra       * 0.10.0   2022-03-23 [1] CRAN (R 4.2.1)
+##  ggfortify     * 0.4.14   2022-01-03 [1] CRAN (R 4.2.1)
+##  ggplot2       * 3.3.6    2022-05-03 [1] CRAN (R 4.2.1)
+##  ggpubr        * 0.4.0    2020-06-27 [1] CRAN (R 4.2.1)
+##  ggsignif        0.6.4    2022-10-13 [1] CRAN (R 4.2.1)
+##  git2r           0.30.1   2022-03-16 [1] CRAN (R 4.2.1)
+##  glue            1.6.2    2022-02-24 [1] CRAN (R 4.2.1)
+##  googledrive     2.0.0    2021-07-08 [1] CRAN (R 4.2.1)
+##  googlesheets4   1.0.1    2022-08-13 [1] CRAN (R 4.2.1)
+##  gridExtra       2.3      2017-09-09 [1] CRAN (R 4.2.1)
+##  gtable          0.3.1    2022-09-01 [1] CRAN (R 4.2.1)
+##  haven           2.5.1    2022-08-22 [1] CRAN (R 4.2.1)
+##  here          * 1.0.1    2020-12-13 [1] CRAN (R 4.2.1)
+##  highr           0.9      2021-04-16 [1] CRAN (R 4.2.1)
+##  hms             1.1.2    2022-08-19 [1] CRAN (R 4.2.1)
+##  htmltools       0.5.3    2022-07-18 [1] CRAN (R 4.2.1)
+##  htmlwidgets     1.5.4    2021-09-08 [1] CRAN (R 4.2.1)
+##  httpuv          1.6.6    2022-09-08 [1] CRAN (R 4.2.1)
+##  httr            1.4.4    2022-08-17 [1] CRAN (R 4.2.1)
+##  jpeg            0.1-9    2021-07-24 [1] CRAN (R 4.2.0)
+##  jquerylib       0.1.4    2021-04-26 [1] CRAN (R 4.2.1)
+##  jsonlite        1.8.2    2022-10-02 [1] CRAN (R 4.2.1)
+##  knitr           1.40     2022-08-24 [1] CRAN (R 4.2.1)
+##  labeling        0.4.2    2020-10-20 [1] CRAN (R 4.2.0)
+##  later           1.3.0    2021-08-18 [1] CRAN (R 4.2.1)
+##  lattice         0.20-45  2021-09-22 [1] CRAN (R 4.2.1)
+##  lifecycle       1.0.3    2022-10-07 [1] CRAN (R 4.2.1)
+##  lubridate       1.8.0    2021-10-07 [1] CRAN (R 4.2.1)
+##  magrittr        2.0.3    2022-03-30 [1] CRAN (R 4.2.1)
+##  MASS            7.3-58.1 2022-08-03 [1] CRAN (R 4.2.1)
+##  Matrix        * 1.5-1    2022-09-13 [1] CRAN (R 4.2.1)
+##  memoise         2.0.1    2021-11-26 [1] CRAN (R 4.2.1)
+##  mime            0.12     2021-09-28 [1] CRAN (R 4.2.0)
+##  miniUI          0.1.1.1  2018-05-18 [1] CRAN (R 4.2.1)
+##  modelr          0.1.9    2022-08-19 [1] CRAN (R 4.2.1)
+##  munsell         0.5.0    2018-06-12 [1] CRAN (R 4.2.1)
+##  nlme            3.1-160  2022-10-10 [1] CRAN (R 4.2.1)
+##  pillar          1.8.1    2022-08-19 [1] CRAN (R 4.2.1)
+##  pkgbuild        1.3.1    2021-12-20 [1] CRAN (R 4.2.1)
+##  pkgconfig       2.0.3    2019-09-22 [1] CRAN (R 4.2.1)
+##  pkgload         1.3.0    2022-06-27 [1] CRAN (R 4.2.1)
+##  prettyunits     1.1.1    2020-01-24 [1] CRAN (R 4.2.1)
+##  processx        3.7.0    2022-07-07 [1] CRAN (R 4.2.1)
+##  profvis         0.3.7    2020-11-02 [1] CRAN (R 4.2.1)
+##  promises        1.2.0.1  2021-02-11 [1] CRAN (R 4.2.1)
+##  ps              1.7.1    2022-06-18 [1] CRAN (R 4.2.1)
+##  purrr         * 0.3.5    2022-10-06 [1] CRAN (R 4.2.1)
+##  R6              2.5.1    2021-08-19 [1] CRAN (R 4.2.1)
+##  Rcpp            1.0.9    2022-07-08 [1] CRAN (R 4.2.1)
+##  readr         * 2.1.3    2022-10-01 [1] CRAN (R 4.2.1)
+##  readxl          1.4.1    2022-08-17 [1] CRAN (R 4.2.1)
+##  remotes         2.4.2    2021-11-30 [1] CRAN (R 4.2.1)
+##  reprex          2.0.2    2022-08-17 [1] CRAN (R 4.2.1)
+##  rgl           * 0.110.2  2022-09-26 [1] CRAN (R 4.2.1)
+##  rlang           1.0.6    2022-09-24 [1] CRAN (R 4.2.1)
+##  rmarkdown       2.17     2022-10-07 [1] CRAN (R 4.2.1)
+##  rprojroot       2.0.3    2022-04-02 [1] CRAN (R 4.2.1)
+##  RRPP          * 1.3.1    2022-09-12 [1] CRAN (R 4.2.1)
+##  rsconnect       0.8.27   2022-07-12 [1] CRAN (R 4.2.1)
+##  rstatix         0.7.0    2021-02-13 [1] CRAN (R 4.2.1)
+##  rstudioapi      0.14     2022-08-22 [1] CRAN (R 4.2.1)
+##  rvest           1.0.3    2022-08-19 [1] CRAN (R 4.2.1)
+##  sass            0.4.2    2022-07-16 [1] CRAN (R 4.2.1)
+##  scales          1.2.1    2022-08-20 [1] CRAN (R 4.2.1)
+##  sessioninfo     1.2.2    2021-12-06 [1] CRAN (R 4.2.1)
+##  shiny           1.7.2    2022-07-19 [1] CRAN (R 4.2.1)
+##  stringi         1.7.8    2022-07-11 [1] CRAN (R 4.2.1)
+##  stringr       * 1.4.1    2022-08-20 [1] CRAN (R 4.2.1)
+##  tibble        * 3.1.8    2022-07-22 [1] CRAN (R 4.2.1)
+##  tidyr         * 1.2.1    2022-09-08 [1] CRAN (R 4.2.1)
+##  tidyselect      1.2.0    2022-10-10 [1] CRAN (R 4.2.1)
+##  tidyverse     * 1.3.2    2022-07-18 [1] CRAN (R 4.2.1)
+##  tzdb            0.3.0    2022-03-28 [1] CRAN (R 4.2.1)
+##  urlchecker      1.0.1    2021-11-30 [1] CRAN (R 4.2.1)
+##  usethis         2.1.6    2022-05-25 [1] CRAN (R 4.2.1)
+##  utf8            1.2.2    2021-07-24 [1] CRAN (R 4.2.1)
+##  vctrs           0.4.2    2022-09-29 [1] CRAN (R 4.2.1)
+##  wesanderson   * 0.3.6    2018-04-20 [1] CRAN (R 4.2.1)
+##  withr           2.5.0    2022-03-03 [1] CRAN (R 4.2.1)
+##  xfun            0.34     2022-10-18 [1] CRAN (R 4.2.1)
+##  xml2            1.3.3    2021-11-30 [1] CRAN (R 4.2.1)
+##  xtable          1.8-4    2019-04-21 [1] CRAN (R 4.2.1)
+##  yaml            2.3.6    2022-10-18 [1] CRAN (R 4.2.1)
 ## 
-##  [1] C:/Users/seldenjrz/Documents/R/win-library/4.1
-##  [2] C:/Program Files/R/R-4.1.2/library
+##  [1] C:/Users/seldenjrz/AppData/Local/Programs/R/R-4.2.1/library
 ## 
-## ----------------------------------------------------------------------------------------------------</code></pre>
+## -----------------------------------------------------------------------------------</code></pre>
 <p>Current Git commit details are:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="index.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># where can I find this commit? </span></span>
-<span id="cb9-2"><a href="index.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="st">&quot;git2r&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>() <span class="sc">&amp;</span> git2r<span class="sc">::</span><span class="fu">in_repository</span>(<span class="at">path =</span> <span class="st">&quot;.&quot;</span>)) git2r<span class="sc">::</span><span class="fu">repository</span>(here<span class="sc">::</span><span class="fu">here</span>())  </span></code></pre></div>
-<pre><code>## Local:    main E:/github/peru.bottle.jar
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="index.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># where can I find this commit? </span></span>
+<span id="cb7-2"><a href="index.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="st">&quot;git2r&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>() <span class="sc">&amp;</span> git2r<span class="sc">::</span><span class="fu">in_repository</span>(<span class="at">path =</span> <span class="st">&quot;.&quot;</span>)) git2r<span class="sc">::</span><span class="fu">repository</span>(here<span class="sc">::</span><span class="fu">here</span>())  </span></code></pre></div>
+<pre><code>## Local:    main D:/github/peru.bottle.jar
 ## Remote:   main @ origin (https://github.com/seldenlab/peru.bottle.jar)
-## Head:     [cddf772] 2022-02-04: &lt;edit index&gt;</code></pre>
+## Head:     [7a86877] 2022-02-05: &lt;init plots&gt;</code></pre>
 
 </div>
 </div>
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-RN20917" class="csl-entry">
 Gandrud, Christopher. 2014. <em>Reproducible Research with r and RStudio</em>. The r Series. London: CRC Press.
@@ -587,7 +554,7 @@ gitbook.start({
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
-"theme": "white",
+"theme": "night",
 "family": "sans",
 "size": 2
 },
