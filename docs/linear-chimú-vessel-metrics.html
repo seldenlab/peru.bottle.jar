@@ -23,7 +23,7 @@
 <meta name="author" content="R. Alan Covey, Robert Z. Selden Jr., Nicole Payntar, and Astrid Runggaldier" />
 
 
-<meta name="date" content="2022-10-20" />
+<meta name="date" content="2022-10-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -229,6 +229,21 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="dgm-body-morphology.html"><a href="dgm-body-morphology.html#body-size-and-shape"><i class="fa fa-check"></i><b>5.4</b> Body size and shape</a></li>
 </ul></li>
+<li class="chapter" data-level="6" data-path="vessel-forms-and-elements.html"><a href="vessel-forms-and-elements.html"><i class="fa fa-check"></i><b>6</b> Vessel Forms and Elements</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="vessel-forms-and-elements.html"><a href="vessel-forms-and-elements.html#load-packages-data-3"><i class="fa fa-check"></i><b>6.1</b> Load packages + data</a></li>
+<li class="chapter" data-level="6.2" data-path="vessel-forms-and-elements.html"><a href="vessel-forms-and-elements.html#generalised-procrustes-analysis-3"><i class="fa fa-check"></i><b>6.2</b> Generalised Procrustes Analysis</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="vessel-forms-and-elements.html"><a href="vessel-forms-and-elements.html#boxplot-3"><i class="fa fa-check"></i><b>6.2.1</b> Boxplot</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="vessel-forms-and-elements.html"><a href="vessel-forms-and-elements.html#principal-components-analysis-3"><i class="fa fa-check"></i><b>6.3</b> Principal Components Analysis</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="vessel-forms-and-elements.html"><a href="vessel-forms-and-elements.html#minimamaxima-of-pc12-with-warp-grids-3"><i class="fa fa-check"></i><b>6.3.1</b> Minima/maxima of PC1/2 with warp grids</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="vessel-forms-and-elements.html"><a href="vessel-forms-and-elements.html#vessel-size-and-shape-1"><i class="fa fa-check"></i><b>6.4</b> Vessel size and shape</a></li>
+<li class="chapter" data-level="6.5" data-path="vessel-forms-and-elements.html"><a href="vessel-forms-and-elements.html#morphological-disparity-1"><i class="fa fa-check"></i><b>6.5</b> Morphological disparity</a></li>
+<li class="chapter" data-level="6.6" data-path="vessel-forms-and-elements.html"><a href="vessel-forms-and-elements.html#mean-shapes-2"><i class="fa fa-check"></i><b>6.6</b> Mean shapes</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -341,9 +356,9 @@ div.csl-indent {
 ## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.</code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="linear-chimú-vessel-metrics.html#cb13-1" aria-hidden="true" tabindex="-1"></a>sitefigure</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:boxsite"></span>
-<img src="chimu1_files/figure-html/boxsite-1.png" alt="Boxplots of orifice diameter, base diameter, neck diameter, belly diameter, height, and rim thickness for the anthropomorphic, phytomorphic, and zoomorphic Chim&lt;U+00FA&gt; vessels used in this study." width="100%" />
+<img src="chimu1_files/figure-html/boxsite-1.png" alt="Boxplots of orifice diameter, base diameter, neck diameter, belly diameter, height, and rim thickness for the anthropomorphic, phytomorphic, and zoomorphic Chimú vessels used in this study." width="100%" />
 <p class="caption">
-Figure 1.1: Boxplots of orifice diameter, base diameter, neck diameter, belly diameter, height, and rim thickness for the anthropomorphic, phytomorphic, and zoomorphic Chim&lt;U+00FA&gt; vessels used in this study.
+Figure 1.1: Boxplots of orifice diameter, base diameter, neck diameter, belly diameter, height, and rim thickness for the anthropomorphic, phytomorphic, and zoomorphic Chimú vessels used in this study.
 </p>
 </div>
 </div>
@@ -404,8 +419,7 @@ Figure 1.2: Results of Principal Components Analysis for linear metrics associat
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Call: lm.rrpp(f1 = od ~ gp, iter = 9999, SS.type = &quot;I&quot;, print.progress = FALSE,  
-##     DATA = DATA)</code></pre>
+## Call: lm.rrpp(f1 = od ~ gp, iter = 9999, SS.type = &quot;I&quot;, print.progress = FALSE,      DATA = DATA)</code></pre>
 </div>
 <div id="anova-base-diameter-of-chimú-vessels" class="section level3 hasAnchor" number="1.4.2">
 <h3><span class="header-section-number">1.4.2</span> ANOVA <em>Base diameter</em> of Chimú vessels<a href="linear-chimú-vessel-metrics.html#anova-base-diameter-of-chimú-vessels" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -429,8 +443,7 @@ Figure 1.2: Results of Principal Components Analysis for linear metrics associat
 ## Residuals 38 49.163 1.29375 0.98897                        
 ## Total     39 49.711                                        
 ## 
-## Call: lm.rrpp(f1 = bd ~ gp, iter = 9999, SS.type = &quot;I&quot;, print.progress = FALSE,  
-##     DATA = DATA)</code></pre>
+## Call: lm.rrpp(f1 = bd ~ gp, iter = 9999, SS.type = &quot;I&quot;, print.progress = FALSE,      DATA = DATA)</code></pre>
 </div>
 <div id="anova-neck-diameter-of-chimú-vessels" class="section level3 hasAnchor" number="1.4.3">
 <h3><span class="header-section-number">1.4.3</span> ANOVA <em>Neck diameter</em> of Chimú vessels<a href="linear-chimú-vessel-metrics.html#anova-neck-diameter-of-chimú-vessels" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -454,8 +467,7 @@ Figure 1.2: Results of Principal Components Analysis for linear metrics associat
 ## Residuals 38 39.860 1.04895 0.99216                      
 ## Total     39 40.175                                      
 ## 
-## Call: lm.rrpp(f1 = nd ~ gp, iter = 9999, SS.type = &quot;I&quot;, print.progress = FALSE,  
-##     DATA = DATA)</code></pre>
+## Call: lm.rrpp(f1 = nd ~ gp, iter = 9999, SS.type = &quot;I&quot;, print.progress = FALSE,      DATA = DATA)</code></pre>
 </div>
 <div id="anova-belly-diameter-of-chimú-vessels" class="section level3 hasAnchor" number="1.4.4">
 <h3><span class="header-section-number">1.4.4</span> ANOVA <em>Belly diameter</em> of Chimú vessels<a href="linear-chimú-vessel-metrics.html#anova-belly-diameter-of-chimú-vessels" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -481,8 +493,7 @@ Figure 1.2: Results of Principal Components Analysis for linear metrics associat
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Call: lm.rrpp(f1 = bl ~ gp, iter = 9999, SS.type = &quot;I&quot;, print.progress = FALSE,  
-##     DATA = DATA)</code></pre>
+## Call: lm.rrpp(f1 = bl ~ gp, iter = 9999, SS.type = &quot;I&quot;, print.progress = FALSE,      DATA = DATA)</code></pre>
 </div>
 <div id="anova-height-of-chimú-vessels" class="section level3 hasAnchor" number="1.4.5">
 <h3><span class="header-section-number">1.4.5</span> ANOVA <em>Height</em> of Chimú vessels<a href="linear-chimú-vessel-metrics.html#anova-height-of-chimú-vessels" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -506,8 +517,7 @@ Figure 1.2: Results of Principal Components Analysis for linear metrics associat
 ## Residuals 38 553.45 14.5644 0.99382                       
 ## Total     39 556.89                                       
 ## 
-## Call: lm.rrpp(f1 = h ~ gp, iter = 9999, SS.type = &quot;I&quot;, print.progress = FALSE,  
-##     DATA = DATA)</code></pre>
+## Call: lm.rrpp(f1 = h ~ gp, iter = 9999, SS.type = &quot;I&quot;, print.progress = FALSE,      DATA = DATA)</code></pre>
 </div>
 <div id="anova-rim-thickness-of-chimú-vessels" class="section level3 hasAnchor" number="1.4.6">
 <h3><span class="header-section-number">1.4.6</span> ANOVA <em>Rim Thickness</em> of Chimú vessels<a href="linear-chimú-vessel-metrics.html#anova-rim-thickness-of-chimú-vessels" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -533,8 +543,7 @@ Figure 1.2: Results of Principal Components Analysis for linear metrics associat
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Call: lm.rrpp(f1 = RT ~ gp, iter = 9999, SS.type = &quot;I&quot;, print.progress = FALSE,  
-##     DATA = DATA)</code></pre>
+## Call: lm.rrpp(f1 = RT ~ gp, iter = 9999, SS.type = &quot;I&quot;, print.progress = FALSE,      DATA = DATA)</code></pre>
 
 </div>
 </div>

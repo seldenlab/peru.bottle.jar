@@ -5,6 +5,8 @@ fig:boxsite
 fig:pca
 tab:gpa
 fig:box1
+tab:gpa6
+fig:box16
 basis-of-inquiry
 primary-findings
 linear-metrics
@@ -49,3 +51,12 @@ boxplot-2
 principal-components-analysis-2
 minimamaxima-of-pc12-with-warp-grids-2
 body-size-and-shape
+vessel-forms-and-elements
+load-packages-data-3
+generalised-procrustes-analysis-3
+boxplot-3
+principal-components-analysis-3
+minimamaxima-of-pc12-with-warp-grids-3
+vessel-size-and-shape-1
+morphological-disparity-1
+mean-shapes-2

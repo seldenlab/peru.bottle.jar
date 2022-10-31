@@ -23,7 +23,7 @@
 <meta name="author" content="R. Alan Covey, Robert Z. Selden Jr., Nicole Payntar, and Astrid Runggaldier" />
 
 
-<meta name="date" content="2022-10-20" />
+<meta name="date" content="2022-10-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -228,6 +228,21 @@ div.csl-indent {
 <li class="chapter" data-level="5.3.1" data-path="dgm-body-morphology.html"><a href="dgm-body-morphology.html#minimamaxima-of-pc12-with-warp-grids-2"><i class="fa fa-check"></i><b>5.3.1</b> Minima/maxima of PC1/2 with warp grids</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="dgm-body-morphology.html"><a href="dgm-body-morphology.html#body-size-and-shape"><i class="fa fa-check"></i><b>5.4</b> Body size and shape</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="vessel-forms-and-elements.html"><a href="vessel-forms-and-elements.html"><i class="fa fa-check"></i><b>6</b> Vessel Forms and Elements</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="vessel-forms-and-elements.html"><a href="vessel-forms-and-elements.html#load-packages-data-3"><i class="fa fa-check"></i><b>6.1</b> Load packages + data</a></li>
+<li class="chapter" data-level="6.2" data-path="vessel-forms-and-elements.html"><a href="vessel-forms-and-elements.html#generalised-procrustes-analysis-3"><i class="fa fa-check"></i><b>6.2</b> Generalised Procrustes Analysis</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="vessel-forms-and-elements.html"><a href="vessel-forms-and-elements.html#boxplot-3"><i class="fa fa-check"></i><b>6.2.1</b> Boxplot</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="vessel-forms-and-elements.html"><a href="vessel-forms-and-elements.html#principal-components-analysis-3"><i class="fa fa-check"></i><b>6.3</b> Principal Components Analysis</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="vessel-forms-and-elements.html"><a href="vessel-forms-and-elements.html#minimamaxima-of-pc12-with-warp-grids-3"><i class="fa fa-check"></i><b>6.3.1</b> Minima/maxima of PC1/2 with warp grids</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="vessel-forms-and-elements.html"><a href="vessel-forms-and-elements.html#vessel-size-and-shape-1"><i class="fa fa-check"></i><b>6.4</b> Vessel size and shape</a></li>
+<li class="chapter" data-level="6.5" data-path="vessel-forms-and-elements.html"><a href="vessel-forms-and-elements.html#morphological-disparity-1"><i class="fa fa-check"></i><b>6.5</b> Morphological disparity</a></li>
+<li class="chapter" data-level="6.6" data-path="vessel-forms-and-elements.html"><a href="vessel-forms-and-elements.html#mean-shapes-2"><i class="fa fa-check"></i><b>6.6</b> Mean shapes</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -600,42 +615,30 @@ div.csl-indent {
 ## Number of vectors 36 
 ## 
 ## Importance of Components:
-##                             Comp1       Comp2      Comp3       Comp4        Comp5
-## Eigenvalues            0.03652055 0.004064251 0.00108168 0.000638151 0.0003001449
-## Proportion of Variance 0.84587966 0.094135151 0.02505360 0.014780690 0.0069518808
-## Cumulative Proportion  0.84587966 0.940014813 0.96506842 0.979849107 0.9868009882
-##                               Comp6        Comp7        Comp8        Comp9
-## Eigenvalues            0.0002048617 0.0001070729 7.173945e-05 0.0000594558
-## Proportion of Variance 0.0047449540 0.0024799941 1.661611e-03 0.0013771000
-## Cumulative Proportion  0.9915459422 0.9940259363 9.956875e-01 0.9970646472
-##                              Comp10       Comp11       Comp12       Comp13
-## Eigenvalues            4.209115e-05 1.948601e-05 1.598621e-05 0.0000127950
-## Proportion of Variance 9.749044e-04 4.513300e-04 3.702685e-04 0.0002963546
-## Cumulative Proportion  9.980396e-01 9.984909e-01 9.988612e-01 0.9991575048
-##                              Comp14       Comp15       Comp16       Comp17
-## Eigenvalues            9.847063e-06 7.186125e-06 6.069951e-06 3.753207e-06
-## Proportion of Variance 2.280752e-04 1.664432e-04 1.405907e-04 8.693082e-05
-## Cumulative Proportion  9.993856e-01 9.995520e-01 9.996926e-01 9.997795e-01
-##                              Comp18       Comp19       Comp20       Comp21
-## Eigenvalues            3.409925e-06 1.825607e-06 1.346814e-06 7.792248e-07
-## Proportion of Variance 7.897980e-05 4.228425e-05 3.119456e-05 1.804821e-05
-## Cumulative Proportion  9.998585e-01 9.999008e-01 9.999320e-01 9.999501e-01
-##                              Comp22       Comp23       Comp24       Comp25
-## Eigenvalues            6.478865e-07 5.140475e-07 4.433879e-07 1.661079e-07
-## Proportion of Variance 1.500618e-05 1.190624e-05 1.026964e-05 3.847348e-06
-## Cumulative Proportion  9.999651e-01 9.999770e-01 9.999872e-01 9.999911e-01
-##                              Comp26       Comp27       Comp28       Comp29
-## Eigenvalues            1.140399e-07 8.823252e-08 6.689052e-08 4.468332e-08
-## Proportion of Variance 2.641362e-06 2.043619e-06 1.549301e-06 1.034944e-06
-## Cumulative Proportion  9.999937e-01 9.999958e-01 9.999973e-01 9.999984e-01
-##                              Comp30       Comp31       Comp32       Comp33
-## Eigenvalues            2.821632e-08 1.994837e-08 1.246152e-08 7.163238e-09
-## Proportion of Variance 6.535391e-07 4.620390e-07 2.886305e-07 1.659131e-07
-## Cumulative Proportion  9.999990e-01 9.999995e-01 9.999998e-01 9.999999e-01
-##                              Comp34       Comp35       Comp36
-## Eigenvalues            2.099495e-09 8.060368e-10 5.410782e-10
-## Proportion of Variance 4.862797e-08 1.866922e-08 1.253232e-08
-## Cumulative Proportion  1.000000e+00 1.000000e+00 1.000000e+00</code></pre>
+##                             Comp1       Comp2      Comp3       Comp4        Comp5        Comp6
+## Eigenvalues            0.03652055 0.004064251 0.00108168 0.000638151 0.0003001449 0.0002048617
+## Proportion of Variance 0.84587966 0.094135151 0.02505360 0.014780690 0.0069518808 0.0047449540
+## Cumulative Proportion  0.84587966 0.940014813 0.96506842 0.979849107 0.9868009882 0.9915459422
+##                               Comp7        Comp8        Comp9       Comp10       Comp11       Comp12
+## Eigenvalues            0.0001070729 7.173945e-05 0.0000594558 4.209115e-05 1.948601e-05 1.598621e-05
+## Proportion of Variance 0.0024799941 1.661611e-03 0.0013771000 9.749044e-04 4.513300e-04 3.702685e-04
+## Cumulative Proportion  0.9940259363 9.956875e-01 0.9970646472 9.980396e-01 9.984909e-01 9.988612e-01
+##                              Comp13       Comp14       Comp15       Comp16       Comp17       Comp18
+## Eigenvalues            0.0000127950 9.847063e-06 7.186125e-06 6.069951e-06 3.753207e-06 3.409925e-06
+## Proportion of Variance 0.0002963546 2.280752e-04 1.664432e-04 1.405907e-04 8.693082e-05 7.897980e-05
+## Cumulative Proportion  0.9991575048 9.993856e-01 9.995520e-01 9.996926e-01 9.997795e-01 9.998585e-01
+##                              Comp19       Comp20       Comp21       Comp22       Comp23       Comp24
+## Eigenvalues            1.825607e-06 1.346814e-06 7.792248e-07 6.478865e-07 5.140475e-07 4.433879e-07
+## Proportion of Variance 4.228425e-05 3.119456e-05 1.804821e-05 1.500618e-05 1.190624e-05 1.026964e-05
+## Cumulative Proportion  9.999008e-01 9.999320e-01 9.999501e-01 9.999651e-01 9.999770e-01 9.999872e-01
+##                              Comp25       Comp26       Comp27       Comp28       Comp29       Comp30
+## Eigenvalues            1.661079e-07 1.140399e-07 8.823252e-08 6.689052e-08 4.468332e-08 2.821632e-08
+## Proportion of Variance 3.847348e-06 2.641362e-06 2.043619e-06 1.549301e-06 1.034944e-06 6.535391e-07
+## Cumulative Proportion  9.999911e-01 9.999937e-01 9.999958e-01 9.999973e-01 9.999984e-01 9.999990e-01
+##                              Comp31       Comp32       Comp33       Comp34       Comp35       Comp36
+## Eigenvalues            1.994837e-08 1.246152e-08 7.163238e-09 2.099495e-09 8.060368e-10 5.410782e-10
+## Proportion of Variance 4.620390e-07 2.886305e-07 1.659131e-07 4.862797e-08 1.866922e-08 1.253232e-08
+## Cumulative Proportion  9.999995e-01 9.999998e-01 9.999999e-01 1.000000e+00 1.000000e+00 1.000000e+00</code></pre>
 <div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="dgm-neck-morphology.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters (types)</span></span>
 <span id="cb56-2"><a href="dgm-neck-morphology.html#cb56-2" aria-hidden="true" tabindex="-1"></a>pch.gps.type <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="fu">as.factor</span>(type)]</span>
 <span id="cb56-3"><a href="dgm-neck-morphology.html#cb56-3" aria-hidden="true" tabindex="-1"></a>col.gps.type <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(type)]</span>
