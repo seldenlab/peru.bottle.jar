@@ -23,7 +23,7 @@
 <meta name="author" content="R. Alan Covey, Robert Z. Selden Jr., Nicole Payntar, and Astrid Runggaldier" />
 
 
-<meta name="date" content="2022-10-31" />
+<meta name="date" content="2022-11-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -269,61 +269,61 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 4</span> 3DGM: Neck morphology<a href="dgm-neck-morphology.html#dgm-neck-morphology" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="load-packages-data-1" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Load packages + data<a href="dgm-neck-morphology.html#load-packages-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="dgm-neck-morphology.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
-<span id="cb50-2"><a href="dgm-neck-morphology.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb50-3"><a href="dgm-neck-morphology.html#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geomorph)</span>
-<span id="cb50-4"><a href="dgm-neck-morphology.html#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb50-5"><a href="dgm-neck-morphology.html#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wesanderson)</span>
-<span id="cb50-6"><a href="dgm-neck-morphology.html#cb50-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-7"><a href="dgm-neck-morphology.html#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="co"># read GM data</span></span>
-<span id="cb50-8"><a href="dgm-neck-morphology.html#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;readmulti.csv.R&#39;</span>)</span>
-<span id="cb50-9"><a href="dgm-neck-morphology.html#cb50-9" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;./data&quot;</span>)</span>
-<span id="cb50-10"><a href="dgm-neck-morphology.html#cb50-10" aria-hidden="true" tabindex="-1"></a>filelist <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">&quot;.csv&quot;</span>)</span>
-<span id="cb50-11"><a href="dgm-neck-morphology.html#cb50-11" aria-hidden="true" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">readmulti.csv</span>(filelist)</span>
-<span id="cb50-12"><a href="dgm-neck-morphology.html#cb50-12" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;../&quot;</span>)</span>
-<span id="cb50-13"><a href="dgm-neck-morphology.html#cb50-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-14"><a href="dgm-neck-morphology.html#cb50-14" aria-hidden="true" tabindex="-1"></a><span class="co"># read qualitative data</span></span>
-<span id="cb50-15"><a href="dgm-neck-morphology.html#cb50-15" aria-hidden="true" tabindex="-1"></a>qdata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;qdata.csv&quot;</span>, </span>
-<span id="cb50-16"><a href="dgm-neck-morphology.html#cb50-16" aria-hidden="true" tabindex="-1"></a>                  <span class="at">header =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb50-17"><a href="dgm-neck-morphology.html#cb50-17" aria-hidden="true" tabindex="-1"></a>                  <span class="at">row.names =</span> <span class="dv">1</span>)</span>
-<span id="cb50-18"><a href="dgm-neck-morphology.html#cb50-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-19"><a href="dgm-neck-morphology.html#cb50-19" aria-hidden="true" tabindex="-1"></a>qdata <span class="ot">&lt;-</span> qdata[<span class="fu">match</span>(<span class="fu">dimnames</span>(coords)[[<span class="dv">3</span>]],</span>
-<span id="cb50-20"><a href="dgm-neck-morphology.html#cb50-20" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">rownames</span>(qdata)),]</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="dgm-neck-morphology.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
+<span id="cb55-2"><a href="dgm-neck-morphology.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb55-3"><a href="dgm-neck-morphology.html#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geomorph)</span>
+<span id="cb55-4"><a href="dgm-neck-morphology.html#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb55-5"><a href="dgm-neck-morphology.html#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wesanderson)</span>
+<span id="cb55-6"><a href="dgm-neck-morphology.html#cb55-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-7"><a href="dgm-neck-morphology.html#cb55-7" aria-hidden="true" tabindex="-1"></a><span class="co"># read GM data</span></span>
+<span id="cb55-8"><a href="dgm-neck-morphology.html#cb55-8" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;readmulti.csv.R&#39;</span>)</span>
+<span id="cb55-9"><a href="dgm-neck-morphology.html#cb55-9" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;./data&quot;</span>)</span>
+<span id="cb55-10"><a href="dgm-neck-morphology.html#cb55-10" aria-hidden="true" tabindex="-1"></a>filelist <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">&quot;.csv&quot;</span>)</span>
+<span id="cb55-11"><a href="dgm-neck-morphology.html#cb55-11" aria-hidden="true" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">readmulti.csv</span>(filelist)</span>
+<span id="cb55-12"><a href="dgm-neck-morphology.html#cb55-12" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;../&quot;</span>)</span>
+<span id="cb55-13"><a href="dgm-neck-morphology.html#cb55-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-14"><a href="dgm-neck-morphology.html#cb55-14" aria-hidden="true" tabindex="-1"></a><span class="co"># read qualitative data</span></span>
+<span id="cb55-15"><a href="dgm-neck-morphology.html#cb55-15" aria-hidden="true" tabindex="-1"></a>qdata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;qdata.csv&quot;</span>, </span>
+<span id="cb55-16"><a href="dgm-neck-morphology.html#cb55-16" aria-hidden="true" tabindex="-1"></a>                  <span class="at">header =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb55-17"><a href="dgm-neck-morphology.html#cb55-17" aria-hidden="true" tabindex="-1"></a>                  <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb55-18"><a href="dgm-neck-morphology.html#cb55-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-19"><a href="dgm-neck-morphology.html#cb55-19" aria-hidden="true" tabindex="-1"></a>qdata <span class="ot">&lt;-</span> qdata[<span class="fu">match</span>(<span class="fu">dimnames</span>(coords)[[<span class="dv">3</span>]],</span>
+<span id="cb55-20"><a href="dgm-neck-morphology.html#cb55-20" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">rownames</span>(qdata)),]</span></code></pre></div>
 </div>
 <div id="generalised-procrustes-analysis-1" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> Generalised Procrustes Analysis<a href="dgm-neck-morphology.html#generalised-procrustes-analysis-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Landmark data were aligned to a global coordinate system <span class="citation">(<a href="#ref-RN11622" role="doc-biblioref">Kendall 1981</a>, <a href="#ref-RN11623" role="doc-biblioref">1984</a>; <a href="#ref-RN11563" role="doc-biblioref">Slice 2001</a>)</span>, achieved through generalised Procrustes superimposition <span class="citation">(<a href="#ref-RN478" role="doc-biblioref">Rohlf and Slice 1990</a>)</span> performed in R 4.0.3 <span class="citation">(<a href="#ref-R" role="doc-biblioref">R Core Development Team, 2020</a>)</span> using the <code>geomorph</code> library v. 3.3.2 <span class="citation">(<a href="#ref-RN11530" role="doc-biblioref">Adams et al. 2017</a>; <a href="#ref-RN1774" role="doc-biblioref">Adams and Otárola-Castillo 2013</a>)</span>. Procrustes superimposition translates, scales, and rotates the coordinate data to allow for comparisons among objects <span class="citation">(<a href="#ref-RN11564" role="doc-biblioref">Gower 1975</a>; <a href="#ref-RN478" role="doc-biblioref">Rohlf and Slice 1990</a>)</span>. The <code>geomorph</code> package uses a partial Procrustes superimposition that projects the aligned specimens into tangent space subsequent to alignment in preparation for the use of multivariate methods that assume linear space <span class="citation">(<a href="#ref-RN1646" role="doc-biblioref">Rohlf 1999</a>; <a href="#ref-RN11563" role="doc-biblioref">Slice 2001</a>)</span>.</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="dgm-neck-morphology.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co">#select landmarks associated with neck</span></span>
-<span id="cb51-2"><a href="dgm-neck-morphology.html#cb51-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">36</span><span class="sc">:</span><span class="dv">45</span>)</span>
-<span id="cb51-3"><a href="dgm-neck-morphology.html#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-4"><a href="dgm-neck-morphology.html#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co"># new coords neck</span></span>
-<span id="cb51-5"><a href="dgm-neck-morphology.html#cb51-5" aria-hidden="true" tabindex="-1"></a>neck.coords <span class="ot">&lt;-</span> coords[a,,]</span>
-<span id="cb51-6"><a href="dgm-neck-morphology.html#cb51-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-7"><a href="dgm-neck-morphology.html#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="co"># gpa</span></span>
-<span id="cb51-8"><a href="dgm-neck-morphology.html#cb51-8" aria-hidden="true" tabindex="-1"></a>Y.gpa <span class="ot">&lt;-</span> <span class="fu">gpagen</span>(neck.coords, </span>
-<span id="cb51-9"><a href="dgm-neck-morphology.html#cb51-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">PrinAxes =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb51-10"><a href="dgm-neck-morphology.html#cb51-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">ProcD =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb51-11"><a href="dgm-neck-morphology.html#cb51-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">Proj =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb51-12"><a href="dgm-neck-morphology.html#cb51-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">print.progress =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb51-13"><a href="dgm-neck-morphology.html#cb51-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-14"><a href="dgm-neck-morphology.html#cb51-14" aria-hidden="true" tabindex="-1"></a><span class="co"># geomorph data frame</span></span>
-<span id="cb51-15"><a href="dgm-neck-morphology.html#cb51-15" aria-hidden="true" tabindex="-1"></a>gdf <span class="ot">&lt;-</span> <span class="fu">geomorph.data.frame</span>(<span class="at">shape =</span> Y.gpa<span class="sc">$</span>coords, </span>
-<span id="cb51-16"><a href="dgm-neck-morphology.html#cb51-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">size =</span> Y.gpa<span class="sc">$</span>Csize,</span>
-<span id="cb51-17"><a href="dgm-neck-morphology.html#cb51-17" aria-hidden="true" tabindex="-1"></a>                           <span class="at">type =</span> qdata<span class="sc">$</span>type)</span>
-<span id="cb51-18"><a href="dgm-neck-morphology.html#cb51-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-19"><a href="dgm-neck-morphology.html#cb51-19" aria-hidden="true" tabindex="-1"></a><span class="co"># render 3d gpa plot</span></span>
-<span id="cb51-20"><a href="dgm-neck-morphology.html#cb51-20" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Y.gpa)</span>
-<span id="cb51-21"><a href="dgm-neck-morphology.html#cb51-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-22"><a href="dgm-neck-morphology.html#cb51-22" aria-hidden="true" tabindex="-1"></a><span class="co"># gpa plot</span></span>
-<span id="cb51-23"><a href="dgm-neck-morphology.html#cb51-23" aria-hidden="true" tabindex="-1"></a><span class="co">#knitr::include_graphics(&#39;images/gpa3d.png&#39;)</span></span>
-<span id="cb51-24"><a href="dgm-neck-morphology.html#cb51-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-25"><a href="dgm-neck-morphology.html#cb51-25" aria-hidden="true" tabindex="-1"></a><span class="co"># add centroid size to qdata</span></span>
-<span id="cb51-26"><a href="dgm-neck-morphology.html#cb51-26" aria-hidden="true" tabindex="-1"></a>qdata<span class="sc">$</span>csz <span class="ot">&lt;-</span> Y.gpa<span class="sc">$</span>Csize</span>
-<span id="cb51-27"><a href="dgm-neck-morphology.html#cb51-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-28"><a href="dgm-neck-morphology.html#cb51-28" aria-hidden="true" tabindex="-1"></a><span class="co"># print updated qdata with centroid size</span></span>
-<span id="cb51-29"><a href="dgm-neck-morphology.html#cb51-29" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(qdata, </span>
-<span id="cb51-30"><a href="dgm-neck-morphology.html#cb51-30" aria-hidden="true" tabindex="-1"></a>             <span class="at">align =</span> <span class="st">&quot;lccccc&quot;</span>, </span>
-<span id="cb51-31"><a href="dgm-neck-morphology.html#cb51-31" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Modified attributes included in qdata.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="dgm-neck-morphology.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co">#select landmarks associated with neck</span></span>
+<span id="cb56-2"><a href="dgm-neck-morphology.html#cb56-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">36</span><span class="sc">:</span><span class="dv">45</span>)</span>
+<span id="cb56-3"><a href="dgm-neck-morphology.html#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-4"><a href="dgm-neck-morphology.html#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="co"># new coords neck</span></span>
+<span id="cb56-5"><a href="dgm-neck-morphology.html#cb56-5" aria-hidden="true" tabindex="-1"></a>neck.coords <span class="ot">&lt;-</span> coords[a,,]</span>
+<span id="cb56-6"><a href="dgm-neck-morphology.html#cb56-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-7"><a href="dgm-neck-morphology.html#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="co"># gpa</span></span>
+<span id="cb56-8"><a href="dgm-neck-morphology.html#cb56-8" aria-hidden="true" tabindex="-1"></a>Y.gpa <span class="ot">&lt;-</span> <span class="fu">gpagen</span>(neck.coords, </span>
+<span id="cb56-9"><a href="dgm-neck-morphology.html#cb56-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">PrinAxes =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb56-10"><a href="dgm-neck-morphology.html#cb56-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">ProcD =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb56-11"><a href="dgm-neck-morphology.html#cb56-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">Proj =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb56-12"><a href="dgm-neck-morphology.html#cb56-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">print.progress =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb56-13"><a href="dgm-neck-morphology.html#cb56-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-14"><a href="dgm-neck-morphology.html#cb56-14" aria-hidden="true" tabindex="-1"></a><span class="co"># geomorph data frame</span></span>
+<span id="cb56-15"><a href="dgm-neck-morphology.html#cb56-15" aria-hidden="true" tabindex="-1"></a>gdf <span class="ot">&lt;-</span> <span class="fu">geomorph.data.frame</span>(<span class="at">shape =</span> Y.gpa<span class="sc">$</span>coords, </span>
+<span id="cb56-16"><a href="dgm-neck-morphology.html#cb56-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">size =</span> Y.gpa<span class="sc">$</span>Csize,</span>
+<span id="cb56-17"><a href="dgm-neck-morphology.html#cb56-17" aria-hidden="true" tabindex="-1"></a>                           <span class="at">type =</span> qdata<span class="sc">$</span>type)</span>
+<span id="cb56-18"><a href="dgm-neck-morphology.html#cb56-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-19"><a href="dgm-neck-morphology.html#cb56-19" aria-hidden="true" tabindex="-1"></a><span class="co"># render 3d gpa plot</span></span>
+<span id="cb56-20"><a href="dgm-neck-morphology.html#cb56-20" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Y.gpa)</span>
+<span id="cb56-21"><a href="dgm-neck-morphology.html#cb56-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-22"><a href="dgm-neck-morphology.html#cb56-22" aria-hidden="true" tabindex="-1"></a><span class="co"># gpa plot</span></span>
+<span id="cb56-23"><a href="dgm-neck-morphology.html#cb56-23" aria-hidden="true" tabindex="-1"></a><span class="co">#knitr::include_graphics(&#39;images/gpa3d.png&#39;)</span></span>
+<span id="cb56-24"><a href="dgm-neck-morphology.html#cb56-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-25"><a href="dgm-neck-morphology.html#cb56-25" aria-hidden="true" tabindex="-1"></a><span class="co"># add centroid size to qdata</span></span>
+<span id="cb56-26"><a href="dgm-neck-morphology.html#cb56-26" aria-hidden="true" tabindex="-1"></a>qdata<span class="sc">$</span>csz <span class="ot">&lt;-</span> Y.gpa<span class="sc">$</span>Csize</span>
+<span id="cb56-27"><a href="dgm-neck-morphology.html#cb56-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-28"><a href="dgm-neck-morphology.html#cb56-28" aria-hidden="true" tabindex="-1"></a><span class="co"># print updated qdata with centroid size</span></span>
+<span id="cb56-29"><a href="dgm-neck-morphology.html#cb56-29" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(qdata, </span>
+<span id="cb56-30"><a href="dgm-neck-morphology.html#cb56-30" aria-hidden="true" tabindex="-1"></a>             <span class="at">align =</span> <span class="st">&quot;lccccc&quot;</span>, </span>
+<span id="cb56-31"><a href="dgm-neck-morphology.html#cb56-31" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Modified attributes included in qdata.&quot;</span>)</span></code></pre></div>
 <table>
 <caption>(#tab:gpa.s)Modified attributes included in qdata.</caption>
 <thead>
@@ -573,25 +573,25 @@ div.csl-indent {
 </table>
 <div id="boxplot-1" class="section level3 hasAnchor" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> Boxplot<a href="dgm-neck-morphology.html#boxplot-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="dgm-neck-morphology.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># attributes for boxplot</span></span>
-<span id="cb52-2"><a href="dgm-neck-morphology.html#cb52-2" aria-hidden="true" tabindex="-1"></a>csz <span class="ot">&lt;-</span> qdata<span class="sc">$</span>csz</span>
-<span id="cb52-3"><a href="dgm-neck-morphology.html#cb52-3" aria-hidden="true" tabindex="-1"></a>type <span class="ot">&lt;-</span>  qdata<span class="sc">$</span>type</span>
-<span id="cb52-4"><a href="dgm-neck-morphology.html#cb52-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-5"><a href="dgm-neck-morphology.html#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="co"># palette</span></span>
-<span id="cb52-6"><a href="dgm-neck-morphology.html#cb52-6" aria-hidden="true" tabindex="-1"></a>pal <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)</span>
-<span id="cb52-7"><a href="dgm-neck-morphology.html#cb52-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-8"><a href="dgm-neck-morphology.html#cb52-8" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of vessel centroid size by type</span></span>
-<span id="cb52-9"><a href="dgm-neck-morphology.html#cb52-9" aria-hidden="true" tabindex="-1"></a>csz.type <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(qdata, <span class="fu">aes</span>(<span class="at">x =</span> type, <span class="at">y =</span> csz, <span class="at">color =</span> type)) <span class="sc">+</span> </span>
-<span id="cb52-10"><a href="dgm-neck-morphology.html#cb52-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">notch =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb52-11"><a href="dgm-neck-morphology.html#cb52-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb52-12"><a href="dgm-neck-morphology.html#cb52-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> pal) <span class="sc">+</span></span>
-<span id="cb52-13"><a href="dgm-neck-morphology.html#cb52-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
-<span id="cb52-14"><a href="dgm-neck-morphology.html#cb52-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb52-15"><a href="dgm-neck-morphology.html#cb52-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Type (Neck)&#39;</span>, </span>
-<span id="cb52-16"><a href="dgm-neck-morphology.html#cb52-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Centroid Size&#39;</span>)</span>
-<span id="cb52-17"><a href="dgm-neck-morphology.html#cb52-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-18"><a href="dgm-neck-morphology.html#cb52-18" aria-hidden="true" tabindex="-1"></a><span class="co"># render plot</span></span>
-<span id="cb52-19"><a href="dgm-neck-morphology.html#cb52-19" aria-hidden="true" tabindex="-1"></a>csz.type</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="dgm-neck-morphology.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># attributes for boxplot</span></span>
+<span id="cb57-2"><a href="dgm-neck-morphology.html#cb57-2" aria-hidden="true" tabindex="-1"></a>csz <span class="ot">&lt;-</span> qdata<span class="sc">$</span>csz</span>
+<span id="cb57-3"><a href="dgm-neck-morphology.html#cb57-3" aria-hidden="true" tabindex="-1"></a>type <span class="ot">&lt;-</span>  qdata<span class="sc">$</span>type</span>
+<span id="cb57-4"><a href="dgm-neck-morphology.html#cb57-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-5"><a href="dgm-neck-morphology.html#cb57-5" aria-hidden="true" tabindex="-1"></a><span class="co"># palette</span></span>
+<span id="cb57-6"><a href="dgm-neck-morphology.html#cb57-6" aria-hidden="true" tabindex="-1"></a>pal <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)</span>
+<span id="cb57-7"><a href="dgm-neck-morphology.html#cb57-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-8"><a href="dgm-neck-morphology.html#cb57-8" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of vessel centroid size by type</span></span>
+<span id="cb57-9"><a href="dgm-neck-morphology.html#cb57-9" aria-hidden="true" tabindex="-1"></a>csz.type <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(qdata, <span class="fu">aes</span>(<span class="at">x =</span> type, <span class="at">y =</span> csz, <span class="at">color =</span> type)) <span class="sc">+</span> </span>
+<span id="cb57-10"><a href="dgm-neck-morphology.html#cb57-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">notch =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb57-11"><a href="dgm-neck-morphology.html#cb57-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb57-12"><a href="dgm-neck-morphology.html#cb57-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> pal) <span class="sc">+</span></span>
+<span id="cb57-13"><a href="dgm-neck-morphology.html#cb57-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
+<span id="cb57-14"><a href="dgm-neck-morphology.html#cb57-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb57-15"><a href="dgm-neck-morphology.html#cb57-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Type (Neck)&#39;</span>, </span>
+<span id="cb57-16"><a href="dgm-neck-morphology.html#cb57-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Centroid Size&#39;</span>)</span>
+<span id="cb57-17"><a href="dgm-neck-morphology.html#cb57-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-18"><a href="dgm-neck-morphology.html#cb57-18" aria-hidden="true" tabindex="-1"></a><span class="co"># render plot</span></span>
+<span id="cb57-19"><a href="dgm-neck-morphology.html#cb57-19" aria-hidden="true" tabindex="-1"></a>csz.type</span></code></pre></div>
 <pre><code>## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.</code></pre>
 <div class="figure">
 <img src="chimu1_files/figure-html/box1.s-1.png" alt="Boxplot of centroid size by spatial/temporal unit." width="100%" />
@@ -604,9 +604,9 @@ div.csl-indent {
 <div id="principal-components-analysis-1" class="section level2 hasAnchor" number="4.3">
 <h2><span class="header-section-number">4.3</span> Principal Components Analysis<a href="dgm-neck-morphology.html#principal-components-analysis-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Principal components analysis <span class="citation">(<a href="#ref-RN1746" role="doc-biblioref">Jolliffe 2002</a>)</span> was used to visualise shape variation among bottle and jar necks. The shape changes described by each principal axis are commonly visualised using thin-plate spline warping of a reference 3D mesh <span class="citation">(<a href="#ref-RN1731" role="doc-biblioref">Klingenberg 2013</a>; <a href="#ref-RN479" role="doc-biblioref">Sherratt et al. 2014</a>)</span>.</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="dgm-neck-morphology.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># principal components analysis</span></span>
-<span id="cb54-2"><a href="dgm-neck-morphology.html#cb54-2" aria-hidden="true" tabindex="-1"></a>pca<span class="ot">&lt;-</span><span class="fu">gm.prcomp</span>(Y.gpa<span class="sc">$</span>coords)</span>
-<span id="cb54-3"><a href="dgm-neck-morphology.html#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pca)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="dgm-neck-morphology.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># principal components analysis</span></span>
+<span id="cb59-2"><a href="dgm-neck-morphology.html#cb59-2" aria-hidden="true" tabindex="-1"></a>pca<span class="ot">&lt;-</span><span class="fu">gm.prcomp</span>(Y.gpa<span class="sc">$</span>coords)</span>
+<span id="cb59-3"><a href="dgm-neck-morphology.html#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pca)</span></code></pre></div>
 <pre><code>## 
 ## Ordination type: Principal Component Analysis 
 ## Centering by OLS mean
@@ -615,67 +615,67 @@ div.csl-indent {
 ## Number of vectors 36 
 ## 
 ## Importance of Components:
-##                             Comp1       Comp2      Comp3       Comp4        Comp5        Comp6
-## Eigenvalues            0.03652055 0.004064251 0.00108168 0.000638151 0.0003001449 0.0002048617
-## Proportion of Variance 0.84587966 0.094135151 0.02505360 0.014780690 0.0069518808 0.0047449540
-## Cumulative Proportion  0.84587966 0.940014813 0.96506842 0.979849107 0.9868009882 0.9915459422
-##                               Comp7        Comp8        Comp9       Comp10       Comp11       Comp12
-## Eigenvalues            0.0001070729 7.173945e-05 0.0000594558 4.209115e-05 1.948601e-05 1.598621e-05
-## Proportion of Variance 0.0024799941 1.661611e-03 0.0013771000 9.749044e-04 4.513300e-04 3.702685e-04
-## Cumulative Proportion  0.9940259363 9.956875e-01 0.9970646472 9.980396e-01 9.984909e-01 9.988612e-01
-##                              Comp13       Comp14       Comp15       Comp16       Comp17       Comp18
-## Eigenvalues            0.0000127950 9.847063e-06 7.186125e-06 6.069951e-06 3.753207e-06 3.409925e-06
-## Proportion of Variance 0.0002963546 2.280752e-04 1.664432e-04 1.405907e-04 8.693082e-05 7.897980e-05
-## Cumulative Proportion  0.9991575048 9.993856e-01 9.995520e-01 9.996926e-01 9.997795e-01 9.998585e-01
-##                              Comp19       Comp20       Comp21       Comp22       Comp23       Comp24
-## Eigenvalues            1.825607e-06 1.346814e-06 7.792248e-07 6.478865e-07 5.140475e-07 4.433879e-07
-## Proportion of Variance 4.228425e-05 3.119456e-05 1.804821e-05 1.500618e-05 1.190624e-05 1.026964e-05
-## Cumulative Proportion  9.999008e-01 9.999320e-01 9.999501e-01 9.999651e-01 9.999770e-01 9.999872e-01
-##                              Comp25       Comp26       Comp27       Comp28       Comp29       Comp30
-## Eigenvalues            1.661079e-07 1.140399e-07 8.823252e-08 6.689052e-08 4.468332e-08 2.821632e-08
-## Proportion of Variance 3.847348e-06 2.641362e-06 2.043619e-06 1.549301e-06 1.034944e-06 6.535391e-07
-## Cumulative Proportion  9.999911e-01 9.999937e-01 9.999958e-01 9.999973e-01 9.999984e-01 9.999990e-01
-##                              Comp31       Comp32       Comp33       Comp34       Comp35       Comp36
-## Eigenvalues            1.994837e-08 1.246152e-08 7.163238e-09 2.099495e-09 8.060368e-10 5.410782e-10
-## Proportion of Variance 4.620390e-07 2.886305e-07 1.659131e-07 4.862797e-08 1.866922e-08 1.253232e-08
-## Cumulative Proportion  9.999995e-01 9.999998e-01 9.999999e-01 1.000000e+00 1.000000e+00 1.000000e+00</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="dgm-neck-morphology.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters (types)</span></span>
-<span id="cb56-2"><a href="dgm-neck-morphology.html#cb56-2" aria-hidden="true" tabindex="-1"></a>pch.gps.type <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="fu">as.factor</span>(type)]</span>
-<span id="cb56-3"><a href="dgm-neck-morphology.html#cb56-3" aria-hidden="true" tabindex="-1"></a>col.gps.type <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(type)]</span>
-<span id="cb56-4"><a href="dgm-neck-morphology.html#cb56-4" aria-hidden="true" tabindex="-1"></a>col.hull.type <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
-<span id="cb56-5"><a href="dgm-neck-morphology.html#cb56-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-6"><a href="dgm-neck-morphology.html#cb56-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by comb</span></span>
-<span id="cb56-7"><a href="dgm-neck-morphology.html#cb56-7" aria-hidden="true" tabindex="-1"></a>pc.plot.type <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
-<span id="cb56-8"><a href="dgm-neck-morphology.html#cb56-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb56-9"><a href="dgm-neck-morphology.html#cb56-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.type,</span>
-<span id="cb56-10"><a href="dgm-neck-morphology.html#cb56-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.type)</span>
-<span id="cb56-11"><a href="dgm-neck-morphology.html#cb56-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">shapeHulls</span>(pc.plot.type, </span>
-<span id="cb56-12"><a href="dgm-neck-morphology.html#cb56-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">groups =</span> type,</span>
-<span id="cb56-13"><a href="dgm-neck-morphology.html#cb56-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">group.cols =</span> col.hull.type)</span></code></pre></div>
+##                             Comp1       Comp2      Comp3       Comp4        Comp5        Comp6        Comp7
+## Eigenvalues            0.03652055 0.004064251 0.00108168 0.000638151 0.0003001449 0.0002048617 0.0001070729
+## Proportion of Variance 0.84587966 0.094135151 0.02505360 0.014780690 0.0069518808 0.0047449540 0.0024799941
+## Cumulative Proportion  0.84587966 0.940014813 0.96506842 0.979849107 0.9868009882 0.9915459422 0.9940259363
+##                               Comp8        Comp9       Comp10       Comp11       Comp12       Comp13
+## Eigenvalues            7.173945e-05 0.0000594558 4.209115e-05 1.948601e-05 1.598621e-05 0.0000127950
+## Proportion of Variance 1.661611e-03 0.0013771000 9.749044e-04 4.513300e-04 3.702685e-04 0.0002963546
+## Cumulative Proportion  9.956875e-01 0.9970646472 9.980396e-01 9.984909e-01 9.988612e-01 0.9991575048
+##                              Comp14       Comp15       Comp16       Comp17       Comp18       Comp19
+## Eigenvalues            9.847063e-06 7.186125e-06 6.069951e-06 3.753207e-06 3.409925e-06 1.825607e-06
+## Proportion of Variance 2.280752e-04 1.664432e-04 1.405907e-04 8.693082e-05 7.897980e-05 4.228425e-05
+## Cumulative Proportion  9.993856e-01 9.995520e-01 9.996926e-01 9.997795e-01 9.998585e-01 9.999008e-01
+##                              Comp20       Comp21       Comp22       Comp23       Comp24       Comp25
+## Eigenvalues            1.346814e-06 7.792248e-07 6.478865e-07 5.140475e-07 4.433879e-07 1.661079e-07
+## Proportion of Variance 3.119456e-05 1.804821e-05 1.500618e-05 1.190624e-05 1.026964e-05 3.847348e-06
+## Cumulative Proportion  9.999320e-01 9.999501e-01 9.999651e-01 9.999770e-01 9.999872e-01 9.999911e-01
+##                              Comp26       Comp27       Comp28       Comp29       Comp30       Comp31
+## Eigenvalues            1.140399e-07 8.823252e-08 6.689052e-08 4.468332e-08 2.821632e-08 1.994837e-08
+## Proportion of Variance 2.641362e-06 2.043619e-06 1.549301e-06 1.034944e-06 6.535391e-07 4.620390e-07
+## Cumulative Proportion  9.999937e-01 9.999958e-01 9.999973e-01 9.999984e-01 9.999990e-01 9.999995e-01
+##                              Comp32       Comp33       Comp34       Comp35       Comp36
+## Eigenvalues            1.246152e-08 7.163238e-09 2.099495e-09 8.060368e-10 5.410782e-10
+## Proportion of Variance 2.886305e-07 1.659131e-07 4.862797e-08 1.866922e-08 1.253232e-08
+## Cumulative Proportion  9.999998e-01 9.999999e-01 1.000000e+00 1.000000e+00 1.000000e+00</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="dgm-neck-morphology.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters (types)</span></span>
+<span id="cb61-2"><a href="dgm-neck-morphology.html#cb61-2" aria-hidden="true" tabindex="-1"></a>pch.gps.type <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="fu">as.factor</span>(type)]</span>
+<span id="cb61-3"><a href="dgm-neck-morphology.html#cb61-3" aria-hidden="true" tabindex="-1"></a>col.gps.type <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(type)]</span>
+<span id="cb61-4"><a href="dgm-neck-morphology.html#cb61-4" aria-hidden="true" tabindex="-1"></a>col.hull.type <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
+<span id="cb61-5"><a href="dgm-neck-morphology.html#cb61-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-6"><a href="dgm-neck-morphology.html#cb61-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by comb</span></span>
+<span id="cb61-7"><a href="dgm-neck-morphology.html#cb61-7" aria-hidden="true" tabindex="-1"></a>pc.plot.type <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
+<span id="cb61-8"><a href="dgm-neck-morphology.html#cb61-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb61-9"><a href="dgm-neck-morphology.html#cb61-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.type,</span>
+<span id="cb61-10"><a href="dgm-neck-morphology.html#cb61-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.type)</span>
+<span id="cb61-11"><a href="dgm-neck-morphology.html#cb61-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">shapeHulls</span>(pc.plot.type, </span>
+<span id="cb61-12"><a href="dgm-neck-morphology.html#cb61-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">groups =</span> type,</span>
+<span id="cb61-13"><a href="dgm-neck-morphology.html#cb61-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">group.cols =</span> col.hull.type)</span></code></pre></div>
 <p><img src="chimu1_files/figure-html/gmpca.s-1.png" width="100%" /></p>
 <div id="minimamaxima-of-pc12-with-warp-grids-1" class="section level3 hasAnchor" number="4.3.1">
 <h3><span class="header-section-number">4.3.1</span> Minima/maxima of PC1/2 with warp grids<a href="dgm-neck-morphology.html#minimamaxima-of-pc12-with-warp-grids-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="dgm-neck-morphology.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot x/y maxima/minima</span></span>
-<span id="cb57-2"><a href="dgm-neck-morphology.html#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="do">## x - minima</span></span>
-<span id="cb57-3"><a href="dgm-neck-morphology.html#cb57-3" aria-hidden="true" tabindex="-1"></a>ref <span class="ot">&lt;-</span> mean.shape <span class="ot">&lt;-</span> <span class="fu">mshape</span>(Y.gpa<span class="sc">$</span>coords)</span>
-<span id="cb57-4"><a href="dgm-neck-morphology.html#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(<span class="at">M1 =</span> ref, </span>
-<span id="cb57-5"><a href="dgm-neck-morphology.html#cb57-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">M2 =</span> pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>min, </span>
-<span id="cb57-6"><a href="dgm-neck-morphology.html#cb57-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;TPS&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="dgm-neck-morphology.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot x/y maxima/minima</span></span>
+<span id="cb62-2"><a href="dgm-neck-morphology.html#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="do">## x - minima</span></span>
+<span id="cb62-3"><a href="dgm-neck-morphology.html#cb62-3" aria-hidden="true" tabindex="-1"></a>ref <span class="ot">&lt;-</span> mean.shape <span class="ot">&lt;-</span> <span class="fu">mshape</span>(Y.gpa<span class="sc">$</span>coords)</span>
+<span id="cb62-4"><a href="dgm-neck-morphology.html#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(<span class="at">M1 =</span> ref, </span>
+<span id="cb62-5"><a href="dgm-neck-morphology.html#cb62-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">M2 =</span> pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>min, </span>
+<span id="cb62-6"><a href="dgm-neck-morphology.html#cb62-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;TPS&quot;</span>)</span></code></pre></div>
 <p><img src="chimu1_files/figure-html/min.max.neck-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="dgm-neck-morphology.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(<span class="at">M1 =</span> ref, </span>
-<span id="cb58-2"><a href="dgm-neck-morphology.html#cb58-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">M2 =</span> pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>max, </span>
-<span id="cb58-3"><a href="dgm-neck-morphology.html#cb58-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;TPS&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="dgm-neck-morphology.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(<span class="at">M1 =</span> ref, </span>
+<span id="cb63-2"><a href="dgm-neck-morphology.html#cb63-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">M2 =</span> pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>max, </span>
+<span id="cb63-3"><a href="dgm-neck-morphology.html#cb63-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;TPS&quot;</span>)</span></code></pre></div>
 <p><img src="chimu1_files/figure-html/min.max.neck-2.png" width="100%" /></p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="dgm-neck-morphology.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(<span class="at">M1 =</span> ref, </span>
-<span id="cb59-2"><a href="dgm-neck-morphology.html#cb59-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">M2 =</span> pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>min, </span>
-<span id="cb59-3"><a href="dgm-neck-morphology.html#cb59-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;TPS&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="dgm-neck-morphology.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(<span class="at">M1 =</span> ref, </span>
+<span id="cb64-2"><a href="dgm-neck-morphology.html#cb64-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">M2 =</span> pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>min, </span>
+<span id="cb64-3"><a href="dgm-neck-morphology.html#cb64-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;TPS&quot;</span>)</span></code></pre></div>
 <p><img src="chimu1_files/figure-html/min.max.neck-3.png" width="100%" /></p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="dgm-neck-morphology.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(<span class="at">M1 =</span> ref, </span>
-<span id="cb60-2"><a href="dgm-neck-morphology.html#cb60-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">M2 =</span> pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>max,</span>
-<span id="cb60-3"><a href="dgm-neck-morphology.html#cb60-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;TPS&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="dgm-neck-morphology.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(<span class="at">M1 =</span> ref, </span>
+<span id="cb65-2"><a href="dgm-neck-morphology.html#cb65-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">M2 =</span> pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>max,</span>
+<span id="cb65-3"><a href="dgm-neck-morphology.html#cb65-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;TPS&quot;</span>)</span></code></pre></div>
 <p><img src="chimu1_files/figure-html/min.max.neck-4.png" width="100%" /></p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="dgm-neck-morphology.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pca warp neck                   </span></span>
-<span id="cb61-2"><a href="dgm-neck-morphology.html#cb61-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/pca-warp-neck.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="dgm-neck-morphology.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pca warp neck                   </span></span>
+<span id="cb66-2"><a href="dgm-neck-morphology.html#cb66-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/pca-warp-neck.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/pca-warp-neck.jpg" alt="Results of PCA summarising shape variation in bottle necks, gray; and jar necks, orange; with shapes + warp grids for maxima/minima of each axis." width="100%" />
 <p class="caption">
@@ -687,14 +687,14 @@ div.csl-indent {
 <div id="neck-size-and-shape" class="section level2 hasAnchor" number="4.4">
 <h2><span class="header-section-number">4.4</span> Neck size and shape<a href="dgm-neck-morphology.html#neck-size-and-shape" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A residual randomisation permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs <span class="citation">(<a href="#ref-RN1655" role="doc-biblioref">Adams and Collyer 2015</a>; <a href="#ref-RN11775" role="doc-biblioref">Michael L. Collyer and Adams 2018</a>)</span>, which has higher statistical power and a greater ability to identify patterns in the data should they be present <span class="citation">(<a href="#ref-RN1719" role="doc-biblioref">Anderson and Ter Braak 2003</a>)</span>. To assess whether shape changes differ by type (geography and time), Procrustes ANOVAs <span class="citation">(<a href="#ref-RN1749" role="doc-biblioref">Goodall 1991</a>)</span> were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions <span class="citation">(<a href="#ref-RN1756" role="doc-biblioref">M. L. Collyer, Sekora, and Adams 2015</a>)</span>.</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="dgm-neck-morphology.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># neck size as a function of vessel form (bottle/jar)?</span></span>
-<span id="cb62-2"><a href="dgm-neck-morphology.html#cb62-2" aria-hidden="true" tabindex="-1"></a>fit.size.type <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(size <span class="sc">~</span> type,</span>
-<span id="cb62-3"><a href="dgm-neck-morphology.html#cb62-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">data =</span> gdf,</span>
-<span id="cb62-4"><a href="dgm-neck-morphology.html#cb62-4" aria-hidden="true" tabindex="-1"></a>                            <span class="at">print.progress =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb62-5"><a href="dgm-neck-morphology.html#cb62-5" aria-hidden="true" tabindex="-1"></a>                            <span class="at">iter =</span> <span class="dv">9999</span>)</span>
-<span id="cb62-6"><a href="dgm-neck-morphology.html#cb62-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb62-7"><a href="dgm-neck-morphology.html#cb62-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Procrustes ANOVA: do neck sizes differ as a function of vessel form?</span></span>
-<span id="cb62-8"><a href="dgm-neck-morphology.html#cb62-8" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.size.type)</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="dgm-neck-morphology.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># neck size as a function of vessel form (bottle/jar)?</span></span>
+<span id="cb67-2"><a href="dgm-neck-morphology.html#cb67-2" aria-hidden="true" tabindex="-1"></a>fit.size.type <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(size <span class="sc">~</span> type,</span>
+<span id="cb67-3"><a href="dgm-neck-morphology.html#cb67-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">data =</span> gdf,</span>
+<span id="cb67-4"><a href="dgm-neck-morphology.html#cb67-4" aria-hidden="true" tabindex="-1"></a>                            <span class="at">print.progress =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb67-5"><a href="dgm-neck-morphology.html#cb67-5" aria-hidden="true" tabindex="-1"></a>                            <span class="at">iter =</span> <span class="dv">9999</span>)</span>
+<span id="cb67-6"><a href="dgm-neck-morphology.html#cb67-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-7"><a href="dgm-neck-morphology.html#cb67-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Procrustes ANOVA: do neck sizes differ as a function of vessel form?</span></span>
+<span id="cb67-8"><a href="dgm-neck-morphology.html#cb67-8" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.size.type)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -709,14 +709,14 @@ div.csl-indent {
 ## Total     38 27604.5                                      
 ## 
 ## Call: procD.lm(f1 = size ~ type, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="dgm-neck-morphology.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># neck shape as a function of vessel form?</span></span>
-<span id="cb64-2"><a href="dgm-neck-morphology.html#cb64-2" aria-hidden="true" tabindex="-1"></a>fit.shape.type <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> type,</span>
-<span id="cb64-3"><a href="dgm-neck-morphology.html#cb64-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> gdf,</span>
-<span id="cb64-4"><a href="dgm-neck-morphology.html#cb64-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">print.progress =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb64-5"><a href="dgm-neck-morphology.html#cb64-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">iter =</span> <span class="dv">9999</span>)</span>
-<span id="cb64-6"><a href="dgm-neck-morphology.html#cb64-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-7"><a href="dgm-neck-morphology.html#cb64-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Procrustes ANOVA: do neck shapes differ as a function of vessel form?</span></span>
-<span id="cb64-8"><a href="dgm-neck-morphology.html#cb64-8" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.type)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="dgm-neck-morphology.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># neck shape as a function of vessel form?</span></span>
+<span id="cb69-2"><a href="dgm-neck-morphology.html#cb69-2" aria-hidden="true" tabindex="-1"></a>fit.shape.type <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> type,</span>
+<span id="cb69-3"><a href="dgm-neck-morphology.html#cb69-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> gdf,</span>
+<span id="cb69-4"><a href="dgm-neck-morphology.html#cb69-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">print.progress =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb69-5"><a href="dgm-neck-morphology.html#cb69-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">iter =</span> <span class="dv">9999</span>)</span>
+<span id="cb69-6"><a href="dgm-neck-morphology.html#cb69-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-7"><a href="dgm-neck-morphology.html#cb69-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Procrustes ANOVA: do neck shapes differ as a function of vessel form?</span></span>
+<span id="cb69-8"><a href="dgm-neck-morphology.html#cb69-8" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.type)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -736,25 +736,25 @@ div.csl-indent {
 </div>
 <div id="mean-shapes-1" class="section level2 hasAnchor" number="4.5">
 <h2><span class="header-section-number">4.5</span> Mean shapes<a href="dgm-neck-morphology.html#mean-shapes-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="dgm-neck-morphology.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset landmark coordinates to produce mean shapes</span></span>
-<span id="cb66-2"><a href="dgm-neck-morphology.html#cb66-2" aria-hidden="true" tabindex="-1"></a>new.coords<span class="ot">&lt;-</span><span class="fu">coords.subset</span>(<span class="at">A =</span> Y.gpa<span class="sc">$</span>coords,</span>
-<span id="cb66-3"><a href="dgm-neck-morphology.html#cb66-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">group =</span> qdata<span class="sc">$</span>type)</span>
-<span id="cb66-4"><a href="dgm-neck-morphology.html#cb66-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(new.coords)</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="dgm-neck-morphology.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset landmark coordinates to produce mean shapes</span></span>
+<span id="cb71-2"><a href="dgm-neck-morphology.html#cb71-2" aria-hidden="true" tabindex="-1"></a>new.coords<span class="ot">&lt;-</span><span class="fu">coords.subset</span>(<span class="at">A =</span> Y.gpa<span class="sc">$</span>coords,</span>
+<span id="cb71-3"><a href="dgm-neck-morphology.html#cb71-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">group =</span> qdata<span class="sc">$</span>type)</span>
+<span id="cb71-4"><a href="dgm-neck-morphology.html#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(new.coords)</span></code></pre></div>
 <pre><code>## [1] &quot;bottle&quot; &quot;jar&quot;</code></pre>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="dgm-neck-morphology.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># type shape means</span></span>
-<span id="cb68-2"><a href="dgm-neck-morphology.html#cb68-2" aria-hidden="true" tabindex="-1"></a>mean <span class="ot">&lt;-</span> <span class="fu">lapply</span>(new.coords, mshape)</span>
-<span id="cb68-3"><a href="dgm-neck-morphology.html#cb68-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb68-4"><a href="dgm-neck-morphology.html#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot mean shapes (type)</span></span>
-<span id="cb68-5"><a href="dgm-neck-morphology.html#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>bottle)</span>
-<span id="cb68-6"><a href="dgm-neck-morphology.html#cb68-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>jar)</span>
-<span id="cb68-7"><a href="dgm-neck-morphology.html#cb68-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb68-8"><a href="dgm-neck-morphology.html#cb68-8" aria-hidden="true" tabindex="-1"></a><span class="co"># comparison plots</span></span>
-<span id="cb68-9"><a href="dgm-neck-morphology.html#cb68-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>bottle,</span>
-<span id="cb68-10"><a href="dgm-neck-morphology.html#cb68-10" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>jar, </span>
-<span id="cb68-11"><a href="dgm-neck-morphology.html#cb68-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="fu">c</span>(<span class="st">&quot;points&quot;</span>),</span>
-<span id="cb68-12"><a href="dgm-neck-morphology.html#cb68-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag =</span> <span class="dv">1</span>)</span>
-<span id="cb68-13"><a href="dgm-neck-morphology.html#cb68-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb68-14"><a href="dgm-neck-morphology.html#cb68-14" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/mshape-neck.png&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="dgm-neck-morphology.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># type shape means</span></span>
+<span id="cb73-2"><a href="dgm-neck-morphology.html#cb73-2" aria-hidden="true" tabindex="-1"></a>mean <span class="ot">&lt;-</span> <span class="fu">lapply</span>(new.coords, mshape)</span>
+<span id="cb73-3"><a href="dgm-neck-morphology.html#cb73-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-4"><a href="dgm-neck-morphology.html#cb73-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot mean shapes (type)</span></span>
+<span id="cb73-5"><a href="dgm-neck-morphology.html#cb73-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>bottle)</span>
+<span id="cb73-6"><a href="dgm-neck-morphology.html#cb73-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>jar)</span>
+<span id="cb73-7"><a href="dgm-neck-morphology.html#cb73-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-8"><a href="dgm-neck-morphology.html#cb73-8" aria-hidden="true" tabindex="-1"></a><span class="co"># comparison plots</span></span>
+<span id="cb73-9"><a href="dgm-neck-morphology.html#cb73-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>bottle,</span>
+<span id="cb73-10"><a href="dgm-neck-morphology.html#cb73-10" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>jar, </span>
+<span id="cb73-11"><a href="dgm-neck-morphology.html#cb73-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="fu">c</span>(<span class="st">&quot;points&quot;</span>),</span>
+<span id="cb73-12"><a href="dgm-neck-morphology.html#cb73-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag =</span> <span class="dv">1</span>)</span>
+<span id="cb73-13"><a href="dgm-neck-morphology.html#cb73-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-14"><a href="dgm-neck-morphology.html#cb73-14" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/mshape-neck.png&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/mshape-neck.png" alt="Mean shapes for bottles (a), jars (b), and comparison of bottle (gray) and jar (black) neck shapes (c)." width="100%" />
 <p class="caption">

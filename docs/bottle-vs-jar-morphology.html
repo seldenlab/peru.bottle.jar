@@ -23,7 +23,7 @@
 <meta name="author" content="R. Alan Covey, Robert Z. Selden Jr., Nicole Payntar, and Astrid Runggaldier" />
 
 
-<meta name="date" content="2022-10-31" />
+<meta name="date" content="2022-11-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -273,53 +273,60 @@ div.csl-indent {
 <span id="cb27-2"><a href="bottle-vs-jar-morphology.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(&quot;mlcollyer/RRPP&quot;)</span></span>
 <span id="cb27-3"><a href="bottle-vs-jar-morphology.html#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(&quot;geomorphR/geomorph&quot;, ref = &quot;Stable&quot;, build_vignettes = TRUE)</span></span>
 <span id="cb27-4"><a href="bottle-vs-jar-morphology.html#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb27-5"><a href="bottle-vs-jar-morphology.html#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geomorph)</span>
-<span id="cb27-6"><a href="bottle-vs-jar-morphology.html#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb27-7"><a href="bottle-vs-jar-morphology.html#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wesanderson)</span>
-<span id="cb27-8"><a href="bottle-vs-jar-morphology.html#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-9"><a href="bottle-vs-jar-morphology.html#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="co"># read GM data</span></span>
-<span id="cb27-10"><a href="bottle-vs-jar-morphology.html#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;readmulti.csv.R&#39;</span>)</span>
-<span id="cb27-11"><a href="bottle-vs-jar-morphology.html#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;./data&quot;</span>)</span>
-<span id="cb27-12"><a href="bottle-vs-jar-morphology.html#cb27-12" aria-hidden="true" tabindex="-1"></a>filelist <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">&quot;.csv&quot;</span>)</span>
-<span id="cb27-13"><a href="bottle-vs-jar-morphology.html#cb27-13" aria-hidden="true" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">readmulti.csv</span>(filelist)</span>
-<span id="cb27-14"><a href="bottle-vs-jar-morphology.html#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;../&quot;</span>)</span>
-<span id="cb27-15"><a href="bottle-vs-jar-morphology.html#cb27-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-16"><a href="bottle-vs-jar-morphology.html#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="co"># read qualitative data</span></span>
-<span id="cb27-17"><a href="bottle-vs-jar-morphology.html#cb27-17" aria-hidden="true" tabindex="-1"></a>qdata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;qdata.csv&quot;</span>, </span>
-<span id="cb27-18"><a href="bottle-vs-jar-morphology.html#cb27-18" aria-hidden="true" tabindex="-1"></a>                  <span class="at">header =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb27-19"><a href="bottle-vs-jar-morphology.html#cb27-19" aria-hidden="true" tabindex="-1"></a>                  <span class="at">row.names =</span> <span class="dv">1</span>)</span>
-<span id="cb27-20"><a href="bottle-vs-jar-morphology.html#cb27-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-21"><a href="bottle-vs-jar-morphology.html#cb27-21" aria-hidden="true" tabindex="-1"></a>qdata <span class="ot">&lt;-</span> qdata[<span class="fu">match</span>(<span class="fu">dimnames</span>(coords)[[<span class="dv">3</span>]],</span>
-<span id="cb27-22"><a href="bottle-vs-jar-morphology.html#cb27-22" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">rownames</span>(qdata)),]</span></code></pre></div>
+<span id="cb27-5"><a href="bottle-vs-jar-morphology.html#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geomorph)</span></code></pre></div>
+<pre><code>## Loading required package: rgl</code></pre>
+<pre><code>## Loading required package: Matrix</code></pre>
+<pre><code>## 
+## Attaching package: &#39;Matrix&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:tidyr&#39;:
+## 
+##     expand, pack, unpack</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="bottle-vs-jar-morphology.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb32-2"><a href="bottle-vs-jar-morphology.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wesanderson)</span>
+<span id="cb32-3"><a href="bottle-vs-jar-morphology.html#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="bottle-vs-jar-morphology.html#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># read GM data</span></span>
+<span id="cb32-5"><a href="bottle-vs-jar-morphology.html#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;readmulti.csv.R&#39;</span>)</span>
+<span id="cb32-6"><a href="bottle-vs-jar-morphology.html#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;./data&quot;</span>)</span>
+<span id="cb32-7"><a href="bottle-vs-jar-morphology.html#cb32-7" aria-hidden="true" tabindex="-1"></a>filelist <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">&quot;.csv&quot;</span>)</span>
+<span id="cb32-8"><a href="bottle-vs-jar-morphology.html#cb32-8" aria-hidden="true" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">readmulti.csv</span>(filelist)</span>
+<span id="cb32-9"><a href="bottle-vs-jar-morphology.html#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;../&quot;</span>)</span>
+<span id="cb32-10"><a href="bottle-vs-jar-morphology.html#cb32-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-11"><a href="bottle-vs-jar-morphology.html#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="co"># read qualitative data</span></span>
+<span id="cb32-12"><a href="bottle-vs-jar-morphology.html#cb32-12" aria-hidden="true" tabindex="-1"></a>qdata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;qdata.csv&quot;</span>, </span>
+<span id="cb32-13"><a href="bottle-vs-jar-morphology.html#cb32-13" aria-hidden="true" tabindex="-1"></a>                  <span class="at">header =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb32-14"><a href="bottle-vs-jar-morphology.html#cb32-14" aria-hidden="true" tabindex="-1"></a>                  <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb32-15"><a href="bottle-vs-jar-morphology.html#cb32-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-16"><a href="bottle-vs-jar-morphology.html#cb32-16" aria-hidden="true" tabindex="-1"></a>qdata <span class="ot">&lt;-</span> qdata[<span class="fu">match</span>(<span class="fu">dimnames</span>(coords)[[<span class="dv">3</span>]],</span>
+<span id="cb32-17"><a href="bottle-vs-jar-morphology.html#cb32-17" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">rownames</span>(qdata)),]</span></code></pre></div>
 </div>
 <div id="generalised-procrustes-analysis" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Generalised Procrustes Analysis<a href="bottle-vs-jar-morphology.html#generalised-procrustes-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Landmark data were aligned to a global coordinate system <span class="citation">(<a href="#ref-RN11622" role="doc-biblioref">Kendall 1981</a>, <a href="#ref-RN11623" role="doc-biblioref">1984</a>; <a href="#ref-RN11563" role="doc-biblioref">Slice 2001</a>)</span>, achieved through generalised Procrustes superimposition <span class="citation">(<a href="#ref-RN478" role="doc-biblioref">Rohlf and Slice 1990</a>)</span> performed in R 4.0.3 <span class="citation">(<a href="#ref-R" role="doc-biblioref">R Core Development Team, 2020</a>)</span> using the <code>geomorph</code> library v. 3.3.2 <span class="citation">(<a href="#ref-RN11530" role="doc-biblioref">Adams et al. 2017</a>; <a href="#ref-RN1774" role="doc-biblioref">Adams and Otárola-Castillo 2013</a>)</span>. Procrustes superimposition translates, scales, and rotates the coordinate data to allow for comparisons among objects <span class="citation">(<a href="#ref-RN11564" role="doc-biblioref">Gower 1975</a>; <a href="#ref-RN478" role="doc-biblioref">Rohlf and Slice 1990</a>)</span>. The <code>geomorph</code> package uses a partial Procrustes superimposition that projects the aligned specimens into tangent space subsequent to alignment in preparation for the use of multivariate methods that assume linear space <span class="citation">(<a href="#ref-RN1646" role="doc-biblioref">Rohlf 1999</a>; <a href="#ref-RN11563" role="doc-biblioref">Slice 2001</a>)</span>.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="bottle-vs-jar-morphology.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gpa</span></span>
-<span id="cb28-2"><a href="bottle-vs-jar-morphology.html#cb28-2" aria-hidden="true" tabindex="-1"></a>Y.gpa <span class="ot">&lt;-</span> <span class="fu">gpagen</span>(coords, </span>
-<span id="cb28-3"><a href="bottle-vs-jar-morphology.html#cb28-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">PrinAxes =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb28-4"><a href="bottle-vs-jar-morphology.html#cb28-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">ProcD =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb28-5"><a href="bottle-vs-jar-morphology.html#cb28-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">Proj =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb28-6"><a href="bottle-vs-jar-morphology.html#cb28-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">print.progress =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb28-7"><a href="bottle-vs-jar-morphology.html#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-8"><a href="bottle-vs-jar-morphology.html#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co"># geomorph data frame</span></span>
-<span id="cb28-9"><a href="bottle-vs-jar-morphology.html#cb28-9" aria-hidden="true" tabindex="-1"></a>gdf <span class="ot">&lt;-</span> <span class="fu">geomorph.data.frame</span>(<span class="at">shape =</span> Y.gpa<span class="sc">$</span>coords, </span>
-<span id="cb28-10"><a href="bottle-vs-jar-morphology.html#cb28-10" aria-hidden="true" tabindex="-1"></a>                           <span class="at">size =</span> Y.gpa<span class="sc">$</span>Csize,</span>
-<span id="cb28-11"><a href="bottle-vs-jar-morphology.html#cb28-11" aria-hidden="true" tabindex="-1"></a>                           <span class="at">type =</span> qdata<span class="sc">$</span>type)</span>
-<span id="cb28-12"><a href="bottle-vs-jar-morphology.html#cb28-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-13"><a href="bottle-vs-jar-morphology.html#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="co"># render 3d gpa plot</span></span>
-<span id="cb28-14"><a href="bottle-vs-jar-morphology.html#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co">#plot(Y.gpa)</span></span>
-<span id="cb28-15"><a href="bottle-vs-jar-morphology.html#cb28-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-16"><a href="bottle-vs-jar-morphology.html#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="co"># gpa plot</span></span>
-<span id="cb28-17"><a href="bottle-vs-jar-morphology.html#cb28-17" aria-hidden="true" tabindex="-1"></a><span class="co">#knitr::include_graphics(&#39;images/gpa3d.png&#39;)</span></span>
-<span id="cb28-18"><a href="bottle-vs-jar-morphology.html#cb28-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-19"><a href="bottle-vs-jar-morphology.html#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="co"># add centroid size to qdata</span></span>
-<span id="cb28-20"><a href="bottle-vs-jar-morphology.html#cb28-20" aria-hidden="true" tabindex="-1"></a>qdata<span class="sc">$</span>csz <span class="ot">&lt;-</span> Y.gpa<span class="sc">$</span>Csize</span>
-<span id="cb28-21"><a href="bottle-vs-jar-morphology.html#cb28-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-22"><a href="bottle-vs-jar-morphology.html#cb28-22" aria-hidden="true" tabindex="-1"></a><span class="co"># print updated qdata with centroid size</span></span>
-<span id="cb28-23"><a href="bottle-vs-jar-morphology.html#cb28-23" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(qdata, </span>
-<span id="cb28-24"><a href="bottle-vs-jar-morphology.html#cb28-24" aria-hidden="true" tabindex="-1"></a>             <span class="at">align =</span> <span class="st">&quot;lccccc&quot;</span>, </span>
-<span id="cb28-25"><a href="bottle-vs-jar-morphology.html#cb28-25" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Modified attributes included in qdata.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="bottle-vs-jar-morphology.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gpa</span></span>
+<span id="cb33-2"><a href="bottle-vs-jar-morphology.html#cb33-2" aria-hidden="true" tabindex="-1"></a>Y.gpa <span class="ot">&lt;-</span> <span class="fu">gpagen</span>(coords, </span>
+<span id="cb33-3"><a href="bottle-vs-jar-morphology.html#cb33-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">PrinAxes =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb33-4"><a href="bottle-vs-jar-morphology.html#cb33-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">ProcD =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb33-5"><a href="bottle-vs-jar-morphology.html#cb33-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">Proj =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb33-6"><a href="bottle-vs-jar-morphology.html#cb33-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">print.progress =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb33-7"><a href="bottle-vs-jar-morphology.html#cb33-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-8"><a href="bottle-vs-jar-morphology.html#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="co"># geomorph data frame</span></span>
+<span id="cb33-9"><a href="bottle-vs-jar-morphology.html#cb33-9" aria-hidden="true" tabindex="-1"></a>gdf <span class="ot">&lt;-</span> <span class="fu">geomorph.data.frame</span>(<span class="at">shape =</span> Y.gpa<span class="sc">$</span>coords, </span>
+<span id="cb33-10"><a href="bottle-vs-jar-morphology.html#cb33-10" aria-hidden="true" tabindex="-1"></a>                           <span class="at">size =</span> Y.gpa<span class="sc">$</span>Csize,</span>
+<span id="cb33-11"><a href="bottle-vs-jar-morphology.html#cb33-11" aria-hidden="true" tabindex="-1"></a>                           <span class="at">type =</span> qdata<span class="sc">$</span>type)</span>
+<span id="cb33-12"><a href="bottle-vs-jar-morphology.html#cb33-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-13"><a href="bottle-vs-jar-morphology.html#cb33-13" aria-hidden="true" tabindex="-1"></a><span class="co"># render 3d gpa plot</span></span>
+<span id="cb33-14"><a href="bottle-vs-jar-morphology.html#cb33-14" aria-hidden="true" tabindex="-1"></a><span class="co">#plot(Y.gpa)</span></span>
+<span id="cb33-15"><a href="bottle-vs-jar-morphology.html#cb33-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-16"><a href="bottle-vs-jar-morphology.html#cb33-16" aria-hidden="true" tabindex="-1"></a><span class="co"># gpa plot</span></span>
+<span id="cb33-17"><a href="bottle-vs-jar-morphology.html#cb33-17" aria-hidden="true" tabindex="-1"></a><span class="co">#knitr::include_graphics(&#39;images/gpa3d.png&#39;)</span></span>
+<span id="cb33-18"><a href="bottle-vs-jar-morphology.html#cb33-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-19"><a href="bottle-vs-jar-morphology.html#cb33-19" aria-hidden="true" tabindex="-1"></a><span class="co"># add centroid size to qdata</span></span>
+<span id="cb33-20"><a href="bottle-vs-jar-morphology.html#cb33-20" aria-hidden="true" tabindex="-1"></a>qdata<span class="sc">$</span>csz <span class="ot">&lt;-</span> Y.gpa<span class="sc">$</span>Csize</span>
+<span id="cb33-21"><a href="bottle-vs-jar-morphology.html#cb33-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-22"><a href="bottle-vs-jar-morphology.html#cb33-22" aria-hidden="true" tabindex="-1"></a><span class="co"># print updated qdata with centroid size</span></span>
+<span id="cb33-23"><a href="bottle-vs-jar-morphology.html#cb33-23" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(qdata, </span>
+<span id="cb33-24"><a href="bottle-vs-jar-morphology.html#cb33-24" aria-hidden="true" tabindex="-1"></a>             <span class="at">align =</span> <span class="st">&quot;lccccc&quot;</span>, </span>
+<span id="cb33-25"><a href="bottle-vs-jar-morphology.html#cb33-25" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Modified attributes included in qdata.&quot;</span>)</span></code></pre></div>
 <table>
 <caption><span id="tab:gpa">Table 3.1: </span>Modified attributes included in qdata.</caption>
 <thead>
@@ -569,21 +576,21 @@ div.csl-indent {
 </table>
 <div id="boxplot" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Boxplot<a href="bottle-vs-jar-morphology.html#boxplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="bottle-vs-jar-morphology.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># attributes for boxplot</span></span>
-<span id="cb29-2"><a href="bottle-vs-jar-morphology.html#cb29-2" aria-hidden="true" tabindex="-1"></a>csz <span class="ot">&lt;-</span> qdata<span class="sc">$</span>csz</span>
-<span id="cb29-3"><a href="bottle-vs-jar-morphology.html#cb29-3" aria-hidden="true" tabindex="-1"></a>group <span class="ot">&lt;-</span>  qdata<span class="sc">$</span>group</span>
-<span id="cb29-4"><a href="bottle-vs-jar-morphology.html#cb29-4" aria-hidden="true" tabindex="-1"></a>type <span class="ot">&lt;-</span> qdata<span class="sc">$</span>type</span>
-<span id="cb29-5"><a href="bottle-vs-jar-morphology.html#cb29-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-6"><a href="bottle-vs-jar-morphology.html#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of vessel centroid size by type</span></span>
-<span id="cb29-7"><a href="bottle-vs-jar-morphology.html#cb29-7" aria-hidden="true" tabindex="-1"></a>csz.type <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(qdata, <span class="fu">aes</span>(<span class="at">x =</span> type, <span class="at">y =</span> csz, <span class="at">color =</span> type)) <span class="sc">+</span> </span>
-<span id="cb29-8"><a href="bottle-vs-jar-morphology.html#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb29-9"><a href="bottle-vs-jar-morphology.html#cb29-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb29-10"><a href="bottle-vs-jar-morphology.html#cb29-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb29-11"><a href="bottle-vs-jar-morphology.html#cb29-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
-<span id="cb29-12"><a href="bottle-vs-jar-morphology.html#cb29-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Group&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Centroid Size&#39;</span>)</span>
-<span id="cb29-13"><a href="bottle-vs-jar-morphology.html#cb29-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-14"><a href="bottle-vs-jar-morphology.html#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="co"># render plot</span></span>
-<span id="cb29-15"><a href="bottle-vs-jar-morphology.html#cb29-15" aria-hidden="true" tabindex="-1"></a>csz.type</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="bottle-vs-jar-morphology.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># attributes for boxplot</span></span>
+<span id="cb34-2"><a href="bottle-vs-jar-morphology.html#cb34-2" aria-hidden="true" tabindex="-1"></a>csz <span class="ot">&lt;-</span> qdata<span class="sc">$</span>csz</span>
+<span id="cb34-3"><a href="bottle-vs-jar-morphology.html#cb34-3" aria-hidden="true" tabindex="-1"></a>group <span class="ot">&lt;-</span>  qdata<span class="sc">$</span>group</span>
+<span id="cb34-4"><a href="bottle-vs-jar-morphology.html#cb34-4" aria-hidden="true" tabindex="-1"></a>type <span class="ot">&lt;-</span> qdata<span class="sc">$</span>type</span>
+<span id="cb34-5"><a href="bottle-vs-jar-morphology.html#cb34-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-6"><a href="bottle-vs-jar-morphology.html#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of vessel centroid size by type</span></span>
+<span id="cb34-7"><a href="bottle-vs-jar-morphology.html#cb34-7" aria-hidden="true" tabindex="-1"></a>csz.type <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(qdata, <span class="fu">aes</span>(<span class="at">x =</span> type, <span class="at">y =</span> csz, <span class="at">color =</span> type)) <span class="sc">+</span> </span>
+<span id="cb34-8"><a href="bottle-vs-jar-morphology.html#cb34-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb34-9"><a href="bottle-vs-jar-morphology.html#cb34-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb34-10"><a href="bottle-vs-jar-morphology.html#cb34-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb34-11"><a href="bottle-vs-jar-morphology.html#cb34-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
+<span id="cb34-12"><a href="bottle-vs-jar-morphology.html#cb34-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Group&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Centroid Size&#39;</span>)</span>
+<span id="cb34-13"><a href="bottle-vs-jar-morphology.html#cb34-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-14"><a href="bottle-vs-jar-morphology.html#cb34-14" aria-hidden="true" tabindex="-1"></a><span class="co"># render plot</span></span>
+<span id="cb34-15"><a href="bottle-vs-jar-morphology.html#cb34-15" aria-hidden="true" tabindex="-1"></a>csz.type</span></code></pre></div>
 <pre><code>## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.</code></pre>
 <div class="figure"><span style="display:block;" id="fig:box1"></span>
 <img src="chimu1_files/figure-html/box1-1.png" alt="Boxplot of centroid size by spatial/temporal unit." width="100%" />
@@ -596,9 +603,9 @@ Figure 3.1: Boxplot of centroid size by spatial/temporal unit.
 <div id="principal-components-analysis" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Principal Components Analysis<a href="bottle-vs-jar-morphology.html#principal-components-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Principal components analysis <span class="citation">(<a href="#ref-RN1746" role="doc-biblioref">Jolliffe 2002</a>)</span> was used to visualise shape variation among the bottles. The shape changes described by each principal axis are commonly visualised using thin-plate spline warping of a reference 3D mesh <span class="citation">(<a href="#ref-RN1731" role="doc-biblioref">Klingenberg 2013</a>; <a href="#ref-RN479" role="doc-biblioref">Sherratt et al. 2014</a>)</span>.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="bottle-vs-jar-morphology.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># principal components analysis</span></span>
-<span id="cb31-2"><a href="bottle-vs-jar-morphology.html#cb31-2" aria-hidden="true" tabindex="-1"></a>pca<span class="ot">&lt;-</span><span class="fu">gm.prcomp</span>(Y.gpa<span class="sc">$</span>coords)</span>
-<span id="cb31-3"><a href="bottle-vs-jar-morphology.html#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pca)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="bottle-vs-jar-morphology.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># principal components analysis</span></span>
+<span id="cb36-2"><a href="bottle-vs-jar-morphology.html#cb36-2" aria-hidden="true" tabindex="-1"></a>pca<span class="ot">&lt;-</span><span class="fu">gm.prcomp</span>(Y.gpa<span class="sc">$</span>coords)</span>
+<span id="cb36-3"><a href="bottle-vs-jar-morphology.html#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pca)</span></code></pre></div>
 <pre><code>## 
 ## Ordination type: Principal Component Analysis 
 ## Centering by OLS mean
@@ -635,43 +642,43 @@ Figure 3.1: Boxplot of centroid size by spatial/temporal unit.
 ## Eigenvalues            6.797149e-08 2.696693e-09
 ## Proportion of Variance 6.156020e-06 2.442333e-07
 ## Cumulative Proportion  9.999998e-01 1.000000e+00</code></pre>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="bottle-vs-jar-morphology.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters (types)</span></span>
-<span id="cb33-2"><a href="bottle-vs-jar-morphology.html#cb33-2" aria-hidden="true" tabindex="-1"></a>pch.gps.type <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="fu">as.factor</span>(type)]</span>
-<span id="cb33-3"><a href="bottle-vs-jar-morphology.html#cb33-3" aria-hidden="true" tabindex="-1"></a>col.gps.type <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(type)]</span>
-<span id="cb33-4"><a href="bottle-vs-jar-morphology.html#cb33-4" aria-hidden="true" tabindex="-1"></a>col.hull.type <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
-<span id="cb33-5"><a href="bottle-vs-jar-morphology.html#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-6"><a href="bottle-vs-jar-morphology.html#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by comb</span></span>
-<span id="cb33-7"><a href="bottle-vs-jar-morphology.html#cb33-7" aria-hidden="true" tabindex="-1"></a>pc.plot.type <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
-<span id="cb33-8"><a href="bottle-vs-jar-morphology.html#cb33-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb33-9"><a href="bottle-vs-jar-morphology.html#cb33-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.type,</span>
-<span id="cb33-10"><a href="bottle-vs-jar-morphology.html#cb33-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.type)</span>
-<span id="cb33-11"><a href="bottle-vs-jar-morphology.html#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="fu">shapeHulls</span>(pc.plot.type,</span>
-<span id="cb33-12"><a href="bottle-vs-jar-morphology.html#cb33-12" aria-hidden="true" tabindex="-1"></a>           <span class="at">groups =</span> type,</span>
-<span id="cb33-13"><a href="bottle-vs-jar-morphology.html#cb33-13" aria-hidden="true" tabindex="-1"></a>           <span class="at">group.cols =</span> col.hull.type)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="bottle-vs-jar-morphology.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters (types)</span></span>
+<span id="cb38-2"><a href="bottle-vs-jar-morphology.html#cb38-2" aria-hidden="true" tabindex="-1"></a>pch.gps.type <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="fu">as.factor</span>(type)]</span>
+<span id="cb38-3"><a href="bottle-vs-jar-morphology.html#cb38-3" aria-hidden="true" tabindex="-1"></a>col.gps.type <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(type)]</span>
+<span id="cb38-4"><a href="bottle-vs-jar-morphology.html#cb38-4" aria-hidden="true" tabindex="-1"></a>col.hull.type <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
+<span id="cb38-5"><a href="bottle-vs-jar-morphology.html#cb38-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-6"><a href="bottle-vs-jar-morphology.html#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by comb</span></span>
+<span id="cb38-7"><a href="bottle-vs-jar-morphology.html#cb38-7" aria-hidden="true" tabindex="-1"></a>pc.plot.type <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
+<span id="cb38-8"><a href="bottle-vs-jar-morphology.html#cb38-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb38-9"><a href="bottle-vs-jar-morphology.html#cb38-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.type,</span>
+<span id="cb38-10"><a href="bottle-vs-jar-morphology.html#cb38-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.type)</span>
+<span id="cb38-11"><a href="bottle-vs-jar-morphology.html#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="fu">shapeHulls</span>(pc.plot.type,</span>
+<span id="cb38-12"><a href="bottle-vs-jar-morphology.html#cb38-12" aria-hidden="true" tabindex="-1"></a>           <span class="at">groups =</span> type,</span>
+<span id="cb38-13"><a href="bottle-vs-jar-morphology.html#cb38-13" aria-hidden="true" tabindex="-1"></a>           <span class="at">group.cols =</span> col.hull.type)</span></code></pre></div>
 <p><img src="chimu1_files/figure-html/gmpca-1.png" width="100%" /></p>
 <div id="minimamaxima-of-pc12-with-warp-grids" class="section level3 hasAnchor" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> Minima/maxima of PC1/2 with warp grids<a href="bottle-vs-jar-morphology.html#minimamaxima-of-pc12-with-warp-grids" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="bottle-vs-jar-morphology.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot x/y maxima/minima</span></span>
-<span id="cb34-2"><a href="bottle-vs-jar-morphology.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="do">## x - minima</span></span>
-<span id="cb34-3"><a href="bottle-vs-jar-morphology.html#cb34-3" aria-hidden="true" tabindex="-1"></a>ref <span class="ot">&lt;-</span> mean.shape <span class="ot">&lt;-</span> <span class="fu">mshape</span>(Y.gpa<span class="sc">$</span>coords)</span>
-<span id="cb34-4"><a href="bottle-vs-jar-morphology.html#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(<span class="at">M1 =</span> ref, </span>
-<span id="cb34-5"><a href="bottle-vs-jar-morphology.html#cb34-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">M2 =</span> pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>min, </span>
-<span id="cb34-6"><a href="bottle-vs-jar-morphology.html#cb34-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;TPS&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="bottle-vs-jar-morphology.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot x/y maxima/minima</span></span>
+<span id="cb39-2"><a href="bottle-vs-jar-morphology.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="do">## x - minima</span></span>
+<span id="cb39-3"><a href="bottle-vs-jar-morphology.html#cb39-3" aria-hidden="true" tabindex="-1"></a>ref <span class="ot">&lt;-</span> mean.shape <span class="ot">&lt;-</span> <span class="fu">mshape</span>(Y.gpa<span class="sc">$</span>coords)</span>
+<span id="cb39-4"><a href="bottle-vs-jar-morphology.html#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(<span class="at">M1 =</span> ref, </span>
+<span id="cb39-5"><a href="bottle-vs-jar-morphology.html#cb39-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">M2 =</span> pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>min, </span>
+<span id="cb39-6"><a href="bottle-vs-jar-morphology.html#cb39-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;TPS&quot;</span>)</span></code></pre></div>
 <p><img src="chimu1_files/figure-html/min.max.botjar-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="bottle-vs-jar-morphology.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(<span class="at">M1 =</span> ref, </span>
-<span id="cb35-2"><a href="bottle-vs-jar-morphology.html#cb35-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">M2 =</span> pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>max, </span>
-<span id="cb35-3"><a href="bottle-vs-jar-morphology.html#cb35-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;TPS&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="bottle-vs-jar-morphology.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(<span class="at">M1 =</span> ref, </span>
+<span id="cb40-2"><a href="bottle-vs-jar-morphology.html#cb40-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">M2 =</span> pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>max, </span>
+<span id="cb40-3"><a href="bottle-vs-jar-morphology.html#cb40-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;TPS&quot;</span>)</span></code></pre></div>
 <p><img src="chimu1_files/figure-html/min.max.botjar-2.png" width="100%" /></p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="bottle-vs-jar-morphology.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(<span class="at">M1 =</span> ref, </span>
-<span id="cb36-2"><a href="bottle-vs-jar-morphology.html#cb36-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">M2 =</span> pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>min, </span>
-<span id="cb36-3"><a href="bottle-vs-jar-morphology.html#cb36-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;TPS&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="bottle-vs-jar-morphology.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(<span class="at">M1 =</span> ref, </span>
+<span id="cb41-2"><a href="bottle-vs-jar-morphology.html#cb41-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">M2 =</span> pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>min, </span>
+<span id="cb41-3"><a href="bottle-vs-jar-morphology.html#cb41-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;TPS&quot;</span>)</span></code></pre></div>
 <p><img src="chimu1_files/figure-html/min.max.botjar-3.png" width="100%" /></p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="bottle-vs-jar-morphology.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(<span class="at">M1 =</span> ref, </span>
-<span id="cb37-2"><a href="bottle-vs-jar-morphology.html#cb37-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">M2 =</span> pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>max,</span>
-<span id="cb37-3"><a href="bottle-vs-jar-morphology.html#cb37-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;TPS&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="bottle-vs-jar-morphology.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(<span class="at">M1 =</span> ref, </span>
+<span id="cb42-2"><a href="bottle-vs-jar-morphology.html#cb42-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">M2 =</span> pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>max,</span>
+<span id="cb42-3"><a href="bottle-vs-jar-morphology.html#cb42-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;TPS&quot;</span>)</span></code></pre></div>
 <p><img src="chimu1_files/figure-html/min.max.botjar-4.png" width="100%" /></p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="bottle-vs-jar-morphology.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pca warp                   </span></span>
-<span id="cb38-2"><a href="bottle-vs-jar-morphology.html#cb38-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/pca-warp-botjar.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="bottle-vs-jar-morphology.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pca warp                   </span></span>
+<span id="cb43-2"><a href="bottle-vs-jar-morphology.html#cb43-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/pca-warp-botjar.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/pca-warp-botjar.jpg" alt="Results of PCA summarising shape variation in bottles, gray; and jars, orange; with shapes + warp grids for maxima/minima of each axis." width="100%" />
 <p class="caption">
@@ -683,14 +690,14 @@ Figure 3.1: Boxplot of centroid size by spatial/temporal unit.
 <div id="vessel-size-and-shape" class="section level2 hasAnchor" number="3.4">
 <h2><span class="header-section-number">3.4</span> Vessel size and shape<a href="bottle-vs-jar-morphology.html#vessel-size-and-shape" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A residual randomisation permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs <span class="citation">(<a href="#ref-RN1655" role="doc-biblioref">Adams and Collyer 2015</a>; <a href="#ref-RN11775" role="doc-biblioref">Michael L. Collyer and Adams 2018</a>)</span>, which has higher statistical power and a greater ability to identify patterns in the data should they be present <span class="citation">(<a href="#ref-RN1719" role="doc-biblioref">Anderson and Ter Braak 2003</a>)</span>. To assess whether shape changes differ by group (geography and time), Procrustes ANOVAs <span class="citation">(<a href="#ref-RN1749" role="doc-biblioref">Goodall 1991</a>)</span> were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions <span class="citation">(<a href="#ref-RN1756" role="doc-biblioref">M. L. Collyer, Sekora, and Adams 2015</a>)</span>.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="bottle-vs-jar-morphology.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># size as a function of vessel form (bottle/jar)?</span></span>
-<span id="cb39-2"><a href="bottle-vs-jar-morphology.html#cb39-2" aria-hidden="true" tabindex="-1"></a>fit.size.type <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(size <span class="sc">~</span> type,</span>
-<span id="cb39-3"><a href="bottle-vs-jar-morphology.html#cb39-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> gdf,</span>
-<span id="cb39-4"><a href="bottle-vs-jar-morphology.html#cb39-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">print.progress =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb39-5"><a href="bottle-vs-jar-morphology.html#cb39-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">iter =</span> <span class="dv">9999</span>)</span>
-<span id="cb39-6"><a href="bottle-vs-jar-morphology.html#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-7"><a href="bottle-vs-jar-morphology.html#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Procrustes ANOVA: do sizes differ as a function of vessel form?</span></span>
-<span id="cb39-8"><a href="bottle-vs-jar-morphology.html#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.size.type)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="bottle-vs-jar-morphology.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># size as a function of vessel form (bottle/jar)?</span></span>
+<span id="cb44-2"><a href="bottle-vs-jar-morphology.html#cb44-2" aria-hidden="true" tabindex="-1"></a>fit.size.type <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(size <span class="sc">~</span> type,</span>
+<span id="cb44-3"><a href="bottle-vs-jar-morphology.html#cb44-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> gdf,</span>
+<span id="cb44-4"><a href="bottle-vs-jar-morphology.html#cb44-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">print.progress =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb44-5"><a href="bottle-vs-jar-morphology.html#cb44-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">iter =</span> <span class="dv">9999</span>)</span>
+<span id="cb44-6"><a href="bottle-vs-jar-morphology.html#cb44-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-7"><a href="bottle-vs-jar-morphology.html#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Procrustes ANOVA: do sizes differ as a function of vessel form?</span></span>
+<span id="cb44-8"><a href="bottle-vs-jar-morphology.html#cb44-8" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.size.type)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -705,14 +712,14 @@ Figure 3.1: Boxplot of centroid size by spatial/temporal unit.
 ## Total     38 374128                                     
 ## 
 ## Call: procD.lm(f1 = size ~ type, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="bottle-vs-jar-morphology.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># shape as a function of vessel form?</span></span>
-<span id="cb41-2"><a href="bottle-vs-jar-morphology.html#cb41-2" aria-hidden="true" tabindex="-1"></a>fit.shape.type <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> type,</span>
-<span id="cb41-3"><a href="bottle-vs-jar-morphology.html#cb41-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> gdf,</span>
-<span id="cb41-4"><a href="bottle-vs-jar-morphology.html#cb41-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">print.progress =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb41-5"><a href="bottle-vs-jar-morphology.html#cb41-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">iter =</span> <span class="dv">9999</span>)</span>
-<span id="cb41-6"><a href="bottle-vs-jar-morphology.html#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-7"><a href="bottle-vs-jar-morphology.html#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Procrustes ANOVA: do shapes differ as a function of vessel form?</span></span>
-<span id="cb41-8"><a href="bottle-vs-jar-morphology.html#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.type)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="bottle-vs-jar-morphology.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># shape as a function of vessel form?</span></span>
+<span id="cb46-2"><a href="bottle-vs-jar-morphology.html#cb46-2" aria-hidden="true" tabindex="-1"></a>fit.shape.type <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> type,</span>
+<span id="cb46-3"><a href="bottle-vs-jar-morphology.html#cb46-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> gdf,</span>
+<span id="cb46-4"><a href="bottle-vs-jar-morphology.html#cb46-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">print.progress =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb46-5"><a href="bottle-vs-jar-morphology.html#cb46-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">iter =</span> <span class="dv">9999</span>)</span>
+<span id="cb46-6"><a href="bottle-vs-jar-morphology.html#cb46-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-7"><a href="bottle-vs-jar-morphology.html#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Procrustes ANOVA: do shapes differ as a function of vessel form?</span></span>
+<span id="cb46-8"><a href="bottle-vs-jar-morphology.html#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.type)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -732,13 +739,13 @@ Figure 3.1: Boxplot of centroid size by spatial/temporal unit.
 </div>
 <div id="morphological-disparity" class="section level2 hasAnchor" number="3.5">
 <h2><span class="header-section-number">3.5</span> Morphological disparity<a href="bottle-vs-jar-morphology.html#morphological-disparity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="bottle-vs-jar-morphology.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: do either of the groups display greater </span></span>
-<span id="cb43-2"><a href="bottle-vs-jar-morphology.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co"># size variation among individuals relative to the other group?</span></span>
-<span id="cb43-3"><a href="bottle-vs-jar-morphology.html#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(fit.size.type, </span>
-<span id="cb43-4"><a href="bottle-vs-jar-morphology.html#cb43-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>type, </span>
-<span id="cb43-5"><a href="bottle-vs-jar-morphology.html#cb43-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
-<span id="cb43-6"><a href="bottle-vs-jar-morphology.html#cb43-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb43-7"><a href="bottle-vs-jar-morphology.html#cb43-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="bottle-vs-jar-morphology.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: do either of the groups display greater </span></span>
+<span id="cb48-2"><a href="bottle-vs-jar-morphology.html#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="co"># size variation among individuals relative to the other group?</span></span>
+<span id="cb48-3"><a href="bottle-vs-jar-morphology.html#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(fit.size.type, </span>
+<span id="cb48-4"><a href="bottle-vs-jar-morphology.html#cb48-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>type, </span>
+<span id="cb48-5"><a href="bottle-vs-jar-morphology.html#cb48-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
+<span id="cb48-6"><a href="bottle-vs-jar-morphology.html#cb48-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb48-7"><a href="bottle-vs-jar-morphology.html#cb48-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## morphol.disparity(f1 = fit.size.type, groups = qdata$type, iter = 9999,  
@@ -764,13 +771,13 @@ Figure 3.1: Boxplot of centroid size by spatial/temporal unit.
 ##        bottle    jar
 ## bottle 1.0000 0.9949
 ## jar    0.9949 1.0000</code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="bottle-vs-jar-morphology.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: do either of the groups display greater </span></span>
-<span id="cb45-2"><a href="bottle-vs-jar-morphology.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co">#shape variation among individuals relative to the other group?</span></span>
-<span id="cb45-3"><a href="bottle-vs-jar-morphology.html#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(fit.shape.type, </span>
-<span id="cb45-4"><a href="bottle-vs-jar-morphology.html#cb45-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>type, </span>
-<span id="cb45-5"><a href="bottle-vs-jar-morphology.html#cb45-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
-<span id="cb45-6"><a href="bottle-vs-jar-morphology.html#cb45-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb45-7"><a href="bottle-vs-jar-morphology.html#cb45-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="bottle-vs-jar-morphology.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: do either of the groups display greater </span></span>
+<span id="cb50-2"><a href="bottle-vs-jar-morphology.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="co">#shape variation among individuals relative to the other group?</span></span>
+<span id="cb50-3"><a href="bottle-vs-jar-morphology.html#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(fit.shape.type, </span>
+<span id="cb50-4"><a href="bottle-vs-jar-morphology.html#cb50-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>type, </span>
+<span id="cb50-5"><a href="bottle-vs-jar-morphology.html#cb50-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
+<span id="cb50-6"><a href="bottle-vs-jar-morphology.html#cb50-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb50-7"><a href="bottle-vs-jar-morphology.html#cb50-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## morphol.disparity(f1 = fit.shape.type, groups = qdata$type, iter = 9999,  
@@ -799,25 +806,25 @@ Figure 3.1: Boxplot of centroid size by spatial/temporal unit.
 </div>
 <div id="mean-shapes" class="section level2 hasAnchor" number="3.6">
 <h2><span class="header-section-number">3.6</span> Mean shapes<a href="bottle-vs-jar-morphology.html#mean-shapes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="bottle-vs-jar-morphology.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset landmark coordinates to produce mean shapes</span></span>
-<span id="cb47-2"><a href="bottle-vs-jar-morphology.html#cb47-2" aria-hidden="true" tabindex="-1"></a>new.coords<span class="ot">&lt;-</span><span class="fu">coords.subset</span>(<span class="at">A =</span> Y.gpa<span class="sc">$</span>coords,</span>
-<span id="cb47-3"><a href="bottle-vs-jar-morphology.html#cb47-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">group =</span> qdata<span class="sc">$</span>type)</span>
-<span id="cb47-4"><a href="bottle-vs-jar-morphology.html#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(new.coords)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="bottle-vs-jar-morphology.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset landmark coordinates to produce mean shapes</span></span>
+<span id="cb52-2"><a href="bottle-vs-jar-morphology.html#cb52-2" aria-hidden="true" tabindex="-1"></a>new.coords<span class="ot">&lt;-</span><span class="fu">coords.subset</span>(<span class="at">A =</span> Y.gpa<span class="sc">$</span>coords,</span>
+<span id="cb52-3"><a href="bottle-vs-jar-morphology.html#cb52-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">group =</span> qdata<span class="sc">$</span>type)</span>
+<span id="cb52-4"><a href="bottle-vs-jar-morphology.html#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(new.coords)</span></code></pre></div>
 <pre><code>## [1] &quot;bottle&quot; &quot;jar&quot;</code></pre>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="bottle-vs-jar-morphology.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># group shape means</span></span>
-<span id="cb49-2"><a href="bottle-vs-jar-morphology.html#cb49-2" aria-hidden="true" tabindex="-1"></a>mean <span class="ot">&lt;-</span> <span class="fu">lapply</span>(new.coords, mshape)</span>
-<span id="cb49-3"><a href="bottle-vs-jar-morphology.html#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-4"><a href="bottle-vs-jar-morphology.html#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot mean shapes (type)</span></span>
-<span id="cb49-5"><a href="bottle-vs-jar-morphology.html#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>bottle)</span>
-<span id="cb49-6"><a href="bottle-vs-jar-morphology.html#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>jar)</span>
-<span id="cb49-7"><a href="bottle-vs-jar-morphology.html#cb49-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-8"><a href="bottle-vs-jar-morphology.html#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="co"># comparison plots</span></span>
-<span id="cb49-9"><a href="bottle-vs-jar-morphology.html#cb49-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>bottle, </span>
-<span id="cb49-10"><a href="bottle-vs-jar-morphology.html#cb49-10" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>jar, </span>
-<span id="cb49-11"><a href="bottle-vs-jar-morphology.html#cb49-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="fu">c</span>(<span class="st">&quot;points&quot;</span>),</span>
-<span id="cb49-12"><a href="bottle-vs-jar-morphology.html#cb49-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag =</span> <span class="dv">1</span>)</span>
-<span id="cb49-13"><a href="bottle-vs-jar-morphology.html#cb49-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-14"><a href="bottle-vs-jar-morphology.html#cb49-14" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/mshape.png&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="bottle-vs-jar-morphology.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># group shape means</span></span>
+<span id="cb54-2"><a href="bottle-vs-jar-morphology.html#cb54-2" aria-hidden="true" tabindex="-1"></a>mean <span class="ot">&lt;-</span> <span class="fu">lapply</span>(new.coords, mshape)</span>
+<span id="cb54-3"><a href="bottle-vs-jar-morphology.html#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="bottle-vs-jar-morphology.html#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot mean shapes (type)</span></span>
+<span id="cb54-5"><a href="bottle-vs-jar-morphology.html#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>bottle)</span>
+<span id="cb54-6"><a href="bottle-vs-jar-morphology.html#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>jar)</span>
+<span id="cb54-7"><a href="bottle-vs-jar-morphology.html#cb54-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-8"><a href="bottle-vs-jar-morphology.html#cb54-8" aria-hidden="true" tabindex="-1"></a><span class="co"># comparison plots</span></span>
+<span id="cb54-9"><a href="bottle-vs-jar-morphology.html#cb54-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>bottle, </span>
+<span id="cb54-10"><a href="bottle-vs-jar-morphology.html#cb54-10" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>jar, </span>
+<span id="cb54-11"><a href="bottle-vs-jar-morphology.html#cb54-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="fu">c</span>(<span class="st">&quot;points&quot;</span>),</span>
+<span id="cb54-12"><a href="bottle-vs-jar-morphology.html#cb54-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag =</span> <span class="dv">1</span>)</span>
+<span id="cb54-13"><a href="bottle-vs-jar-morphology.html#cb54-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-14"><a href="bottle-vs-jar-morphology.html#cb54-14" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/mshape.png&#39;</span>)</span></code></pre></div>
 <p><img src="images/mshape.png" width="100%" /></p>
 
 </div>
