@@ -85,7 +85,7 @@ rtgroup <- ggplot(DATA, aes(x = gp, y = RT, color = gp)) +
 
 # render figure
 sitefigure<-ggarrange(odgroup, bdgroup, ndgroup, blgroup, hgroup, rtgroup,
-                  labels = c("a","b","c","d","e","f"),
+                  labels = c("b","c","d","e","f","g"),
                   ncol = 3, nrow = 2)
 sitefigure
 ```
