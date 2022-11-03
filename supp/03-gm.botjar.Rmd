@@ -45,7 +45,7 @@ gdf <- geomorph.data.frame(shape = Y.gpa$coords,
                            type = qdata$type)
 
 # render 3d gpa plot
-#plot(Y.gpa)
+plot(Y.gpa)
 
 # gpa plot
 #knitr::include_graphics('images/gpa3d.png')
