@@ -33,7 +33,7 @@ appendix: appendix.tex
 abstract: |
   After centuries of looting along Peru’s North Coast, archaeologists acknowledge that the pottery of the Chimú Empire is one of the most collected Andean artifacts, but also one of the most poorly understood.  Much of the enduring classificatory uncertainty comes from the problematic provenance of most Chimú vessels, and the fact that the distinctive blackware identified as Chimú represents the production of workshops from across an extensive area, during periods of regional political decentralization (CE 900-1200), imperial growth (CE 1200-1450), and foreign conquest by the Inca (CE 1450-1535) and Spanish (after CE 1532) empires.  This chapter builds on previous seriations and field observations, using geometric morphometric analysis of a sample of 3D-scanned Chimú bottles from publicly held collections at the University of Texas at Austin.  Since Chimú bottles were formed in workshops using molds, variations in vessel shape can serve as indicators of variable practices.  We compare a sample of common Chimú blackware bottles with a sample of _Inca-Chimú_ vessels that carry features typical of the short Inca occupation of the North Coast.  Differences between the two vessel forms offer new lines of evidence that can guide more precise classifications, as well as new interpretations of the imperial history of Peru’s North Coast.
 keywords: |
-  Sections; lists; figures; tables; mathematics; fonts; references; appendices
+  Computational Archaeology; Museum Studies; Digital Humanities; Non-Western Art History; STEM; STEAM
 header-includes: |
   \usepackage{hyperref}
   \usepackage[utf8]{inputenc}
