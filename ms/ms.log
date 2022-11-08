@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.7)  8 NOV 2022 01:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.7)  8 NOV 2022 01:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -439,10 +439,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <figs/linear.fig.png, id=156, 794.97pt x 1273.1565pt>
 File: figs/linear.fig.png Graphic file (type png)
 <use figs/linear.fig.png>
-Package pdftex.def Info: figs/linear.fig.png  used on input line 588.
+Package pdftex.def Info: figs/linear.fig.png  used on input line 587.
 (pdftex.def)             Requested size: 408.0pt x 653.43913pt.
 
-LaTeX Warning: Float too large for page by 31.99469pt on input line 591.
+LaTeX Warning: Float too large for page by 31.99469pt on input line 590.
 
 [9] [10 <./figs/linear.fig.png
 
@@ -451,29 +451,29 @@ pdfTeX warning: pdflatex.exe (file ./figs/linear.fig.png): large interlaced PNG 
 <figs/gpa.csize.png, id=249, 1299.8964pt x 614.295pt>
 File: figs/gpa.csize.png Graphic file (type png)
 <use figs/gpa.csize.png>
-Package pdftex.def Info: figs/gpa.csize.png  used on input line 712.
+Package pdftex.def Info: figs/gpa.csize.png  used on input line 711.
 (pdftex.def)             Requested size: 408.0pt x 192.81032pt.
 <figs/pca-warp-botjar.jpg, id=266, 1272.6747pt x 835.4412pt>
 File: figs/pca-warp-botjar.jpg Graphic file (type jpg)
 <use figs/pca-warp-botjar.jpg>
-Package pdftex.def Info: figs/pca-warp-botjar.jpg  used on input line 729.
+Package pdftex.def Info: figs/pca-warp-botjar.jpg  used on input line 728.
 (pdftex.def)             Requested size: 408.0pt x 267.83105pt.
 [12 <./figs/gpa.csize.png>]
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 748.
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 747.
 (c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <11> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 748.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 747.
 
-Underfull \hbox (badness 2237) in paragraph at lines 747--758
+Underfull \hbox (badness 2237) in paragraph at lines 746--757
 []\OT1/cmr/m/n/10.95 Vessel shape dif-fers sig-nif-i-cantly be-tween bot-tles and jars (RRPP=10,000,
  []
 
 <figs/mshape.compare.png, id=321, 2358.1701pt x 1815.6633pt>
 File: figs/mshape.compare.png Graphic file (type png)
 <use figs/mshape.compare.png>
-Package pdftex.def Info: figs/mshape.compare.png  used on input line 760.
+Package pdftex.def Info: figs/mshape.compare.png  used on input line 759.
 (pdftex.def)             Requested size: 408.0pt x 314.11652pt.
 [13 <./figs/pca-warp-botjar.jpg>] [14 <./figs/mshape.compare.png>] [15] (./ms.bbl [16]
 Underfull \hbox (badness 3189) in paragraph at lines 25--30
@@ -552,7 +552,7 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  85i,7n,90p,451b,636s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on ms.pdf (19 pages, 7159021 bytes).
+Output written on ms.pdf (19 pages, 7158629 bytes).
 PDF statistics:
  527 PDF objects out of 1000 (max. 8388607)
  464 compressed objects within 5 object streams
