@@ -21,7 +21,7 @@ affiliation:
       Department of Anthropology, The University of Texas at Austin
   - num: b
     address: |
-      Heritage Research Center, Stephen F. Austin State University; Department of Biology, Stephen F. Austin State University; and Cultural Heritage Department, Jean Monnet University 
+      Heritage Research Center, Stephen F. Austin State University; Department of Biology, Stephen F. Austin State University; and Cultural Heritage Department, Jean Monnet University
   - num: c
     address: |
       Department of Art and Art History, The University of Texas at Austin; The Mesoamerica Center, The University of Texas at Austin
