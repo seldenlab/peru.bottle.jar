@@ -1,0 +1,437 @@
+\begin{thebibliography}{79}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\normalfont{#1}}
+\providecommand{\urlprefix}{}
+
+\bibitem[Adams and Collyer(2015)]{RN1655}
+Adams, Dean~C., and Michael~L. Collyer. 2015. ``{Permutation Tests for
+  Phylogenetic Comparative Analyses of High-Dimensional Shape Data: What you
+  Shuffle Matters}.'' \emph{Evolution} 69 (3): 823--9.
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/25641367}.
+
+\bibitem[Adams et~al.(2017)]{RN11530}
+Adams, Dean~C., Michael~L. Collyer, Antigoni Kaliontzopoulou, and Emma
+  Sherratt. 2017. ``{Package geomorph: Geometric Morphometric Analyses of
+  Landmark Data. R package version 3.0.5}.''
+  \urlprefix\url{http://geomorphr.github.io/geomorph/}.
+
+\bibitem[Adams and Otárola-Castillo(2013)]{RN1774}
+Adams, Dean~C., and Erik Otárola-Castillo. 2013. ``geomorph: An R Package for
+  the Collection and Analysis of Geometric Morphometric Shape Data.''
+  \emph{Methods in Ecology and Evolution} 4 (4): 393--399.
+  \urlprefix\url{https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12035
+  https://besjournals.onlinelibrary.wiley.com/doi/pdfdirect/10.1111/2041-210X.12035?download=true}.
+
+\bibitem[Adams, Rohlf, and Slice(2013)]{RN8633}
+Adams, Dean~C., F.~James Rohlf, and Dennis~E. Slice. 2013. ``A Field Comes of
+  Age: Geometric Morphometrics in the 21st Century.'' \emph{Hystrix} 24 (1):
+  7--14.
+  \urlprefix\url{http://www.italian-journal-of-mammalogy.it/pdf-77238-13391?filename=A
+  field comes of age_.pdf}.
+
+\bibitem[Anderson and Ter~Braak(2003)]{RN1719}
+Anderson, M.~J., and C.~J.~F. Ter~Braak. 2003. ``{Permutation Tests for
+  Multi-Factoral Analysis of Variance}.'' \emph{Journal of Statistical
+  Computation and Simulation} 73 (2): 85--113.
+
+\bibitem[Atwood(2004)]{RN11153}
+Atwood, Roger. 2004. \emph{Stealing History: Tomb Raiders, Smugglers, and the
+  Looting of the Ancient World}. New York: St. Martin's Press.
+
+\bibitem[Baken et~al.(2021)]{RN9565}
+Baken, Erica~K., Michael~L. Collyer, Antigoni Kaliontzopoulou, and Dean~C.
+  Adams. 2021. ``geomorph v4.0 and gmShiny: Enhanced analytics and a new
+  graphical interface for a comprehensive morphometric experience.''
+  \emph{Methods in Ecology and Evolution} 12 (12): 2355--2363.
+  \urlprefix\url{https://besjournals.onlinelibrary.wiley.com/doi/pdfdirect/10.1111/2041-210X.13723?download=true}.
+
+\bibitem[Bennett(1937)]{RN11156}
+Bennett, Wendell~C. 1937. ``Chimu Archeology.'' \emph{The Scientific Monthly}
+  45 (1): 35--48.  \urlprefix\url{https://www.jstor.org/stable/16526}.
+
+\bibitem[Beuchat(1918)]{RN11152}
+Beuchat, H. 1918. \emph{Manual de arqueología Americana}. Madrid: Daniel
+  Jorro.
+
+\bibitem[Bingham(1915)]{RN7063}
+Bingham, Hiram. 1915. ``Types of Machu Picchu Pottery.'' \emph{American
+  Anthropologist} 17 (2): 257--271.
+  \urlprefix\url{http://onlinelibrary.wiley.com/store/10.1525/aa.1915.17.2.02a00040/asset/aa.1915.17.2.02a00040.pdf?v=1&t=jbzbev9s&s=b558cb7dcbdb4721be204c0ecb3ce74b02df7982}.
+
+\bibitem[Birkhoff(1933)]{RN5700}
+Birkhoff, George~D. 1933. \emph{Aesthetic Measure}. Cambridge: Harvard
+  University Press.
+
+\bibitem[Bookstein(1986)]{RN11138}
+Bookstein, Fred~L. 1986. ``Size and Shape Spaces for Landmark Data in Two
+  Dimensions.'' \emph{Statistical Science} 1 (2): 181--242.
+  \urlprefix\url{https://projecteuclid.org/journals/statistical-science/volume-1/issue-2/Size-and-Shape-Spaces-for-Landmark-Data-in-Two-Dimensions/10.1214/ss/1177013696.pdf}.
+
+\bibitem[Bookstein(1991)]{RN5616}
+Bookstein, Fred~L. 1991. \emph{Morphometric Tools for Landmark Data: Geometry
+  and Biology}. Cambridge: Cambridge University Press.
+
+\bibitem[Bookstein et~al.(1999)]{RN8477}
+Bookstein, Fred~L., Katrin Schäfer, Hermann Prossinger, Horst Seidler, Martin
+  Fieder, Chris Stringer, Gerhard~W. Weber, et~al. 1999. ``Comparing frontal
+  cranial profiles in archaic and modern Homo by morphometric analysis.''
+  \emph{The Anatomical Record} 257 (6): 217--224.
+  \urlprefix\url{https://www.ncbi.nlm.nih.gov/pubmed/10620751
+  https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/%28SICI%291097-0185%2819991215%29257%3A6%3C217%3A%3AAID-AR7%3E3.0.CO%3B2-W?download=true}.
+
+\bibitem[Chapman(1990)]{RN11139}
+Chapman, R.~E. 1990. ``Conventional Procrustes Approaches.'' In
+  \emph{Proceedings of the Michigan Morphometrics Workshop},  edited by
+  F.~James Rohlf and Fred~L. Bookstein, 251--269. Ann Arbor: Special
+  Publication Number 2, The University of Michigan Museum of Zoology.
+
+\bibitem[Collier(1955)]{RN8727}
+Collier, Donald. 1955. ``Cultural Chronology and Change: As Reflected in the
+  Ceramics of the Viru Valley, Peru.'' \emph{Fieldiana. Anthropology} 43:
+  1--226.  \urlprefix\url{https://www.jstor.org/stable/29782339}.
+
+\bibitem[Collyer and Adams(2018)]{RN11775}
+Collyer, Michael~L., and Dean~C. Adams. 2018. ``{RRPP: An R Package for Fitting
+  Linear Models to High-Dimensional Data using Residual Randomization}.''
+  \emph{Methods in Ecology and Evolution} 9 (7): 1772--1779.
+  \urlprefix\url{https://besjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/2041-210X.13029}.
+
+\bibitem[Collyer, Sekora, and Adams(2015)]{RN1756}
+Collyer, Michael~L., David~J. Sekora, and Dean~C. Adams. 2015. ``{A Method for
+  Analysis of Phenotypic Change for Phenotypes Described by High-Dimensional
+  Data}.'' \emph{Heredity} 115 (4): 357--65.
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/25204302}.
+
+\bibitem[Cunha~Lima(2010)]{RN11172}
+Cunha~Lima, Silvia. 2010. ``Tecnologia ceramica Chimu: estudo arqueometrico da
+  colecao do MAE/USP.'' Thesis.
+  \urlprefix\url{https://doi.org/10.11606/T.71.2010.tde-05112010-101643}.
+
+\bibitem[Denkowska, Grabska, and Marek(1994)]{RN8103}
+Denkowska, Sabina, Ewa~J Grabska, and Katarzyna Marek. 1994. ``Application of
+  Birkhoff's Aesthetic Measure to Computer Aided Design of Vases.''
+  \emph{Journal of Machine Graphics and Vision} 7 (1/2): 69--75.
+
+\bibitem[Donnan(1997)]{RN11164}
+Donnan, Christopher~B. 1997. ``A Chimu-Inka Ceramic-Manufacturing Center from
+  the North Coast of Peru.'' \emph{Latin American Antiquity} 8 (1): 30--54.
+  \urlprefix\url{https://www.cambridge.org/core/journals/latin-american-antiquity/article/abs/chimuinka-ceramicmanufacturing-center-from-the-north-coast-of-peru/F9158C13A22FF4EFF887B054A633A9AF}.
+
+\bibitem[Donnan and Mackey(1978)]{RN11165}
+Donnan, Christopher~B., and Carol~J. Mackey. 1978. \emph{Ancient Burial
+  Patterns of the Moche Valley, Peru}. Austin: The University of Texas Press.
+
+\bibitem[Dryden and Mardia(1993)]{RN11141}
+Dryden, I.~L., and K.~V. Mardia. 1993. ``Multivariate Shape Analysis.''
+  \emph{Sankhya: The Indian Journal of Statistics, Series A} Special Volume 55,
+  Series A, Pt. 3: 460--480.
+
+\bibitem[Dryden and Mardia(1998)]{RN11140}
+Dryden, I.~L., and K.~V. Mardia. 1998. \emph{Statistical Shape Analysis}.
+  Chichester: Wiley.
+
+\bibitem[Frezier(1716)]{RN11149t}
+Frezier, Amedee-Francois. 1716. \emph{Relation du voyage de la mer du sud aux
+  cotes du Chily et du Perou, fait pendant les annees 1712, 1713 and 1714}.
+  Paris: Jean-Geoffroy Nyon et al.
+
+\bibitem[Gandrud(2014)]{RN20917}
+Gandrud, Christopher. 2014. \emph{Reproducible Research with R and RStudio}.
+  The R Series. London: CRC Press.
+
+\bibitem[Gerstenblith(2013)]{RN11160}
+Gerstenblith, Patty. 2013. ``The meaning of 1970 for the acquisition of
+  archaeological objects.'' \emph{Journal of Field Archaeology} 38 (4):
+  364--373.
+  \urlprefix\url{https://www.tandfonline.com/doi/full/10.1179/0093469013Z.00000000062}.
+
+\bibitem[Girrulat(2006)]{RN7039}
+Girrulat, Itaci~Correa. 2006. ``Contribution of Geometric Morphometrics to the
+  Study of Archaeological Ceramics.'' \emph{Revista Werken} 8: 57--75.
+
+\bibitem[Goodall(1991)]{RN1749}
+Goodall, Colin. 1991. ``Procrustes Methods in the Statistical Analysis of
+  Shape.'' \emph{Journal of the Royal Statistical Society: Series B
+  (Methodological)} 53 (2): 285--321.
+  \urlprefix\url{https://rss.onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.2517-6161.1991.tb01825.x?download=true}.
+
+\bibitem[Gower(1975)]{RN5622}
+Gower, J.~C. 1975. ``Generalized Procrustes Analysis.'' \emph{Psychometrika} 40
+  (1): 33--51.
+  \urlprefix\url{https://link.springer.com/article/10.1007%2FBF02291478}.
+
+\bibitem[Gray and Marwick(2019)]{RN20915}
+Gray, Charles~T., and Ben Marwick. 2019. ``Truth, Proof, and Reproducibility:
+  There's No Counter-Attack for the Codeless.'' In \emph{Statistics and Data
+  Science},  edited by H.~Nguyen, Statistics and Data Science. RSSDS 2019.
+  Communications in Computer and Information Science, Chap.~8, 111--129.
+
+\bibitem[Grossman(1969)]{RN11162}
+Grossman, Joel~W. 1969. ``A Huaquero’s Discard: Eleven Associated Molds from
+  Huaca Facho, Peru.'' \emph{Nawpa Pacha} 7 (1): 29--39.
+
+\bibitem[Gunz, Mitteroecker, and Bookstein(2005)]{RN7502}
+Gunz, P., P.~Mitteroecker, and F.~L. Bookstein. 2005. ``Semilandmarks in Three
+  Dimensions.'' In \emph{Modern Morphometrics in Physical Anthropology},
+  edited by D.~E. Slice, 73--98. New York: Plenum Publishers.
+
+\bibitem[Hayashida(1999)]{RN8875}
+Hayashida, Frances~M. 1999. ``Style, Technology, and State Production: Inka
+  Pottery Manufacture in the Leche Valley, Peru.'' \emph{Latin American
+  Antiquity} 10 (4): 337--352.
+  \urlprefix\url{https://www.cambridge.org/core/journals/latin-american-antiquity/article/abs/style-technology-and-state-production-inka-pottery-manufacture-in-the-leche-valley-peru/BD6BF0ACB1657D646EB290276E959F80}.
+
+\bibitem[Hrdlica(1914)]{RN11150}
+Hrdlica, Ales. 1914. \emph{Anthropological Work in Peru in 1913, with Notes on
+  the Pathology of the Ancient Peruvians}. Smithsonian Miscellaneous
+  Collections 61(18). Washington DC: Smithsonian Institution.
+
+\bibitem[Ivanovaite et~al.(2020)]{RN21009}
+Ivanovaite, Livija, Kamil Serwatka, Christian~Steven Hoggard, Florian Sauer,
+  and Felix Riede. 2020. ``All these Fantastic Cultures? Research History and
+  Regionalization in the Late Palaeolithic Tanged Point Cultures of Eastern
+  Europe.'' \emph{European Journal of Archaeology} 23 (2): 162--185.
+
+\bibitem[Jolliffe(2002)]{RN1746}
+Jolliffe, Ian~T. 2002. \emph{Principal Component Analysis}. New York: Springer.
+
+\bibitem[Kendall(1981)]{RN11622}
+Kendall, David~G. 1981. ``{The Statistics of Shape}.'' In \emph{Interpreting
+  Multivariate Data},  edited by V.~Barnett, 75--80. New York: Wiley.
+
+\bibitem[Kendall(1984)]{RN11623}
+Kendall, David~G. 1984. ``{Shape Manifolds, Procrustean Metrics, and Complex
+  Projective Spaces}.'' \emph{Bulletin of the London Mathematical Society} 16
+  (2): 81--121.
+
+\bibitem[Kent and Mardia(2001)]{RN11142}
+Kent, J.~T., and K.~V. Mardia. 2001. ``Shape, Procrustes Tangent Projections
+  and Bilateral Symmetry.'' \emph{Biometrika} 88 (2): 469--485.
+
+\bibitem[Klingenberg(2013)]{RN1731}
+Klingenberg, Christian~Peter. 2013. ``{Visualizations in Geometric
+  Morphometrics: How to Read and How to Make Graphs Showing Shape Changes}.''
+  \emph{Hystrix} 24 (1): 15--24.  \urlprefix\url{<Go to
+  ISI>://WOS:000330926000003}.
+
+\bibitem[Kroeber(1926)]{RN11151}
+Kroeber, Alfred~L. 1926. \emph{Archaeological Explorations in Peru: Part 1.
+  Ancient Pottery from Trujillo}. Museum of Natural History Anthropology
+  Memoirs 11(1). Chicago: Field Museum of Natural History.
+
+\bibitem[Kroeber(1930)]{RN11155}
+Kroeber, Alfred~L. 1930. \emph{Archaeological Explorations in Peru: Part II.
+  The Northern Coast.} Field Museum of Natural History Anthropology Memoirs,
+  11(2). Chicago: Field Museum of Natural History.
+  \urlprefix\url{https://www.jstor.org/stable/41575602}.
+
+\bibitem[Krzanowski and Pawlikowski(1980)]{RN11171}
+Krzanowski, Andrzej, and Maciej Pawlikowski. 1980. ``North Peruvian ceramics in
+  the aspect of petrographic analysis.'' \emph{Contributions in New World
+  Archaeology} 2: 63--101.
+  \urlprefix\url{https://bazhum.muzhp.pl/media/files/Contributions_in_New_World_Archaeology/Contributions_in_New_World_Archaeology-r1980-t-n2/Contributions_in_New_World_Archaeology-r1980-t-n2-s63-101/Contributions_in_New_World_Archaeology-r1980-t-n2-s63-101.pdf}.
+
+\bibitem[Kvetinova(2011)]{RN11159}
+Kvetinova, Sylvie. 2011. ``Material culture as a vehicle of social-political
+  organization: Chimu pottery.'' Thesis.
+
+\bibitem[Levine(2011)]{RN11170}
+Levine, Abigail~R. 2011. ``A Case for Local Ceramic Production in the
+  Jequetepeque Valley during the Late Horizon.'' In \emph{From State to Empire
+  in the Prehistoric Jequetepeque Valley, Peru},  edited by Colleen~M. Zori and
+  Ilana Johnson, 169--177. Oxford: BAR Publishing.
+  \urlprefix\url{https://d1wqtxts1xzle7.cloudfront.net/8262632/Levine_2011-libre.pdf?1390854781=&response-content-disposition=inline%3B+filename%3DA_Case_for_Local_Ceramic_Production_in_t.pdf&Expires=1668012430&Signature=Dr4dkc1X9pnowAUGrOPYM99fWnmXWG8a~gsfRzw-6qK3bSVmrkG6pp6yI3VQW-AFVz63DYB5TsT108dx355YVCigzKzYB1x0CCvGdQHQyGNnmQST~0KdaAfAwO-EeQTuls6x0O6tIuKzmzI6RGmHNIYjrohvzuqiAknIwfddVAtg7ihbWsFtEUO1aOOcwDskopqAe1k2cue6MAM6pfch-eQzD7oY9kVpVeuoNRlsvUpluBgepqv4YBAJvo3kSCz1kR3JXvE6fDpOhaTot3sFfceiDFq99oAfN3VUaUSVzbHTRnqHaNESmi~7WIjH-aSAcTYm3plfPdR5Zofi8hm-JA__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA}.
+
+\bibitem[Lycett(2009)]{RN8521}
+Lycett, Stephen~J. 2009. ``Quantifying Transitions: Morphometric Approaches to
+  Palaeolithic Variability and Technological Change.'' In \emph{Sourcebook of
+  Paleolithic Transitions},  edited by Marta Camps and Parth Chauhan, Chap.~5,
+  79--92. Springer.
+  \urlprefix\url{https://link.springer.com/chapter/10.1007%2F978-0-387-76487-0_5}.
+
+\bibitem[Mackey(2003)]{RN11166}
+Mackey, Carol~J. 2003. ``La transformacion socioeconomica de Farfan bajo el
+  gobierno Inka.'' \emph{Boletín De Arqueología PUCP} 7: 321--353.
+  \urlprefix\url{https://revistas.pucp.edu.pe/index.php/boletindearqueologia/article/view/1997}.
+
+\bibitem[Mackey and Sapp(2021)]{RN11167}
+Mackey, Carol~J., and William~D. Sapp. 2021. ``El Algarrobal De Moro: A
+  Lower-level Administrative Center in the Jequetepeque Valley on Peru’s
+  North Coast.'' \emph{Ñawpa Pacha} 42 (1): 33--61.
+  \urlprefix\url{https://www.tandfonline.com/doi/full/10.1080/00776297.2021.1890380}.
+
+\bibitem[Marwick(2016)]{RN20804}
+Marwick, Ben. 2016. ``Computational Reproducibility in Archaeological Research:
+  Basic Principles and a Case Study of Their Implementation.'' \emph{Journal of
+  Archaeological Method and Theory} 24 (2): 424--450.
+
+\bibitem[Marwick et~al.(2019)]{RN21007}
+Marwick, Ben, Li-Ying Wang, Ryan Robinson, and Hope Loiselle. 2019. ``How to
+  Use Replication Assignments for Teaching Integrity in Empirical
+  Archaeology.'' \emph{Advances in Archaeological Practice} 8 (1): 78--86.
+
+\bibitem[O'Higgins and Jones(1998)]{RN11143}
+O'Higgins, Paul, and Nicholas Jones. 1998. ``Facial growth in Cercocebus
+  torquatus: an application of three-dimensional geometric morphometric
+  techniques to the study of morphological variation.'' \emph{J Anat} 193 ( Pt
+  2) (2): 251--72. O'Higgins, P Jones, N eng England 1998/11/25 J Anat. 1998
+  Aug;193 ( Pt 2):251-72. doi: 10.1046/j.1469-7580.1998.19320251.x.,
+  \urlprefix\url{https://www.ncbi.nlm.nih.gov/pubmed/9827641}.
+
+\bibitem[Peels and Bouter(2018)]{RN21008}
+Peels, Rik, and Lex Bouter. 2018. ``Humanities Need a Replication Drive Too.''
+  \emph{Nature} 558 (7710): 372.
+  \urlprefix\url{https://www.ncbi.nlm.nih.gov/pubmed/29921855}.
+
+\bibitem[Peng(2011)]{RN20916}
+Peng, Roger~D. 2011. ``Reproducible Research in Computational Science.''
+  \emph{Science} 334 (6060): 1226--7.
+  \urlprefix\url{https://www.ncbi.nlm.nih.gov/pubmed/22144613}.
+
+\bibitem[Rohlf(1999)]{RN1646}
+Rohlf, F.~James. 1999. ``Shape Statistics: Procrustes Superimpositions and
+  Tangent Spaces.'' \emph{Journal of Classification} 16 (2): 197--223.
+  \urlprefix\url{https://link.springer.com/article/10.1007%2Fs003579900054}.
+
+\bibitem[Rohlf and Marcus(1993)]{RN7550}
+Rohlf, F.~James, and Leslie~F. Marcus. 1993. ``A Revolution in Morphometrics.''
+  \emph{Trends in Ecology \& Evolution} 8 (4): 129--132. James Rohlf, F Marcus,
+  L F eng England Trends Ecol Evol. 1993 Apr;8(4):129-32. doi:
+  10.1016/0169-5347(93)90024-J.,
+  \urlprefix\url{https://www.ncbi.nlm.nih.gov/pubmed/21236128
+  https://www.sciencedirect.com/science/article/abs/pii/016953479390024J?via%3Dihub}.
+
+\bibitem[Rohlf and Slice(1990)]{RN478}
+Rohlf, F.~James, and Dennis Slice. 1990. ``{Extensions of the Procrustes Method
+  for the Optimal Superimposition of Landmarks}.'' \emph{Systematic Zoology} 39
+  (1): 40--59.
+
+\bibitem[Scheele and Patterson(1966)]{RN11158}
+Scheele, Harry, and Thomas~C. Patterson. 1966. ``A Preliminary Seriation of the
+  Chimu Pottery Style.'' \emph{Ñawpa Pacha} 4 (1): 15--30.
+  \urlprefix\url{https://www.tandfonline.com/doi/abs/10.1179/naw.1966.4.1.002?journalCode=ynaw20}.
+
+\bibitem[Schlager and Rudell(2017)]{RN8497}
+Schlager, Stefan, and Alexandra Rudell. 2017. ``Sexual Dimorphism and
+  Population Affinity in the Human Zygomatic Structure-Comparing Surface to
+  Outline Data.'' \emph{Anat Rec (Hoboken)} 300 (1): 226--237.
+  \urlprefix\url{https://www.ncbi.nlm.nih.gov/pubmed/28000405}.
+
+\bibitem[Selden~Jr.(2018{\natexlab{a}})]{RN7925}
+Selden~Jr., Robert~Z. 2018{\natexlab{a}}. ``Ceramic Morphological Organisation
+  in the Southern Caddo Area: Quiddity of Shape for Hickory Engraved Bottles.''
+  \emph{Journal of Archaeological Science: Reports} 21: 884--896.
+  \urlprefix\url{https://www.sciencedirect.com/science/article/abs/pii/S2352409X18302700}.
+
+\bibitem[Selden~Jr.(2018{\natexlab{b}})]{RN8071}
+Selden~Jr., Robert~Z. 2018{\natexlab{b}}. ``A Preliminary Study of Smithport
+  Plain Bottle Morphology in the Southern Caddo Area.'' \emph{Bulletin of the
+  Texas Archeological Society} 89: 63--89.
+  \urlprefix\url{https://scholarworks.sfasu.edu/crhr/283/}.
+
+\bibitem[Selden~Jr.(2019)]{RN8361}
+Selden~Jr., Robert~Z. 2019. ``Ceramic Morphological Organisation in the
+  Southern Caddo Area: The Clarence H. Webb Collections.'' \emph{Journal of
+  Cultural Heritage} 35: 41--55.
+  \urlprefix\url{https://www.sciencedirect.com/science/article/abs/pii/S1296207418301912?via%3Dihub}.
+
+\bibitem[Selden~Jr.(2021)]{RN8967}
+Selden~Jr., Robert~Z. 2021. ``Louisiana Limitrophe: An Iterative Morphological
+  Exegesis of Caddo Bottle and Biface Production.'' In \emph{Ancestral Caddo
+  Ceramic Traditions},  edited by Duncan~P. McKinnon, Jeffrey~S. Girard, and
+  Timothy~K. Perttula, 258--276. Baton Rouge: LSU Press.
+  \urlprefix\url{https://osf.io/preprints/socarxiv/rpnd5/}.
+
+\bibitem[Selden~Jr.(2022)]{RN11264}
+Selden~Jr., Robert~Z. 2022. ``Morphologically Similar, but Regionally Distinct:
+  Perdiz Arrow Points from Caddo Burial Contexts in the American Southeast.''
+  \emph{Lithic Technology} (in press).
+  \urlprefix\url{https://doi.org/10.1080/01977261.2022.2095492}.
+
+\bibitem[Selden~Jr et~al.(2021)]{RN9364}
+Selden~Jr, Robert~Z., John~E. Dockall, C.~Britt Bousman, and Timothy~K.
+  Perttula. 2021. ``Shape as a function of time + raw material + burial
+  context? An exploratory analysis of Perdiz arrow points from the ancestral
+  Caddo area of the American Southeast.'' \emph{Journal of Archaeological
+  Science: Reports} 37: 102916.
+  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S2352409X21001280}.
+
+\bibitem[Selden~Jr., Dockall, and Dubied(2020)]{RN21001}
+Selden~Jr., Robert~Z., John~E. Dockall, and Morgane Dubied. 2020. ``A
+  quantitative assessment of intraspecific morphological variation in Gahagan
+  bifaces from the southern Caddo area and central Texas.'' \emph{Southeastern
+  Archaeology} 39 (2): 125--145.
+  \urlprefix\url{https://www.tandfonline.com/doi/full/10.1080/0734578X.2020.1744416}.
+
+\bibitem[Sherratt et~al.(2014)]{RN479}
+Sherratt, Emma, David~J. Gower, Christian~Peter Klingenberg, and Mark
+  Wilkinson. 2014. ``{Evolution of Cranial Shape in Caecilians (Amphibia:
+  Gymnophiona)}.'' \emph{Evolutionary Biology} 41 (4): 528--545.
+  \urlprefix\url{<Go to ISI>://WOS:000344862900003}.
+
+\bibitem[Shimada and Wagner(2019)]{RN11174}
+Shimada, Izumi, and Ursel Wagner. 2019. ``Technology and organization of black
+  pottery production on the north coast of Peru.'' \emph{Boletín de
+  Arqueología PUCP}  (27): 133--156.
+  \urlprefix\url{https://revistas.pucp.edu.pe/index.php/boletindearqueologia/article/download/22745/21866}.
+
+\bibitem[Slice(2001)]{RN11563}
+Slice, Dennis~E. 2001. ``{Landmark Coordinates Aligned by Procrustes Analysis
+  Do Not Lie in Kendall's Shape Space}.'' \emph{Systematic Biology} 50 (1):
+  141--149.
+
+\bibitem[Staudek(1999)]{RN8104}
+Staudek, Tomas. 1999. \emph{On Birkhoff's Aesthetic Measure of Vases}. FI MU
+  Report Series, FIMU-RS-99-06. Brno: Masaryk University.
+
+\bibitem[Thompson(1963)]{RN11163}
+Thompson, Donald~E. 1963. ``A Mold Matrix from Peru.'' \emph{American
+  Antiquity} 28 (4): 545--547.
+
+\bibitem[Topi et~al.(2017)]{RN7588}
+Topi, John~R., Christine~S. VanPool, Kyle~D. Waller, and Todd~L. VanPool. 2017.
+  ``The Economy of Specialized Ceramic Craft Production in the Casas Grandes
+  Region.'' \emph{Latin American Antiquity} 29 (1): 122--142.
+  \urlprefix\url{https://www.cambridge.org/core/journals/latin-american-antiquity/article/economy-of-specialized-ceramic-craft-production-in-the-casas-grandes-region/BD104B0A2E52C307C4CD8A559ADA88EA}.
+
+\bibitem[Tschauner and Wagner(2003)]{RN11173}
+Tschauner, Harmut, and Ursel Wagner. 2003. ``Pottery from a Chimu Workshop
+  Studied by Mossbauer Spectroscopy.'' \emph{Hyperfine Interactions} 150 (1-4):
+  165--186.
+  \urlprefix\url{https://link.springer.com/content/pdf/10.1023/B:HYPE.0000007173.11484.7a.pdf}.
+
+\bibitem[Tschauner(2006)]{RN11168}
+Tschauner, Hartmut. 2006. ``Chimu Craft Specialization and Political Economy: A
+  View from the Provinces.'' In \emph{Andean Archaeology III},  edited by
+  William~H. Isbell and Helaine Silverman, book section Chapter 8, 171--196.
+  Boston: Springer.
+  \urlprefix\url{https://link.springer.com/chapter/10.1007/0-387-28940-2_8}.
+
+\bibitem[Tschauner(2009)]{RN11169}
+Tschauner, Hartmut. 2009. ``“Los Olleros no son del Inka”, Especialización
+  Artesanal y Economía Política en Los Andes: El Caso de los Alfareros de la
+  Pampa de Burros.'' \emph{Revista Chilena De Antropología} 20.
+  \urlprefix\url{https://iamr.uchile.cl/index.php/RCA/article/view/14255}.
+
+\bibitem[Uhle(1902)]{RN11154}
+Uhle, Max. 1902. ``Types of Culture in Peru.'' \emph{American Anthropologist} 4
+  (4): 753--759.  \urlprefix\url{https://www.jstor.org/stable/659382}.
+
+\bibitem[Wauters(2016)]{RN11175}
+Wauters, Valentine. 2016. ``Imperial Needs, Imperial Methods: Chimú Ceramic
+  Manufacturing Process Through CT Scan Analysis of Stirrup-Spout Bottles.''
+  \emph{Latin American Antiquity} 27 (2): 238--256.
+  \urlprefix\url{https://www.cambridge.org/core/journals/latin-american-antiquity/article/abs/imperial-needs-imperial-methods-chimu-ceramic-manufacturing-process-through-ct-scan-analysis-of-stirrupspout-bottles/9EB9E0F52D6F3B3A3BAA3FBF3D192273}.
+
+\bibitem[Willey(1945)]{RN11157}
+Willey, Gordon~R. 1945. ``Horizon Styles and Pottery Traditions in Peruvian
+  Archaeology.'' \emph{American Antiquity} 11 (1): 49--56.
+  \urlprefix\url{https://www.cambridge.org/core/journals/american-antiquity/article/abs/horizon-styles-and-pottery-traditions-in-peruvian-archaeology/E00A9D87BF5579A0F4D019EEF4BE8180}.
+
+\bibitem[Willey(1947)]{RN11161}
+Willey, Gordon~R. 1947. ``A Middle Period cemetery in the Viru Valley, northern
+  Peru.'' \emph{Journal of the Washington Academy of Sciences} 37 (2): 41--47.
+  \urlprefix\url{https://www.jstor.org/stable/24531938}.
+
+\end{thebibliography}

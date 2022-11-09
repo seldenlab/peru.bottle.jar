@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: ms.aux
+The style file: tfcad.bst
+Database file #1: interactcadsample.bib
+Warning--entry type for "RN11530" isn't style-file defined
+--line 797 of file interactcadsample.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--missing school in RN11172
+Warning--missing publisher in RN20915
+Warning--missing school in RN11159
+Warning--there's a number but no volume in RN11174
+You've used 79 entries,
+            3285 wiz_defined-function locations,
+            1273 strings with 22486 characters,
+and the built_in function-call counts, 43225 in all, are:
+= -- 3535
+> -- 1427
+< -- 3
++ -- 629
+- -- 410
+* -- 3170
+:= -- 6674
+add.period$ -- 384
+call.type$ -- 79
+change.case$ -- 481
+chr.to.int$ -- 80
+cite$ -- 83
+duplicate$ -- 3434
+empty$ -- 3727
+format.name$ -- 478
+if$ -- 8890
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 711
+newline$ -- 244
+num.names$ -- 245
+pop$ -- 1329
+preamble$ -- 1
+purify$ -- 458
+quote$ -- 0
+skip$ -- 1235
+stack$ -- 0
+substring$ -- 2086
+swap$ -- 1738
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 448
+warning$ -- 4
+while$ -- 314
+width$ -- 0
+write$ -- 922
+(There were 5 warnings)
