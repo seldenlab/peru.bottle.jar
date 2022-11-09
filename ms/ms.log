@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.7)  9 NOV 2022 05:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.7)  9 NOV 2022 10:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -436,7 +436,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 {c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6] [7] [8]
-<figs/linear.fig.png, id=187, 794.97pt x 1273.1565pt>
+<figs/linear.fig.png, id=275, 794.97pt x 1273.1565pt>
 File: figs/linear.fig.png Graphic file (type png)
 <use figs/linear.fig.png>
 Package pdftex.def Info: figs/linear.fig.png  used on input line 588.
@@ -448,12 +448,12 @@ LaTeX Warning: Float too large for page by 31.99469pt on input line 591.
 
 pdfTeX warning: pdflatex.exe (file ./figs/linear.fig.png): large interlaced PNG might cause out of memory (use non-interlaced PNG to fix this)
 >] [11]
-<figs/gpa.csize.png, id=279, 1299.8964pt x 614.295pt>
+<figs/gpa.csize.png, id=368, 1299.8964pt x 614.295pt>
 File: figs/gpa.csize.png Graphic file (type png)
 <use figs/gpa.csize.png>
 Package pdftex.def Info: figs/gpa.csize.png  used on input line 712.
 (pdftex.def)             Requested size: 408.0pt x 192.81032pt.
-<figs/pca-warp-botjar.jpg, id=296, 1272.6747pt x 835.4412pt>
+<figs/pca-warp-botjar.jpg, id=385, 1272.6747pt x 835.4412pt>
 File: figs/pca-warp-botjar.jpg Graphic file (type jpg)
 <use figs/pca-warp-botjar.jpg>
 Package pdftex.def Info: figs/pca-warp-botjar.jpg  used on input line 729.
@@ -470,87 +470,247 @@ Underfull \hbox (badness 2237) in paragraph at lines 747--758
 []\OT1/cmr/m/n/10.95 Vessel shape dif-fers sig-nif-i-cantly be-tween bot-tles and jars (RRPP=10,000,
  []
 
-<figs/mshape.compare.png, id=351, 2358.1701pt x 1815.6633pt>
+<figs/mshape.compare.png, id=440, 2358.1701pt x 1815.6633pt>
 File: figs/mshape.compare.png Graphic file (type png)
 <use figs/mshape.compare.png>
 Package pdftex.def Info: figs/mshape.compare.png  used on input line 760.
 (pdftex.def)             Requested size: 408.0pt x 314.11652pt.
-[13 <./figs/pca-warp-botjar.jpg>] [14 <./figs/mshape.compare.png>] [15] (./ms.bbl [16]
-Underfull \hbox (badness 3189) in paragraph at lines 25--30
+[13 <./figs/pca-warp-botjar.jpg>] [14 <./figs/mshape.compare.png>] [15] (./ms.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 20--25
+\OT1/cmtt/m/n/10 2041-[]210X . 12035https : / / besjournals . onlinelibrary . wiley . com / doi / pdfdirect /
+ []
+
+
+Underfull \hbox (badness 3189) in paragraph at lines 27--32
 []\OT1/cmr/m/n/10 Adams, Dean C., F. James Rohlf, and Den-nis E. Slice. 2013. ``A Field Comes
  []
 
 
-Underfull \hbox (badness 3128) in paragraph at lines 25--30
+Underfull \hbox (badness 3128) in paragraph at lines 27--32
 \OT1/cmr/m/n/10 of Age: Ge-o-met-ric Mor-pho-met-rics in the 21st Cen-tury.'' \OT1/cmr/m/it/10 Hys-trix \OT1/cmr/m/n/10 24 (1): 7--14.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--30
+Underfull \hbox (badness 10000) in paragraph at lines 27--32
 []$\OT1/cmtt/m/n/10 http : / / www . italian-[]journal-[]of-[]mammalogy . it / pdf-[]77238-[]13391 ? filename =
  []
 
-
-Underfull \hbox (badness 5637) in paragraph at lines 55--58
+[16]
+Underfull \hbox (badness 5637) in paragraph at lines 58--61
 []\OT1/cmr/m/n/10 Bingham, Hi-ram. 1915. ``Types of Machu Pic-chu Pot-tery.'' \OT1/cmr/m/it/10 Amer-i-can An-thro-pol-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--58
+Underfull \hbox (badness 10000) in paragraph at lines 58--61
 \OT1/cmr/m/it/10 o-gist \OT1/cmr/m/n/10 17 (2): 257--271. []$\OT1/cmtt/m/n/10 http : / / onlinelibrary . wiley . com / store / 10 . 1525 / aa .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--58
+Underfull \hbox (badness 10000) in paragraph at lines 58--61
 \OT1/cmtt/m/n/10 1915 . 17 . 2 . 02a00040 / asset / aa . 1915 . 17 . 2 . 02a00040 . pdf ? v = 1 & t = jbzbev9s & s =
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--70
+[]\OT1/cmr/m/n/10 Bookstein, Fred L. 1986. ``Size and Shape Spaces for Land-mark Data
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--70
+\OT1/cmr/m/n/10 in Two Di-men-sions.'' \OT1/cmr/m/it/10 Sta-tis-ti-cal Sci-ence \OT1/cmr/m/n/10 1 (2): 181--242. []$\OT1/cmtt/m/n/10 https : / /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--70
+\OT1/cmtt/m/n/10 projecteuclid . org / journals / statistical-[]science / volume-[]1 / issue-[]2 /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--70
+\OT1/cmtt/m/n/10 Size-[]and-[]Shape-[]Spaces-[]for-[]Landmark-[]Data-[]in-[]Two-[]Dimensions / 10 . 1214 / ss /
+ []
+
+
+Underfull \hbox (badness 1460) in paragraph at lines 76--86
+\OT1/cmr/m/n/10 in ar-chaic and mod-ern Homo by mor-pho-me-t-ric anal-y-sis.'' \OT1/cmr/m/it/10 The Anatom-i-cal Record
+ []
+
+
+Underfull \hbox (badness 2556) in paragraph at lines 76--86
+\OT1/cmr/m/n/10 257 (6): 217--224. Book-stein, F Schafer, K Prossinger, H Sei-dler, H Fieder, M
+ []
+
+
+Underfull \hbox (badness 1776) in paragraph at lines 76--86
+\OT1/cmr/m/n/10 15;257(6):217-24. doi: 10.1002/(SICI)1097-0185(19991215)257:6<217::AID-AR7>3.0.CO;2-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--86
+\OT1/cmtt/m/n/10 com / doi / pdfdirect / 10 . 1002 / %28SICI % 291097-[]0185 % 2819991215 % 29257 % 3A6 % 3C217 %
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--124
+[]\OT1/cmr/m/n/10 Donnan, Christo-pher B. 1997. ``A Chimu-Inka Ceramic-Manufacturing Cen-
+ []
+
+
+Underfull \hbox (badness 4144) in paragraph at lines 121--124
+\OT1/cmr/m/n/10 ter from the North Coast of Peru.'' \OT1/cmr/m/it/10 Latin Amer-i-can An-tiq-uity \OT1/cmr/m/n/10 8 (1): 30--54.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--124
+[]$\OT1/cmtt/m/n/10 https : / / www . cambridge . org / core / journals / latin-[]american-[]antiquity / article /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--124
+\OT1/cmtt/m/n/10 abs / chimuinka-[]ceramicmanufacturing-[]center-[]from-[]the-[]north-[]coast-[]of-[]peru /
+ []
+
 [17]
-Underfull \hbox (badness 1521) in paragraph at lines 221--227
+Underfull \hbox (badness 10000) in paragraph at lines 183--187
+\OT1/cmtt/m/n/10 / / www . cambridge . org / core / journals / latin-[]american-[]antiquity / article / abs /
+ []
+
+
+Overfull \hbox (70.946pt too wide) in paragraph at lines 183--187
+\OT1/cmtt/m/n/10 style-[]technology-[]and-[]state-[]production-[]inka-[]pottery-[]manufacture-[]in-[]the-[]leche-[]valley-[]peru /
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 233--237
+[]$\OT1/cmtt/m/n/10 https : / / bazhum . muzhp . pl / media / files / Contributions _ in _ New _ World _ Archaeology /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--237
+\OT1/cmtt/m/n/10 Contributions _ in _ New _ World _ Archaeology-[]r1980-[]t-[]n2 / Contributions _ in _
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--237
+\OT1/cmtt/m/n/10 New _ World _ Archaeology-[]r1980-[]t-[]n2-[]s63-[]101 / Contributions _ in _ New _ World _
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--248
+\OT1/cmr/m/n/10 lish-ing. []$\OT1/cmtt/m/n/10 https : / / d1wqtxts1xzle7 . cloudfront . net / 8262632 / Levine _ 2011-[]libre .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--248
+\OT1/cmtt/m/n/10 pdf ? 1390854781 = &response-[]content-[]disposition = inline % 3B + filename % 3DA _
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--248
+\OT1/cmtt/m/n/10 Case _ for _ Local _ Ceramic _ Production _ in _ t . pdf & Expires = 1668012430 & Signature =
+ []
+
+
+Overfull \hbox (1406.68433pt too wide) in paragraph at lines 243--248
+\OT1/cmtt/m/n/10 Dr4dkc1X9pnowAUGrOPYM99fWnmXWG8a[]gsfRzw-[]6qK3bSVmrkG6pp6yI3VQW-[]AFVz63DYB5TsT108dx355YVCigzKzYB1x0CCvGdQHQyGNnmQST[]0KdaAfAwO-[]EeQTuls6x0O6tIuKzmzI6RGmHNIYjrohvzuqiAknIwfddVAtg7ihbWsFtEUO1aOOcwDskopqAe1k2cue6MAM6pfch-[]eQzD7oY9kVpVeuoNRlsvUpluBgepqv4YBAJvo3kSCz1kR3JXvE6fDpOhaTot3sFfceiDFq99oAfN3VUaUSVzbHTRnqHaNESmi[]7WIjH-[]aSAcTYm3plfPdR5Zofi8hm-[]JA _
+ []
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 301--307
 \OT1/cmr/m/it/10 in Ecol-ogy & Evo-lu-tion \OT1/cmr/m/n/10 8 (4): 129--132. James Rohlf, F Mar-cus, L F eng Eng-
  []
 
 
-Underfull \hbox (badness 3492) in paragraph at lines 221--227
+Underfull \hbox (badness 3492) in paragraph at lines 301--307
 \OT1/cmr/m/n/10 land Trends Ecol Evol. 1993 Apr;8(4):129-32. doi: 10.1016/0169-5347(93)90024-J.,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--227
+Underfull \hbox (badness 10000) in paragraph at lines 301--307
 []$\OT1/cmtt/m/n/10 https : / / www . ncbi . nlm . nih . gov / pubmed / 21236128https : / / www . sciencedirect . com /
  []
 
-[18]
-Underfull \hbox (badness 1178) in paragraph at lines 244--248
+[19]
+Underfull \hbox (badness 1178) in paragraph at lines 325--329
 \OT1/cmr/m/it/10 ence: Re-ports \OT1/cmr/m/n/10 21: 884--896. []$\OT1/cmtt/m/n/10 https : / / www . sciencedirect . com / science / article / abs /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--308
+Underfull \hbox (badness 1097) in paragraph at lines 377--381
+\OT1/cmr/m/n/10 tery pro-duc-tion on the north coast of Peru.'' \OT1/cmr/m/it/10 Bo-let^^S^^Pn de Ar-que-olog^^S^^Pa PUCP \OT1/cmr/m/n/10 (27):
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--400
 []\OT1/cmr/m/n/10 Topi, John R., Chris-tine S. Van-Pool, Kyle D. Waller, and Todd L. Van-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--308
-\OT1/cmr/m/n/10 Pool. 2017. ``The Econ-omy of Spe-cial-ized Ce-ramic Craft Pro-duc-tion in
+Underfull \hbox (badness 7362) in paragraph at lines 396--400
+\OT1/cmr/m/n/10 Pool. 2017. ``The Econ-omy of Spe-cial-ized Ce-ramic Craft Pro-duc-tion in the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--308
-\OT1/cmr/m/n/10 the Casas Grandes Re-gion.'' \OT1/cmr/m/it/10 Latin Amer-i-can An-tiq-uity \OT1/cmr/m/n/10 1--21. []$\OT1/cmtt/m/n/10 https : / /
+Underfull \hbox (badness 10000) in paragraph at lines 396--400
+\OT1/cmr/m/n/10 Casas Grandes Re-gion.'' \OT1/cmr/m/it/10 Latin Amer-i-can An-tiq-uity \OT1/cmr/m/n/10 29 (1): 122--142. []$\OT1/cmtt/m/n/10 https :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--308
-\OT1/cmtt/m/n/10 www . cambridge . org / core / journals / latin-[]american-[]antiquity / article /
+Underfull \hbox (badness 10000) in paragraph at lines 396--400
+\OT1/cmtt/m/n/10 / / www . cambridge . org / core / journals / latin-[]american-[]antiquity / article /
  []
 
 
-Overfull \hbox (6.94655pt too wide) in paragraph at lines 304--308
+Overfull \hbox (6.94655pt too wide) in paragraph at lines 396--400
 \OT1/cmtt/m/n/10 economy-[]of-[]specialized-[]ceramic-[]craft-[]production-[]in-[]the-[]casas-[]grandes-[]region /
  []
 
-) (./appendix.tex) [19] (./ms.aux)
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 425--429
+[]\OT1/cmr/m/n/10 Wauters, Valen-tine. 2016. ``Im-pe-rial Needs, Im-pe-rial Meth-ods: Chim^^Su Ce-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--429
+\OT1/cmr/m/n/10 ramic Man-u-fac-tur-ing Pro-cess Through CT Scan Anal-y-sis of Stirrup-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--429
+\OT1/cmr/m/n/10 Spout Bot-tles.'' \OT1/cmr/m/it/10 Latin Amer-i-can An-tiq-uity \OT1/cmr/m/n/10 27 (2): 238--256. []$\OT1/cmtt/m/n/10 https : / / www .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--429
+\OT1/cmtt/m/n/10 cambridge . org / core / journals / latin-[]american-[]antiquity / article / abs /
+ []
+
+
+Overfull \hbox (224.19467pt too wide) in paragraph at lines 425--429
+\OT1/cmtt/m/n/10 imperial-[]needs-[]imperial-[]methods-[]chimu-[]ceramic-[]manufacturing-[]process-[]through-[]ct-[]scan-[]analysis-[]of-[]stirrupspout-[]bottles /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--434
+[]\OT1/cmr/m/n/10 Willey, Gor-don R. 1945. ``Hori-zon Styles and Pot-tery Tra-di-tions in Pe-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--434
+\OT1/cmr/m/n/10 ru-vian Ar-chae-ol-ogy.'' \OT1/cmr/m/it/10 Amer-i-can An-tiq-uity \OT1/cmr/m/n/10 11 (1): 49--56. []$\OT1/cmtt/m/n/10 https : / /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--434
+\OT1/cmtt/m/n/10 www . cambridge . org / core / journals / american-[]antiquity / article / abs /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--434
+\OT1/cmtt/m/n/10 horizon-[]styles-[]and-[]pottery-[]traditions-[]in-[]peruvian-[]archaeology /
+ []
+
+) (./appendix.tex) [21] (./ms.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
@@ -559,18 +719,18 @@ Package rerunfilecheck Info: File `ms.out' has not changed.
 (rerunfilecheck)             Checksum: ACDF86E5993FA8B8A4BC51FEAB951382;3916.
  ) 
 Here is how much of TeX's memory you used:
- 11165 strings out of 476931
- 176476 string characters out of 5823518
- 524024 words of memory out of 5000000
- 32121 multiletter control sequences out of 15000+600000
+ 11244 strings out of 476931
+ 177569 string characters out of 5823518
+ 530613 words of memory out of 5000000
+ 32179 multiletter control sequences out of 15000+600000
  480622 words of font info for 73 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 85i,7n,90p,451b,638s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 85i,7n,90p,674b,698s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/Users/seldenjrz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on ms.pdf (19 pages, 7160843 bytes).
+Output written on ms.pdf (21 pages, 7176421 bytes).
 PDF statistics:
- 561 PDF objects out of 1000 (max. 8388607)
- 498 compressed objects within 5 object streams
- 123 named destinations out of 1000 (max. 500000)
+ 732 PDF objects out of 1000 (max. 8388607)
+ 665 compressed objects within 7 object streams
+ 144 named destinations out of 1000 (max. 500000)
  173 words of extra memory for PDF output out of 10000 (max. 10000000)
 
