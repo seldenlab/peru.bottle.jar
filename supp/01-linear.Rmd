@@ -1,15 +1,11 @@
 # Linear Chimú vessel metrics
 
 ```{r load packages 3, echo=TRUE}
-# install required analysis packages
-#devtools::install_github("tidyverse/tidyverse")
-#devtools::install_github("mlcollyer/RRPP")
-#devtools::install_github("kassambara/ggpubr")
-#devtools::install_github('sinhrks/ggfortify')
 # load libraries
 library(here)
 library(tidyverse)
-library(RRPP)
+library(vegan)
+library(RVAideMemoire)
 library(ggpubr)
 library(ggfortify)
 library(cluster)
@@ -117,76 +113,22 @@ pca <- autoplot(prcomp(df),
 ggMarginal(pca, groupColour = TRUE)
 ```
 
-## Analyses of Variance (ANOVA) for _variable_ ~ _group_
+## MANOVA
 
-### ANOVA _Orifice diameter_ ~ _group_
+```{r manova}
+# perMANOVA
+ceramic.matrix <- as.matrix(DATA[,3:8]) # response vars
+ceramic.mat <- sqrt(ceramic.matrix) # sqrt transform
+ceramic.dist <- vegdist(ceramic.mat,
+                        method = 'bray') # dissimilarity matrix
+set.seed(5) # make results reproducible
 
-```{r anova.gp.od, out.width = "100%", dpi = 300, echo=TRUE}
-# anova = orifice diameter ~ group
-gp.od <- lm.rrpp(od ~ gp, 
-                 SS.type = "I", 
-                 DATA = DATA, 
-                 iter = 9999, 
-                 print.progress = FALSE)
-anova(gp.od)
-```
+# model: morphology as a function of form (jar v. bottle)
+ceramic.manova <- adonis2(ceramic.dist ~ form,
+                          data = DATA,
+                          permutations = 10000,
+                          method = 'bray')
 
-### ANOVA _Base diameter_ of Chimú vessels
-
-```{r anova.gp.bd, out.width = "100%", dpi = 300, echo=TRUE}
-# anova = base diameter ~ group
-gp.bd <- lm.rrpp(bd ~ gp, 
-                 SS.type = "I", 
-                 DATA = DATA, 
-                 iter = 9999, 
-                 print.progress = FALSE)
-anova(gp.bd)
-```
-
-### ANOVA _Neck diameter_ of Chimú vessels
-
-```{r anova.gp.nd, out.width = "100%", dpi = 300, echo=TRUE}
-# anova = neck diameter ~ group
-gp.nd <- lm.rrpp(nd ~ gp, 
-                 SS.type = "I", 
-                 DATA = DATA, 
-                 iter = 9999, 
-                 print.progress = FALSE)
-anova(gp.nd)
-```
-
-### ANOVA _Belly diameter_ of Chimú vessels
-
-```{r anova.gp.bl, out.width = "100%", dpi = 300, echo=TRUE}
-# anova = belly diameter ~ group
-gp.bl <- lm.rrpp(bl ~ gp, 
-                 SS.type = "I", 
-                 DATA = DATA, 
-                 iter = 9999, 
-                 print.progress = FALSE)
-anova(gp.bl)
-```
-
-### ANOVA _Height_ of Chimú vessels
-
-```{r anova.gp.h, out.width = "100%", dpi = 300, echo=TRUE}
-# anova = height ~ group
-gp.h <- lm.rrpp(h ~ gp, 
-                SS.type = "I", 
-                DATA = DATA, 
-                iter = 9999, 
-                print.progress = FALSE)
-anova(gp.h)
-```
-
-### ANOVA _Rim Thickness_ of Chimú vessels
-
-```{r anova.gp.rt, out.width = "100%", dpi = 300, echo=TRUE}
-# anova = rim thickness ~ group
-gp.rt <- lm.rrpp(RT ~ gp, 
-                 SS.type = "I", 
-                 DATA = DATA, 
-                 iter = 9999, 
-                 print.progress = FALSE)
-anova(gp.rt)
+## do bottles and jars differ?
+ceramic.manova
 ```
